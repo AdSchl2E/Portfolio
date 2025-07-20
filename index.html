@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adam Schlee - Portfolio</title>
+        <meta name="description"
+            content="Portfolio d'Adam Schlee, étudiant en informatique à l'INSA Lyon">
+
+        <!-- Icônes -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/unicons/4.0.8/css/unicons.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.21.0/simpleicons.min.css">
+
+        <style>
+        /* ===== CSS RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Thème par défaut - Momiji */
+            --primary-color: #ff6b35;
+            --secondary-color: #f7931e;
+            --accent-color: #c1272d;
+            --bg-primary: #fdf5f3;
+            --bg-secondary: #ffffff;
+            --text-primary: #2d1b1b;
+            --text-secondary: #5d4e4e;
+            --text-accent: #c1272d;
+            --shadow-color: rgba(193, 39, 45, 0.1);
+            --gradient-primary: linear-gradient(135deg, #ff6b35, #f7931e, #c1272d);
+            --gradient-bg: linear-gradient(135deg, #fdf5f3, #ffeee8);
+            --font-primary: 'Noto Serif JP', serif;
+            --font-secondary: 'Inter', sans-serif;
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background: var(--gradient-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== ANIMATIONS D'INTRO ===== */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            font-family: var(--font-primary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-secondary);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--shadow-color);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+            background: var(--shadow-color);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-selector,
+        .lang-selector {
+            position: relative;
+        }
+
+        .selector-btn {
+            background: var(--bg-primary);
+            border: 1px solid var(--shadow-color);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .selector-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--shadow-color);
+            border-radius: var(--border-radius);
+            padding: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            box-shadow: 0 10px 40px var(--shadow-color);
+        }
+
+        .dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: calc(var(--border-radius) / 2);
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: var(--shadow-color);
+        }
+
+        .theme-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: var(--gradient-bg);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-primary);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s 0.5s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s 0.7s forwards;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s 0.9s forwards;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== SECTIONS GÉNÉRALES ===== */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-primary);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 5px 20px var(--shadow-color);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-color);
+            border-color: var(--primary-color);
+        }
+
+        /* ===== GRILLE RESPONSIVE ===== */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+
+        /* ===== À PROPOS ===== */
+        .about-card {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            padding: 3.5rem 2.5rem;
+            min-height: 320px;
+        }
+        .about-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 2.5rem;
+            width: 100%;
+        }
+        .about-profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            background: var(--bg-secondary);
+            flex-shrink: 0;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 180px;
+        }
+        .about-text h3 {
+            margin-top: 0;
+            font-size: 2rem;
+        }
+        .about-text p {
+            margin-bottom: 2rem;
+            font-size: 1.15rem;
+        }
+        .about-gallery {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-end;
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+        .about-gallery-img1 {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+            transform: rotate(-6deg);
+        }
+        .about-gallery-img2 {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+            transform: rotate(8deg);
+            margin-bottom: 28px;
+        }
+        .about-gallery-img3 {
+            width: 105px;
+            height: 105px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+            transform: rotate(-4deg);
+            margin-bottom: 16px;
+        }
+        .about-gallery-img4 {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+            transform: rotate(5deg);
+            margin-bottom: 36px;
+        }
+
+        /* ===== FORMATION ===== */
+        .formation-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 5px 20px var(--shadow-color);
+            margin-bottom: 2rem;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+        .formation-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 40px var(--shadow-color);
+        }
+        .formation-img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 0.75rem;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+        }
+        .formation-content {
+            flex: 1;
+        }
+        .formation-content h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .formation-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive: À propos - image au-dessus, texte en dessous sur mobile */
+        @media (max-width: 768px) {
+            .about-row {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                align-items: center !important;
+            }
+            .about-profile-img {
+                margin-bottom: 0.5rem;
+            }
+            .about-text {
+                min-width: 0 !important;
+                max-width: 100% !important;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* ===== EXPERIENCES ===== */
+        .experience-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--card-bg, #fff);
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px #0001;
+            margin-bottom: 2rem;
+            padding: 1.5rem 1.5rem 1rem 1.5rem;
+        }
+        .experience-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        .experience-img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 0.75rem;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+        }
+        .experience-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .experience-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .experience-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 0;
+        }
+        .experience-period {
+            color: var(--text-accent, #c1272d);
+            font-weight: 500;
+            white-space: nowrap;
+            font-size: 1em;
+        }
+        .experience-meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+            color: var(--text-secondary, #666);
+            gap: 1rem;
+        }
+        .experience-company {
+            font-weight: 500;
+        }
+        .experience-location {
+            font-style: italic;
+            color: var(--text-accent, #c1272d);
+        }
+        .experience-list {
+            margin: 0.5em 0 0 1.2em;
+            padding: 0;
+            list-style: disc;
+            color: var(--text-main, #323232);
+            font-size: 1em;
+        }
+        @media (max-width: 700px) {
+            .experience-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .experience-header-row, .experience-meta-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2em;
+            }
+        }
+
+        /* ===== PROJETS ===== */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient-primary);
+            margin-bottom: 1rem;
+            border-radius: calc(var(--border-radius) / 2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            background: var(--shadow-color);
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: calc(var(--border-radius) / 3);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* ===== COMPÉTENCES ===== */
+        .skills-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--shadow-color);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0.5rem;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .skill-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        .skill-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .skill-icon img {
+            width: 2.5rem;
+            height: 2.5rem;
+            object-fit: contain;
+            display: block;
+            /* Par défaut, couleur du thème */
+            filter: var(--skill-icon-filter, none);
+            transition: filter 0.3s;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+            border-top: 1px solid var(--shadow-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--shadow-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== NAVIGATION MOBILE ===== */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--shadow-color);
+            padding: 0.5rem;
+            z-index: 1000;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            font-size: 0.7rem;
+            min-width: 50px;
+        }
+
+        .mobile-nav-item:hover,
+        .mobile-nav-item.active {
+            color: var(--primary-color);
+            background: var(--shadow-color);
+        }
+
+        .mobile-nav-icon {
+            font-size: 1.2rem;
+        }
+
+        /* ===== MEDIA QUERIES ===== */
+        @media (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+            .mobile-nav {
+                display: block;
+            }
+            .section {
+                padding: 3rem 1rem;
+            }
+            .nav-controls {
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                z-index: 1001;
+                background: var(--bg-secondary);
+                border-radius: var(--border-radius);
+                padding: 0.5rem;
+                box-shadow: 0 5px 20px var(--shadow-color);
+            }
+            .hero-content {
+                padding: 1rem;
+            }
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .skills-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            .formation-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .formation-img {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* ===== THÈMES ===== */
+        [data-theme="sakura"] {
+            --primary-color: #ff69b4;
+            --secondary-color: #ffc0cb;
+            --accent-color: #ff1493;
+            --bg-primary: #fdf7fd;
+            --bg-secondary: #ffffff;
+            --text-primary: #2d1b2d;
+            --text-secondary: #5d4e5d;
+            --text-accent: #ff1493;
+            --shadow-color: rgba(255, 20, 147, 0.1);
+            --gradient-primary: linear-gradient(135deg, #ff69b4, #ffc0cb, #ff1493);
+            --gradient-bg: linear-gradient(135deg, #fdf7fd, #ffe8f0);
+            --font-primary: 'Noto Serif JP', serif;
+        }
+
+        [data-theme="yuzu"] {
+            --primary-color: #ffd700;
+            --secondary-color: #ffeb3b;
+            --accent-color: #ff8f00;
+            --bg-primary: #fffef7;
+            --bg-secondary: #ffffff;
+            --text-primary: #2d2b1b;
+            --text-secondary: #5d5a4e;
+            --text-accent: #ff8f00;
+            --shadow-color: rgba(255, 143, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #ffd700, #ffeb3b, #ff8f00);
+            --gradient-bg: linear-gradient(135deg, #fffef7, #fff8e1);
+            --font-primary: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="matcha"] {
+            --primary-color: #8bc34a;
+            --secondary-color: #cddc39;
+            --accent-color: #4caf50;
+            --bg-primary: #f7fdf7;
+            --bg-secondary: #ffffff;
+            --text-primary: #1b2d1b;
+            --text-secondary: #4e5d4e;
+            --text-accent: #4caf50;
+            --shadow-color: rgba(76, 175, 80, 0.1);
+            --gradient-primary: linear-gradient(135deg, #8bc34a, #cddc39, #4caf50);
+            --gradient-bg: linear-gradient(135deg, #f7fdf7, #e8f5e8);
+            --font-primary: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="glass"] {
+            --primary-color: #00bcd4;
+            --secondary-color: #4fc3f7;
+            --accent-color: #0097a7;
+            --bg-primary: rgba(255, 255, 255, 0.1);
+            --bg-secondary: rgba(255, 255, 255, 0.2);
+            --text-primary: #263238;
+            --text-secondary: #546e7a;
+            --text-accent: #0097a7;
+            --shadow-color: rgba(0, 151, 167, 0.1);
+            --gradient-primary: linear-gradient(135deg, #00bcd4, #4fc3f7, #0097a7);
+            --gradient-bg: linear-gradient(135deg, rgba(240, 248, 255, 0.8), rgba(225, 245, 254, 0.8));
+            --font-primary: 'Inter', sans-serif;
+        }
+
+        [data-theme="glass"] .card,
+        [data-theme="glass"] .navbar,
+        [data-theme="glass"] .mobile-nav {
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* ===== ANIMATIONS SMOOTH ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== SCROLL SMOOTH ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Responsive: À propos - image au-dessus, texte en dessous sur mobile */
+        @media (max-width: 768px) {
+            #about .about-card > div:first-child {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                align-items: center !important;
+            }
+            #about .about-card img[alt^="Photo de profil"] {
+                margin-bottom: 0.5rem;
+            }
+            #about .about-text {
+                min-width: 0 !important;
+                max-width: 100% !important;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        </style>
+    </head>
+    <body data-theme="momiji">
+        <!-- Loader d'intro -->
+        <div class="loader" id="loader">
+            <div class="loader-text">Adam Schlee</div>
+        </div>
+
+        <!-- Navigation desktop -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#home" class="logo">AdSchl2E</a>
+
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active"
+                            data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="#about" class="nav-link"
+                            data-i18n="nav.about">Qui je suis</a></li>
+                    <li><a href="#education" class="nav-link"
+                            data-i18n="nav.education">Formation</a></li>
+                    <li><a href="#experience" class="nav-link"
+                            data-i18n="nav.experience">Expériences</a></li>
+                    <li><a href="#skills" class="nav-link"
+                            data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="#projects" class="nav-link"
+                            data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="#contact" class="nav-link"
+                            data-i18n="nav.contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-controls">
+                    <div class="theme-selector">
+                        <button class="selector-btn" id="themeBtn">
+                            <div class="theme-icon"
+                                style="background: linear-gradient(135deg, #ff6b35, #f7931e, #c1272d);"></div>
+                            <span data-i18n="themes.momiji">Momiji</span>
+                            <i class="uil uil-angle-down"></i>
+                        </button>
+                        <div class="dropdown" id="themeDropdown">
+                            <div class="dropdown-item" data-theme="momiji">
+                                <div class="theme-icon"
+                                    style="background: linear-gradient(135deg, #ff6b35, #f7931e, #c1272d);"></div>
+                                <span data-i18n="themes.momiji">Momiji</span>
+                            </div>
+                            <div class="dropdown-item" data-theme="sakura">
+                                <div class="theme-icon"
+                                    style="background: linear-gradient(135deg, #ff69b4, #ffc0cb, #ff1493);"></div>
+                                <span data-i18n="themes.sakura">Sakura</span>
+                            </div>
+                            <div class="dropdown-item" data-theme="yuzu">
+                                <div class="theme-icon"
+                                    style="background: linear-gradient(135deg, #ffd700, #ffeb3b, #ff8f00);"></div>
+                                <span data-i18n="themes.yuzu">Yuzu</span>
+                            </div>
+                            <div class="dropdown-item" data-theme="matcha">
+                                <div class="theme-icon"
+                                    style="background: linear-gradient(135deg, #8bc34a, #cddc39, #4caf50);"></div>
+                                <span data-i18n="themes.matcha">Matcha</span>
+                            </div>
+                            <div class="dropdown-item" data-theme="glass">
+                                <div class="theme-icon"
+                                    style="background: linear-gradient(135deg, #00bcd4, #4fc3f7, #0097a7);"></div>
+                                <span data-i18n="themes.glass">Glass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lang-selector">
+                        <button class="selector-btn" id="langBtn">
+                            <i class="uil uil-globe"></i>
+                            <span id="currentLang">FR</span>
+                            <i class="uil uil-angle-down"></i>
+                        </button>
+                        <div class="dropdown" id="langDropdown">
+                            <div class="dropdown-item" data-lang="fr">
+                                <i class="uil uil-globe"></i>
+                                <span>Français</span>
+                            </div>
+                            <div class="dropdown-item" data-lang="en">
+                                <i class="uil uil-globe"></i>
+                                <span>English</span>
+                            </div>
+                            <div class="dropdown-item" data-lang="ja">
+                                <i class="uil uil-globe"></i>
+                                <span>日本語</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Navigation mobile -->
+        <nav class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-links">
+                <a href="#home" class="mobile-nav-item active">
+                    <i class="uil uil-home mobile-nav-icon"></i>
+                    <span data-i18n="nav.home">Accueil</span>
+                </a>
+                <a href="#about" class="mobile-nav-item">
+                    <i class="uil uil-user mobile-nav-icon"></i>
+                    <span data-i18n="nav.about">À propos</span>
+                </a>
+                <a href="#skills" class="mobile-nav-item">
+                    <i class="uil uil-code-branch mobile-nav-icon"></i>
+                    <span data-i18n="nav.skills">Skills</span>
+                </a>
+                <a href="#projects" class="mobile-nav-item">
+                    <i class="uil uil-folder mobile-nav-icon"></i>
+                    <span data-i18n="nav.projects">Projets</span>
+                </a>
+                <a href="#contact" class="mobile-nav-item">
+                    <i class="uil uil-envelope mobile-nav-icon"></i>
+                    <span data-i18n="nav.contact">Contact</span>
+                </a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+                <div class="hero-bg">
+                    <svg width="100%" height="100%"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="heroPattern" x="0" y="0" width="100"
+                                height="100" patternUnits="userSpaceOnUse">
+                                <circle cx="20" cy="20" r="2"
+                                    fill="currentColor" opacity="0.5" />
+                                <circle cx="80" cy="80" r="3"
+                                    fill="currentColor" opacity="0.3" />
+                                <circle cx="40" cy="60" r="1.5"
+                                    fill="currentColor" opacity="0.1" />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%"
+                            fill="url(#heroPattern)" />
+                    </svg>
+                </div>
+
+                <div class="hero-content">
+                    <h1 class="hero-title">Adam Schlee</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Étudiant
+                        en informatique à l'INSA Lyon</p>
+                    <a href="#about" class="hero-cta"
+                        data-i18n="hero.cta">Découvrir mon parcours</a>
+                </div>
+            </section>
+
+            <!-- À propos -->
+            <section class="section" id="about">
+                <h2 class="section-title" data-i18n="about.title">Qui je
+                    suis</h2>
+                <div class="about-card card">
+                    <div class="about-row">
+                        <img src="assets/cv/me.png"
+                            alt="Photo de profil Adam Schlee"
+                            class="about-profile-img">
+                        <div class="about-text">
+                            <h3>Bonjour, moi c'est Adam !</h3>
+                            <p>Je suis étudiant en informatique à l'INSA Lyon,
+                                passionné par le développement web, les
+                                nouvelles technologies et la création
+                                d'expériences numériques modernes. J'aime
+                                relever des défis techniques et collaborer sur
+                                des projets innovants. Mon approche combine
+                                créativité, rigueur et curiosité pour apprendre
+                                en continu et offrir des solutions performantes
+                                et accessibles.</p>
+                        </div>
+                    </div>
+                    <div class="about-gallery">
+                        <div>
+                            <img
+                                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=240&q=80"
+                                alt="Japon" title="Japon"
+                                class="about-gallery-img1">
+                        </div>
+                        <div>
+                            <img src="assets/images/canard.jpg"
+                                alt="Gastronomie" title="Gastronomie"
+                                class="about-gallery-img2">
+                        </div>
+                        <div>
+                            <img
+                                src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=210&q=80"
+                                alt="Voyage" title="Voyage"
+                                class="about-gallery-img3">
+                        </div>
+                        <div>
+                            <img
+                                src="https://images.unsplash.com/photo-1514361892635-cebb9b6c7ca5?auto=format&fit=facearea&w=180&q=80"
+                                alt="Oenologie" title="Oenologie"
+                                class="about-gallery-img4">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formation -->
+            <section class="section" id="education">
+                <h2 class="section-title"
+                    data-i18n="education.title">Formation</h2>
+                <div>
+                    <div class="formation-card">
+                        <img src="assets/cv/insa-lyon-logo.png"
+                            alt="Logo INSA Lyon" class="formation-img">
+                        <div class="formation-content">
+                            <h3 data-i18n="education.insa.title">INSA Lyon</h3>
+                            <p class="text-accent"
+                                data-i18n="education.insa.period">2023 -
+                                2026</p>
+                            <p data-i18n="education.insa.description">
+                                Cycle ingénieur en informatique.<br>
+                                Formation complète couvrant les algorithmes,
+                                structures de données, développement logiciel,
+                                bases de données et gestion de projet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="formation-card">
+                        <img src="assets/cv/insa-lyon-logo.png"
+                            alt="Logo INSA Lyon" class="formation-img">
+                        <div class="formation-content">
+                            <h3 data-i18n="education.insa.title">INSA Lyon</h3>
+                            <p class="text-accent"
+                                data-i18n="education.insa.period">2021 -
+                                2023</p>
+                            <p data-i18n="education.insa.description">
+                                Classe préparatoire intégrée en filière
+                                internationale.<br>
+                                Formation intensive en mathématiques, physique
+                                et mécanique.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="formation-card">
+                        <img src="assets/cv/lycee-marc-bloch-logo.png"
+                            alt="Logo Lycée Marc Bloch" class="formation-img">
+                        <div class="formation-content">
+                            <h3 data-i18n="education.lycee.title">Lycée Marc
+                                Bloch</h3>
+                            <p class="text-accent"
+                                data-i18n="education.lycee.period">2018 -
+                                2021</p>
+                            <p data-i18n="education.lycee.description">
+                                Baccalauréat général, spécialité mathématiques
+                                et NSI (Numérique et Sciences
+                                Informatiques).<br>
+                                Mention Très Bien.<br>
+                                Formation solide en sciences et techniques.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expériences -->
+            <section class="section" id="experience">
+                <h2 class="section-title" data-i18n="experience.title">Expériences professionnelles</h2>
+                <div>
+                    <div class="experience-card">
+                        <div class="experience-row">
+                            <img src="assets/cv/eiffage-logo.png" alt="Eiffage logo" class="experience-img">
+                            <div class="experience-content">
+                                <div class="experience-header-row">
+                                    <h3 class="experience-title" data-i18n="experience.internship.title">Ingénieur développeur logiciel</h3>
+                                    <span class="experience-period">Mai 2025 - Septembre 2025</span>
+                                </div>
+                                <div class="experience-meta-row">
+                                    <span class="experience-company">Eiffage Énergie Systèmes</span>
+                                    <span class="experience-location">Lyon</span>
+                                </div>
+                                <ul class="experience-list">
+                                    <li>Développement d'un simulateur d'équipements de tunnel en Java/Swing pour la plateforme de tests du SITG (Système d'Information des Tunnels du Grand Lyon).</li>
+                                    <li>Appropriation de la passerelle de communication SITG et de la gestion de versions (Git).</li>
+                                    <li>Rédaction de spécifications, réalisation de tests et mise à jour documentaire.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-row">
+                            <img src="assets/cv/loreal-logo.png" alt="L'Oréal logo" class="experience-img">
+                            <div class="experience-content">
+                                <div class="experience-header-row">
+                                    <h3 class="experience-title" data-i18n="experience.internship.title">Gestion et analyse de données expérimentales</h3>
+                                    <span class="experience-period">Juin 2024 - Septembre 2024</span>
+                                </div>
+                                <div class="experience-meta-row">
+                                    <span class="experience-company">L'ORÉAL (EPISKIN)</span>
+                                    <span class="experience-location">Lyon</span>
+                                </div>
+                                <ul class="experience-list">
+                                    <li>Traitement et nettoyage de données issues de tests in vitro.</li>
+                                    <li>Analyse et visualisation avec Excel, Power BI (VBA, DAX, M, Python).</li>
+                                    <li>Collaboration avec l'équipe R&D pour assurer la qualité des données.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compétences -->
+            <section class="section" id="skills">
+                <h2 class="section-title"
+                    data-i18n="skills.title">Compétences</h2>
+
+                <div class="skills-filters">
+                    <button class="filter-btn active" data-filter="all"
+                        data-i18n="skills.filters.all">Toutes</button>
+                    <button class="filter-btn" data-filter="languages"
+                        data-i18n="skills.filters.languages">Langages</button>
+                    <button class="filter-btn" data-filter="frameworks"
+                        data-i18n="skills.filters.frameworks">Frameworks</button>
+                    <button class="filter-btn" data-filter="tools"
+                        data-i18n="skills.filters.tools">Outils</button>
+                </div>
+
+                <div class="grid grid-4" id="skillsGrid">
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="javascript"
+                                src="https://cdn.simpleicons.org/javascript/323232"
+                                alt="JavaScript logo" />
+                        </div>
+                        <div class="skill-name">JavaScript</div>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="html5"
+                                src="https://cdn.simpleicons.org/html5/323232"
+                                alt="HTML logo" />
+                        </div>
+                        <div class="skill-name">HTML</div>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="css"
+                                src="https://cdn.simpleicons.org/css/323232"
+                                alt="CSS logo" />
+                        </div>
+                        <div class="skill-name">CSS</div>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="python"
+                                src="https://cdn.simpleicons.org/python/323232"
+                                alt="Python logo" />
+                        </div>
+                        <div class="skill-name">Python</div>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="java"
+                                src="https://img.icons8.com/?size=100&id=2572&format=png&color=323232"
+                                alt="Java logo" />
+                        </div>
+                        <div class="skill-name">Java</div>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="cplusplus"
+                                src="https://cdn.simpleicons.org/cplusplus/323232"
+                                alt="C++ logo" />
+                        </div>
+                        <div class="skill-name">C++</div>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="typescript"
+                                src="https://cdn.simpleicons.org/typescript/323232"
+                                alt="TypeScript logo" />
+                        </div>
+                        <div class="skill-name">TypeScript</div>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="php"
+                                src="https://cdn.simpleicons.org/php/323232"
+                                alt="PHP logo" />
+                        </div>
+                        <div class="skill-name">PHP</div>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="c"
+                                src="https://cdn.simpleicons.org/c/323232"
+                                alt="C logo" />
+                        </div>
+                        <div class="skill-name">C</div>
+                    </div>
+
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="nodedotjs"
+                                src="https://cdn.simpleicons.org/nodedotjs/323232"
+                                alt="Node.js logo" />
+                        </div>
+                        <div class="skill-name">Node.js</div>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="react"
+                                src="https://cdn.simpleicons.org/react/323232"
+                                alt="React logo" />
+                        </div>
+                        <div class="skill-name">React</div>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="nextdotjs"
+                                src="https://cdn.simpleicons.org/nextdotjs/323232"
+                                alt="Next.js logo" />
+                        </div>
+                        <div class="skill-name">Next.js</div>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="nestjs"
+                                src="https://cdn.simpleicons.org/nestjs/323232"
+                                alt="NestJS logo" />
+                        </div>
+                        <div class="skill-name">NestJS</div>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="spring"
+                                src="https://cdn.simpleicons.org/spring/323232"
+                                alt="Spring logo" />
+                        </div>
+                        <div class="skill-name">Spring</div>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="thymeleaf"
+                                src="https://cdn.simpleicons.org/thymeleaf/323232"
+                                alt="Thymeleaf logo" />
+                        </div>
+                        <div class="skill-name">Thymeleaf</div>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="bootstrap"
+                                src="https://cdn.simpleicons.org/bootstrap/323232"
+                                alt="Bootstrap logo" />
+                        </div>
+                        <div class="skill-name">Bootstrap</div>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="tailwindcss"
+                                src="https://cdn.simpleicons.org/tailwindcss/323232"
+                                alt="Tailwind logo" />
+                        </div>
+                        <div class="skill-name">Tailwind</div>
+                    </div>
+
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="git"
+                                src="https://cdn.simpleicons.org/git/323232"
+                                alt="Git logo" />
+                        </div>
+                        <div class="skill-name">Git</div>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="docker"
+                                src="https://cdn.simpleicons.org/docker/323232"
+                                alt="Docker logo" />
+                        </div>
+                        <div class="skill-name">Docker</div>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="mongodb"
+                                src="https://cdn.simpleicons.org/mongodb/323232"
+                                alt="MongoDB logo" />
+                        </div>
+                        <div class="skill-name">MongoDB</div>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="mysql"
+                                src="https://cdn.simpleicons.org/mysql/323232"
+                                alt="MySQL logo" />
+                        </div>
+                        <div class="skill-name">MySQL</div>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="postgresql"
+                                src="https://cdn.simpleicons.org/postgresql/323232"
+                                alt="PostgreSQL logo" />
+                        </div>
+                        <div class="skill-name">PostgreSQL</div>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="sqlite"
+                                src="https://cdn.simpleicons.org/sqlite/323232"
+                                alt="SQLite logo" />
+                        </div>
+                        <div class="skill-name">SQLite</div>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="vscode"
+                                src="https://img.icons8.com/?size=100&id=yCNobJ80uutx&format=png&color=323232"
+                                alt="VS Code logo" />
+                        </div>
+                        <div class="skill-name">VS Code</div>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="intellijidea"
+                                src="https://cdn.simpleicons.org/intellijidea/323232"
+                                alt="IntelliJ IDEA logo" />
+                        </div>
+                        <div class="skill-name">IntelliJ IDEA</div>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="figma"
+                                src="https://cdn.simpleicons.org/figma/323232"
+                                alt="Figma logo" />
+                        </div>
+                        <div class="skill-name">Figma</div>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img
+                                data-icon="powerbi"
+                                src="https://img.icons8.com/?size=100&id=FQ9NVJuXbDIv&format=png&color=323232"
+                                alt="Power BI logo" />
+                        </div>
+                        <div class="skill-name">Power BI</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projets -->
+            <section class="section" id="projects">
+                <h2 class="section-title" data-i18n="projects.title">Projets
+                    récents</h2>
+
+                <div class="grid grid-3">
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <i class="uil uil-shopping-cart"></i>
+                        </div>
+                        <h3 class="project-title"
+                            data-i18n="projects.ecommerce.title">E-Shop
+                            Lyon</h3>
+                        <p class="project-description"
+                            data-i18n="projects.ecommerce.description">
+                            Plateforme e-commerce complète avec panier, paiement
+                            sécurisé et interface d'administration.
+                            Développée avec React, Node.js et MongoDB.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="uil uil-github"></i>
+                                GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="uil uil-external-link-alt"></i>
+                                <span data-i18n="projects.live">Démo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <i class="uil uil-cloud-data-connection"></i>
+                        </div>
+                        <h3 class="project-title"
+                            data-i18n="projects.dashboard.title">Dashboard
+                            Analytics</h3>
+                        <p class="project-description"
+                            data-i18n="projects.dashboard.description">
+                            Interface de visualisation de données avec
+                            graphiques interactifs et tableau de bord
+                            personnalisable. Intégration d'APIs externes et mise
+                            à jour temps réel.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Vue.js</span>
+                            <span class="tech-badge">Chart.js</span>
+                            <span class="tech-badge">Express</span>
+                            <span class="tech-badge">Socket.IO</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="uil uil-github"></i>
+                                GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="uil uil-external-link-alt"></i>
+                                <span data-i18n="projects.live">Démo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card project-card">
+                        <div class="project-image">
+                            <i class="uil uil-mobile-android"></i>
+                        </div>
+                        <h3 class="project-title"
+                            data-i18n="projects.mobile.title">App Mobile
+                            ToDo</h3>
+                        <p class="project-description"
+                            data-i18n="projects.mobile.description">
+                            Application mobile de gestion de tâches avec
+                            synchronisation cloud, notifications
+                            et interface intuitive. Compatible iOS et Android.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React Native</span>
+                            <span class="tech-badge">Firebase</span>
+                            <span class="tech-badge">Redux</span>
+                            <span class="tech-badge">TypeScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="uil uil-github"></i>
+                                GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="uil uil-external-link-alt"></i>
+                                <span data-i18n="projects.live">Démo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="projets.html" class="hero-cta"
+                        data-i18n="projects.viewAll">Voir tous mes projets</a>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="section" id="contact">
+                <h2 class="section-title" data-i18n="contact.title">Me
+                    contacter</h2>
+
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3 data-i18n="contact.info.title">Informations de
+                            contact</h3>
+                        <p data-i18n="contact.info.description">
+                            N'hésitez pas à me contacter pour discuter de vos
+                            projets ou pour toute collaboration.
+                            Je suis toujours ouvert aux nouvelles opportunités !
+                        </p>
+                        <div style="margin-top: 2rem;">
+                            <p><strong>Email:</strong>
+                                adam.schlee@insa-lyon.fr</p>
+                            <p><strong
+                                    data-i18n="contact.location">Localisation:</strong>
+                                Lyon, France</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 data-i18n="contact.social.title">Réseaux
+                            sociaux</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/adamschlee"
+                                class="social-link" target="_blank"
+                                rel="noopener">
+                                <i class="uil uil-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/adamschlee"
+                                class="social-link" target="_blank"
+                                rel="noopener">
+                                <i class="uil uil-linkedin"></i>
+                            </a>
+                            <a href="mailto:adam.schlee@insa-lyon.fr"
+                                class="social-link">
+                                <i class="uil uil-envelope"></i>
+                            </a>
+                            <a href="https://twitter.com/adamschlee"
+                                class="social-link" target="_blank"
+                                rel="noopener">
+                                <i class="uil uil-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Adam Schlee. <span data-i18n="footer.rights">Tous
+                    droits réservés.</span></p>
+        </footer>
+
+        <script>
+        // ===== TRANSLATIONS =====
+        const translations = {
+            fr: {
+                nav: {
+                    home: "Accueil",
+                    about: "Qui je suis",
+                    education: "Formation",
+                    experience: "Expériences",
+                    skills: "Compétences",
+                    projects: "Projets",
+                    contact: "Contact"
+                },
+                themes: {
+                    momiji: "Momiji",
+                    sakura: "Sakura",
+                    yuzu: "Yuzu",
+                    matcha: "Matcha",
+                    glass: "Glass"
+                },
+                hero: {
+                    subtitle: "Étudiant en informatique à l'INSA Lyon",
+                    cta: "Découvrir mon parcours"
+                },
+                about: {
+                    title: "Qui je suis",
+                    passion: {
+                        title: "Ma passion",
+                        content: "Passionné par le développement web et les nouvelles technologies, je me spécialise dans la création d'expériences utilisateur modernes et performantes. Mon approche combine créativité et rigueur technique pour donner vie aux projets."
+                    },
+                    values: {
+                        title: "Mes valeurs",
+                        content: "Je crois en l'importance du code propre, de l'accessibilité et de l'innovation. Toujours curieux d'apprendre, je reste à l'affût des dernières tendances technologiques pour offrir des solutions toujours plus performantes."
+                    }
+                },
+                education: {
+                    title: "Formation",
+                    insa: {
+                        title: "INSA Lyon",
+                        period: "2022 - 2027",
+                        description: "Cycle ingénieur en informatique, spécialisation développement web et applications mobiles. Formation complète couvrant les algorithmes, structures de données, développement logiciel, bases de données et gestion de projet."
+                    },
+                    projects: {
+                        title: "Projets académiques",
+                        description: "Réalisation de nombreux projets en équipe : applications web, systèmes distribués, intelligence artificielle, et développement d'applications mobiles. Participation à des hackathons et concours de programmation."
+                    }
+                },
+                experience: {
+                    title: "Expériences professionnelles",
+                    internship: {
+                        title: "Stage Développeur Web",
+                        company: "TechCorp Lyon - Été 2024",
+                        description: "Développement d'une application web complète avec React et Node.js. Mise en place d'une architecture microservices et optimisation des performances. Collaboration étroite avec l'équipe UX/UI pour l'amélioration de l'expérience utilisateur."
+                    },
+                    freelance: {
+                        title: "Développeur Freelance",
+                        period: "2023 - Présent",
+                        description: "Création de sites web sur mesure pour des petites entreprises et associations. Développement de solutions e-commerce, sites vitrines et applications web. Gestion complète des projets de la conception à la mise en production."
+                    }
+                },
+                skills: {
+                    title: "Compétences",
+                    filters: {
+                        all: "Toutes",
+                        languages: "Langages",
+                        frameworks: "Frameworks",
+                        tools: "Outils"
+                    }
+                },
+                projects: {
+                    title: "Projets récents",
+                    viewAll: "Voir tous mes projets",
+                    live: "Démo",
+                    ecommerce: {
+                        title: "E-Shop Lyon",
+                        description: "Plateforme e-commerce complète avec panier, paiement sécurisé et interface d'administration. Développée avec React, Node.js et MongoDB."
+                    },
+                    dashboard: {
+                        title: "Dashboard Analytics",
+                        description: "Interface de visualisation de données avec graphiques interactifs et tableau de bord personnalisable. Intégration d'APIs externes et mise à jour temps réel."
+                    },
+                    mobile: {
+                        title: "App Mobile ToDo",
+                        description: "Application mobile de gestion de tâches avec synchronisation cloud, notifications et interface intuitive. Compatible iOS et Android."
+                    }
+                },
+                contact: {
+                    title: "Me contacter",
+                    location: "Localisation",
+                    info: {
+                        title: "Informations de contact",
+                        description: "N'hésitez pas à me contacter pour discuter de vos projets ou pour toute collaboration. Je suis toujours ouvert aux nouvelles opportunités !"
+                    },
+                    social: {
+                        title: "Réseaux sociaux"
+                    }
+                },
+                footer: {
+                    rights: "Tous droits réservés."
+                }
+            },
+            en: {
+                nav: {
+                    home: "Home",
+                    about: "About me",
+                    education: "Education",
+                    experience: "Experience",
+                    skills: "Skills",
+                    projects: "Projects",
+                    contact: "Contact"
+                },
+                themes: {
+                    momiji: "Momiji",
+                    sakura: "Sakura",
+                    yuzu: "Yuzu",
+                    matcha: "Matcha",
+                    glass: "Glass"
+                },
+                hero: {
+                    subtitle: "Computer Science Student at INSA Lyon",
+                    cta: "Discover my journey"
+                },
+                about: {
+                    title: "About me",
+                    passion: {
+                        title: "My passion",
+                        content: "Passionate about web development and new technologies, I specialize in creating modern and performant user experiences. My approach combines creativity and technical rigor to bring projects to life."
+                    },
+                    values: {
+                        title: "My values",
+                        content: "I believe in the importance of clean code, accessibility and innovation. Always curious to learn, I stay on the lookout for the latest technological trends to offer increasingly efficient solutions."
+                    }
+                },
+                education: {
+                    title: "Education",
+                    insa: {
+                        title: "INSA Lyon",
+                        period: "2022 - 2027",
+                        description: "Engineering degree in computer science, specializing in web development and mobile applications. Comprehensive training covering algorithms, data structures, software development, databases and project management."
+                    },
+                    projects: {
+                        title: "Academic projects",
+                        description: "Completion of numerous team projects: web applications, distributed systems, artificial intelligence, and mobile application development. Participation in hackathons and programming contests."
+                    }
+                },
+                experience: {
+                    title: "Professional experience",
+                    internship: {
+                        title: "Web Developer Intern",
+                        company: "TechCorp Lyon - Summer 2024",
+                        description: "Development of a complete web application with React and Node.js. Implementation of microservices architecture and performance optimization. Close collaboration with UX/UI team for user experience improvement."
+                    }
+                },
+                skills: {
+                    title: "Skills",
+                    filters: {
+                        all: "All",
+                        languages: "Languages",
+                        frameworks: "Frameworks",
+                        tools: "Tools"
+                    }
+                },
+                projects: {
+                    title: "Recent projects",
+                    viewAll: "View all my projects",
+                    live: "Demo",
+                    ecommerce: {
+                        title: "E-Shop Lyon",
+                        description: "Complete e-commerce platform with cart, secure payment and administration interface. Developed with React, Node.js and MongoDB."
+                    },
+                    dashboard: {
+                        title: "Analytics Dashboard",
+                        description: "Data visualization interface with interactive charts and customizable dashboard. External API integration and real-time updates."
+                    },
+                    mobile: {
+                        title: "ToDo Mobile App",
+                        description: "Mobile task management application with cloud synchronization, notifications and intuitive interface. Compatible with iOS and Android."
+                    }
+                },
+                contact: {
+                    title: "Contact me",
+                    location: "Location",
+                    info: {
+                        title: "Contact information",
+                        description: "Feel free to contact me to discuss your projects or for any collaboration. I'm always open to new opportunities!"
+                    },
+                    social: {
+                        title: "Social networks"
+                    }
+                },
+                footer: {
+                    rights: "All rights reserved."
+                }
+            },
+            ja: {
+                nav: {
+                    home: "ホーム",
+                    about: "私について",
+                    education: "学歴",
+                    experience: "経験",
+                    skills: "スキル",
+                    projects: "プロジェクト",
+                    contact: "連絡先"
+                },
+                themes: {
+                    momiji: "紅葉",
+                    sakura: "桜",
+                    yuzu: "柚子",
+                    matcha: "抹茶",
+                    glass: "ガラス"
+                },
+                hero: {
+                    subtitle: "INSA Lyonコンピュータサイエンス学生",
+                    cta: "私の経歴を見る"
+                },
+                about: {
+                    title: "私について",
+                    passion: {
+                        title: "私の情熱",
+                        content: "ウェブ開発と新しい技術に情熱を注ぎ、モダンで高性能なユーザーエクスペリエンスの創造を専門としています。創造性と技術的な厳密さを組み合わせたアプローチで、プロジェクトに命を吹き込みます。"
+                    },
+                    values: {
+                        title: "私の価値観",
+                        content: "クリーンなコード、アクセシビリティ、イノベーションの重要性を信じています。常に学ぶことに好奇心を持ち、より効率的なソリューションを提供するために最新の技術トレンドを注視しています。"
+                    }
+                },
+                education: {
+                    title: "学歴",
+                    insa: {
+                        title: "INSA Lyon",
+                        period: "2022年 - 2027年",
+                        description: "コンピュータサイエンスのエンジニア学位、ウェブ開発とモバイルアプリケーション専門。アルゴリズム、データ構造、ソフトウェア開発、データベース、プロジェクト管理を網羅する包括的な教育。"
+                    },
+                    projects: {
+                        title: "学術プロジェクト",
+                        description: "多数のチームプロジェクトの完成：ウェブアプリケーション、分散システム、人工知能、モバイルアプリケーション開発。ハッカソンやプログラミングコンテストへの参加。"
+                    }
+                },
+                experience: {
+                    title: "職歴",
+                    internship: {
+                        title: "ウェブ開発インターン",
+                        company: "TechCorp Lyon - 2024年夏",
+                        description: "ReactとNode.jsを使用した完全なウェブアプリケーションの開発。マイクロサービス アーキテクチャの実装とパフォーマンスの最適化。ユーザーエクスペリエンス向上のためのUX/UIチームとの密接な協力。"
+                    },
+                    freelance: {
+                        title: "フリーランス開発者",
+                        period: "2023年 - 現在",
+                        description: "中小企業や団体向けのカスタムウェブサイト作成。Eコマースソリューション、ショーケースサイト、ウェブアプリケーションの開発。設計から本稼働まで、プロジェクトの完全管理。"
+                    }
+                },
+                skills: {
+                    title: "スキル",
+                    filters: {
+                        all: "すべて",
+                        languages: "言語",
+                        frameworks: "フレームワーク",
+                        tools: "ツール"
+                    }
+                },
+                projects: {
+                    title: "最近のプロジェクト",
+                    viewAll: "すべてのプロジェクトを見る",
+                    live: "デモ",
+                    ecommerce: {
+                        title: "Eショップ Lyon",
+                        description: "カート、安全な支払い、管理インターフェースを備えた完全なeコマースプラットフォーム。React、Node.js、MongoDBで開発。"
+                    },
+                    dashboard: {
+                        title: "アナリティクス ダッシュボード",
+                        description: "インタラクティブなグラフとカスタマイズ可能なダッシュボードを備えたデータ可視化インターフェース。外部API統合とリアルタイム更新。"
+                    },
+                    mobile: {
+                        title: "ToDo モバイルアプリ",
+                        description: "クラウド同期、通知、直感的なインターフェースを備えたモバイルタスク管理アプリケーション。iOSとAndroidに対応。"
+                    }
+                },
+                contact: {
+                    title: "お問い合わせ",
+                    location: "場所",
+                    info: {
+                        title: "連絡先情報",
+                        description: "プロジェクトの相談やコラボレーションについて、お気軽にお問い合わせください。新しい機会には常にオープンです！"
+                    },
+                    social: {
+                        title: "ソーシャルネットワーク"
+                    }
+                },
+                footer: {
+                    rights: "無断転載禁止。"
+                }
+            }
+        };
+
+        // ===== STATE MANAGEMENT =====
+        let currentLang = 'fr';
+        let currentTheme = 'momiji';
+
+        // ===== DOM ELEMENTS =====
+        const loader = document.getElementById('loader');
+        const themeBtn = document.getElementById('themeBtn');
+        const themeDropdown = document.getElementById('themeDropdown');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        const currentLangSpan = document.getElementById('currentLang');
+        const skillsGrid = document.getElementById('skillsGrid');
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                initializeIntersectionObserver();
+                initializeNavigation();
+                initializeThemeSelector();
+                initializeLangSelector();
+                initializeSkillsFilter();
+                loadPreferences();
+                setSkillItemHoverEffect();
+            }, 1000);
+        });
+
+        function getThemePrimaryColor() {
+            // Récupère la couleur primaire du thème courant depuis la variable CSS
+            return getComputedStyle(document.body).getPropertyValue('--primary-color').replace('#', '').trim() || 'c1272d';
+        }
+
+        function setSkillItemHoverEffect() {
+            document.querySelectorAll('.skill-item').forEach(item => {
+                const img = item.querySelector('.skill-icon img[data-icon]');
+                const skillName = item.querySelector('.skill-name');
+                if (!img) return;
+                item.addEventListener('mouseenter', () => {
+                    const icon = img.getAttribute('data-icon');
+                    const primary = getThemePrimaryColor();
+                    if (icon === 'java') {
+                        img.src = `https://img.icons8.com/?size=100&id=2572&format=png&color=${primary}`;
+                    } else if (icon === 'vscode') {
+                        img.src = `https://img.icons8.com/?size=100&id=yCNobJ80uutx&format=png&color=${primary}`;
+                    } else if (icon === 'powerbi') {
+                        img.src = `https://img.icons8.com/?size=100&id=FQ9NVJuXbDIv&format=png&color=${primary}`;
+                    } else {
+                        img.src = `https://cdn.simpleicons.org/${icon}/${primary}`;
+                    }
+                    skillName.style.color = `#${primary}`;
+                });
+                item.addEventListener('mouseleave', () => {
+                    const icon = img.getAttribute('data-icon');
+                    if (icon === 'java') {
+                        img.src = `https://img.icons8.com/?size=100&id=2572&format=png&color=323232`;
+                    } else if (icon === 'vscode') {
+                        img.src = `https://img.icons8.com/?size=100&id=yCNobJ80uutx&format=png&color=323232`;
+                    } else if (icon === 'powerbi') {
+                        img.src = `https://img.icons8.com/?size=100&id=FQ9NVJuXbDIv&format=png&color=323232`;
+                    } else {
+                        img.src = `https://cdn.simpleicons.org/${icon}/323232`;
+                    }
+                    skillName.style.color = `#323232`;
+                });
+            });
+        }
+
+        // ===== THEME SYSTEM =====
+        function initializeThemeSelector() {
+            themeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                themeDropdown.classList.toggle('active');
+                langDropdown.classList.remove('active');
+            });
+
+            document.querySelectorAll('[data-theme]').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const theme = e.currentTarget.getAttribute('data-theme');
+                    setTheme(theme);
+                    themeDropdown.classList.remove('active');
+                });
+            });
+
+            document.addEventListener('click', () => {
+                themeDropdown.classList.remove('active');
+            });
+        }
+
+        function setTheme(theme) {
+            currentTheme = theme;
+            document.body.setAttribute('data-theme', theme);
+            // Mettre à jour le bouton sélecteur
+            const themeData = {
+                momiji: { gradient: 'linear-gradient(to right, #f6d365, #fda085)', icon: 'uil uil-leaf' },
+                sakura: { gradient: 'linear-gradient(to right, #f9d5e5, #fce7f3)', icon: 'uil uil-flower' },
+                yuzu: { gradient: 'linear-gradient(to right, #fff3cd, #ffeeba)', icon: 'uil uil-sun' },
+                koyo: { gradient: 'linear-gradient(to right, #f6a5c0, #f8d3b0)', icon: 'uil uil-leaf' }
+            };
+            const themeInfo = themeData[theme];
+            themeBtn.style.background = themeInfo.gradient;
+            themeBtn.innerHTML = `<i class="${themeInfo.icon}"></i>`;
+            themeBtn.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            setSkillItemHoverEffect();
+        }
+        // ===== LANGUAGE SYSTEM =====
+        function initializeLangSelector() {
+            langBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langDropdown.classList.toggle('active');
+                themeDropdown.classList.remove('active');
+            });
+
+            document.querySelectorAll('[data-lang]').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const lang = e.currentTarget.getAttribute('data-lang');
+                    setLanguage(lang);
+                    langDropdown.classList.remove('active');
+                });
+            });
+
+            document.addEventListener('click', () => {
+                langDropdown.classList.remove('active');
+            });
+        }
+        function setLanguage(lang) {
+            currentLang = lang;
+            currentLangSpan.textContent = lang.toUpperCase();
+            document.documentElement.lang = lang;
+
+            // Mettre à jour le contenu
+            updateContent();
+            localStorage.setItem('lang', lang);
+        }
+        function updateContent() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                } else {
+                    console.warn(`Translation missing for key: ${key}`);
+                }
+            });
+        }
+        // ===== SKILLS FILTER =====
+        function initializeSkillsFilter() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const filter = e.currentTarget.getAttribute('data-filter');
+                    filterSkills(filter);
+                    e.currentTarget.classList.add('active');
+                    document.querySelectorAll('.filter-btn').forEach(b => {
+                        if (b !== e.currentTarget) {
+                            b.classList.remove('active');
+                        }
+                    }); 
+                });
+            });
+        }
+        function filterSkills(filter) {
+            const skillItems = skillsGrid.querySelectorAll('.skill-item');
+            skillItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        // ===== INTERSECTION OBSERVER =====
+        function initializeIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.skill-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        // ===== LOAD PREFERENCES =====
+        function loadPreferences() {
+            const savedLang = localStorage.getItem('lang') || 'fr';
+            const savedTheme = localStorage.getItem('theme') || 'momiji';
+            setLanguage(savedLang);
+            setTheme(savedTheme);
+        }
+        // ===== LOADER =====
+        function showLoader() {
+            loader.classList.add('active');
+        }
+
+        function hideLoader() {
+            loader.classList.remove('active');
+        }
+
+        // ===== NAVIGATION =====
+        function initializeNavigation() {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    scrollToSection(targetId);
+                });
+            });
+        }
+
+        function scrollToSection(targetId) {
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        </script>
+    </body>
+</html>
