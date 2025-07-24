@@ -320,6 +320,154 @@
             border-color: var(--primary-color);
         }
 
+        /* ===== PROJETS (NOUVEAU STYLE) ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+            max-width: 100%;
+        }
+        @media (min-width: 900px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .project-card {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 32px var(--shadow-color);
+            padding: 2.5rem 2rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: var(--transition);
+            border: 1.5px solid transparent;
+            min-height: 420px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .project-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 16px 48px var(--shadow-color);
+            transform: translateY(-6px) scale(1.01);
+        }
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient-primary);
+            margin-bottom: 1rem;
+            border-radius: calc(var(--border-radius) / 2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        .project-image img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        .project-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.1rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .project-features {
+            margin: 0.5em 0 1.2em 1.2em;
+            padding: 0;
+            list-style: disc;
+            color: var(--text-main, #323232);
+            font-size: 1em;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .tech-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.4em;
+            background: var(--shadow-color);
+            color: var(--text-primary);
+            padding: 0.35em 0.8em 0.35em 0.5em;
+            border-radius: calc(var(--border-radius) / 2);
+            font-size: 0.98em;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: var(--transition);
+            user-select: none;
+        }
+        .tech-badge img {
+            width: 1.3em;
+            height: 1.3em;
+            object-fit: contain;
+            display: inline-block;
+            vertical-align: middle;
+            filter: var(--skill-icon-filter, none);
+            transition: var(--transition);
+        }
+        .tech-badge:hover, .tech-badge.active {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+        .tech-badge:hover img, .tech-badge.active img {
+            filter: brightness(0) invert(1);
+        }
+        .project-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: auto;
+        }
+        .project-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.08rem;
+            background: var(--bg-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+        .project-link img {
+            width: 1.3em;
+            height: 1.3em;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+        .project-link:hover {
+            background: var(--secondary-color);
+            color: #fff;
+        }
+        .project-link:hover img {
+            filter: brightness(0) invert(1);
+        }
+        @media (max-width: 700px) {
+            .project-card {
+                padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+                min-height: unset;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ===== GRILLE RESPONSIVE ===== */
         .grid {
             display: grid;
@@ -479,11 +627,18 @@
         .experience-card {
             display: flex;
             flex-direction: column;
-            background: var(--card-bg, #fff);
-            border-radius: 1rem;
-            box-shadow: 0 2px 8px #0001;
+            gap: 2rem;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 5px 20px var(--shadow-color);
             margin-bottom: 2rem;
-            padding: 1.5rem 1.5rem 1rem 1.5rem;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+        .experience-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 40px var(--shadow-color);
         }
         .experience-row {
             display: flex;
@@ -554,74 +709,6 @@
                 align-items: flex-start;
                 gap: 0.2em;
             }
-        }
-
-        /* ===== PROJETS ===== */
-        .project-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: var(--gradient-primary);
-            margin-bottom: 1rem;
-            border-radius: calc(var(--border-radius) / 2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .tech-badge {
-            background: var(--shadow-color);
-            color: var(--primary-color);
-            padding: 0.25rem 0.5rem;
-            border-radius: calc(var(--border-radius) / 3);
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            transition: var(--transition);
-        }
-
-        .project-link:hover {
-            color: var(--accent-color);
         }
 
         /* ===== COMPÉTENCES ===== */
@@ -910,7 +997,6 @@
                 min-width: 0 !important;
                 max-width: 100% !important;
                 width: 100%;
-                text-align: center;
             }
         }
         </style>
@@ -1484,108 +1570,102 @@
 
             <!-- Projets -->
             <section class="section" id="projects">
-                <h2 class="section-title" data-i18n="projects.title">Projets
-                    récents</h2>
-
-                <div class="grid grid-3">
-                    <div class="card project-card">
-                        <div class="project-image">
-                            <i class="uil uil-shopping-cart"></i>
+                <h2 class="section-title" data-i18n="projects.title">Projets récents</h2>
+                <div class="projects-grid">
+                    <!-- Rate 'Em All -->
+                    <div class="project-card">
+                        <div class="project-image" style="background:linear-gradient(135deg,#f6d365,#fda085,#c1272d);">
+                            <img src="assets/projects/rate-em-all-logo.png" alt="Rate 'Em All logo" />
                         </div>
-                        <h3 class="project-title"
-                            data-i18n="projects.ecommerce.title">E-Shop
-                            Lyon</h3>
-                        <p class="project-description"
-                            data-i18n="projects.ecommerce.description">
-                            Plateforme e-commerce complète avec panier, paiement
-                            sécurisé et interface d'administration.
-                            Développée avec React, Node.js et MongoDB.
+                        <h3 class="project-title">Rate 'Em All</h3>
+                        <p class="project-description">
+                            Application web full-stack pour explorer, noter et collectionner vos Pokémon favoris !
                         </p>
+                        <ul class="project-features">
+                            <li>Base de données complète des Pokémon</li>
+                            <li>Notation de 1 à 5 étoiles, favoris, profils utilisateurs</li>
+                            <li>Classement des Pokémon les mieux notés</li>
+                            <li>Design responsive</li>
+                        </ul>
                         <div class="project-tech">
-                            <span class="tech-badge">React</span>
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">MongoDB</span>
-                            <span class="tech-badge">Stripe</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/nextdotjs/323232" alt="Next.js" />Next.js</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/typescript/323232" alt="TypeScript" />TypeScript</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/tailwindcss/323232" alt="Tailwind CSS" />Tailwind</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/nestjs/323232" alt="NestJS" />NestJS</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/typeorm/323232" alt="TypeORM" />TypeORM</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/postgresql/323232" alt="PostgreSQL" />PostgreSQL</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="uil uil-github"></i>
-                                GitHub
+                            <a href="https://rate-em-all.vercel.app/" class="project-link" target="_blank" rel="noopener">
+                                <img src="https://img.icons8.com/?size=100&id=92&format=png&color=323232" alt="Live Demo" title="Live Demo" /> Live Démo
                             </a>
-                            <a href="#" class="project-link">
-                                <i class="uil uil-external-link-alt"></i>
-                                <span data-i18n="projects.live">Démo</span>
+                            <a href="https://github.com/AdSchl2E/rate-em-all" class="project-link" target="_blank" rel="noopener">
+                                <img src="https://cdn.simpleicons.org/github/323232" alt="GitHub" title="GitHub" /> GitHub
                             </a>
                         </div>
                     </div>
-
-                    <div class="card project-card">
-                        <div class="project-image">
-                            <i class="uil uil-cloud-data-connection"></i>
+                    <!-- 1 Tonne de Bonnes Pratiques Green IT -->
+                    <div class="project-card">
+                        <div class="project-image" style="background:linear-gradient(135deg,#8bc34a,#cddc39,#4caf50);">
+                            <img src="assets/projects/greenit-logo.png" alt="Green IT logo" />
                         </div>
-                        <h3 class="project-title"
-                            data-i18n="projects.dashboard.title">Dashboard
-                            Analytics</h3>
-                        <p class="project-description"
-                            data-i18n="projects.dashboard.description">
-                            Interface de visualisation de données avec
-                            graphiques interactifs et tableau de bord
-                            personnalisable. Intégration d'APIs externes et mise
-                            à jour temps réel.
+                        <h3 class="project-title">1 Tonne de Bonnes Pratiques Green IT</h3>
+                        <p class="project-description">
+                            Jeu de cartes digitalisé pour sensibiliser aux pratiques numériques responsables, inspiré du 1000 Bornes.
                         </p>
+                        <ul class="project-features">
+                            <li>Jeu multijoueur en ligne (2 à 4 joueurs)</li>
+                            <li>Cartes bonnes/mauvaises pratiques, formation, expert</li>
+                            <li>Questions QCM de sensibilisation à chaque tour</li>
+                            <li>Interface d'administration sécurisée</li>
+                        </ul>
                         <div class="project-tech">
-                            <span class="tech-badge">Vue.js</span>
-                            <span class="tech-badge">Chart.js</span>
-                            <span class="tech-badge">Express</span>
-                            <span class="tech-badge">Socket.IO</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/react/323232" alt="React" />React</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/nestjs/323232" alt="NestJS" />NestJS</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/postgresql/323232" alt="PostgreSQL" />PostgreSQL</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/nodedotjs/323232" alt="Node.js" />Node.js</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="uil uil-github"></i>
-                                GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="uil uil-external-link-alt"></i>
-                                <span data-i18n="projects.live">Démo</span>
+                            <a href="https://github.com/hexplosif/4IF-PLD-AGIR" class="project-link" target="_blank" rel="noopener">
+                                <img src="https://cdn.simpleicons.org/github/323232" alt="GitHub" title="GitHub" /> GitHub
                             </a>
                         </div>
                     </div>
-
-                    <div class="card project-card">
-                        <div class="project-image">
-                            <i class="uil uil-mobile-android"></i>
+                    <!-- Optimod (Back & Front) -->
+                    <div class="project-card">
+                        <div class="project-image" style="background:linear-gradient(135deg,#00bcd4,#4fc3f7,#0097a7);">
+                            <img src="assets/projects/optimod-logo.png" alt="Optimod logo" />
                         </div>
-                        <h3 class="project-title"
-                            data-i18n="projects.mobile.title">App Mobile
-                            ToDo</h3>
-                        <p class="project-description"
-                            data-i18n="projects.mobile.description">
-                            Application mobile de gestion de tâches avec
-                            synchronisation cloud, notifications
-                            et interface intuitive. Compatible iOS et Android.
+                        <h3 class="project-title">Optimod Lyon</h3>
+                        <p class="project-description">
+                            Système de gestion de trafic pour la ville de Lyon, architecture MVC, projet Agile INSA.
                         </p>
+                        <ul class="project-features">
+                            <li>Visualisation du trafic en temps réel (Leaflet)</li>
+                            <li>Back-end Java Spring Boot, API REST, base H2</li>
+                            <li>Front-end Thymeleaf, HTML, CSS, JS</li>
+                            <li>Tests JUnit, documentation intégrée</li>
+                        </ul>
                         <div class="project-tech">
-                            <span class="tech-badge">React Native</span>
-                            <span class="tech-badge">Firebase</span>
-                            <span class="tech-badge">Redux</span>
-                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge"><img src="https://img.icons8.com/?size=100&id=2572&format=png&color=323232" alt="Java" />Java</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/spring/323232" alt="Spring Boot" />Spring Boot</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/thymeleaf/323232" alt="Thymeleaf" />Thymeleaf</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/apachemaven/323232" alt="Maven" />Maven</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/leaflet/323232" alt="Leaflet" />Leaflet</span>
+                            <span class="tech-badge"><img src="https://cdn.simpleicons.org/junit5/323232" alt="JUnit" />JUnit</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="uil uil-github"></i>
-                                GitHub
+                            <a href="https://github.com/AdSchl2E/Optimod-BackEnd" class="project-link" target="_blank" rel="noopener">
+                                <img src="https://cdn.simpleicons.org/github/323232" alt="GitHub" title="GitHub" /> BackEnd
                             </a>
-                            <a href="#" class="project-link">
-                                <i class="uil uil-external-link-alt"></i>
-                                <span data-i18n="projects.live">Démo</span>
+                            <a href="https://github.com/AdSchl2E/Optimod-FrontEnd" class="project-link" target="_blank" rel="noopener">
+                                <img src="https://cdn.simpleicons.org/github/323232" alt="GitHub" title="GitHub" /> FrontEnd
                             </a>
                         </div>
                     </div>
                 </div>
-
                 <div style="text-align: center; margin-top: 3rem;">
-                    <a href="projets.html" class="hero-cta"
-                        data-i18n="projects.viewAll">Voir tous mes projets</a>
+                    <a href="projets.html" class="hero-cta" data-i18n="projects.viewAll">Voir tous mes projets</a>
                 </div>
             </section>
 
@@ -1619,21 +1699,21 @@
                             <a href="https://github.com/adamschlee"
                                 class="social-link" target="_blank"
                                 rel="noopener">
-                                <i class="uil uil-github"></i>
+                                <img src="https://cdn.simpleicons.org/github/323232" alt="GitHub" title="GitHub" />
                             </a>
                             <a href="https://linkedin.com/in/adamschlee"
                                 class="social-link" target="_blank"
                                 rel="noopener">
-                                <i class="uil uil-linkedin"></i>
+                                <img src="https://img.icons8.com/?size=100&id=8808&format=png&color=323232" alt="LinkedIn" title="LinkedIn" />
                             </a>
                             <a href="mailto:adam.schlee@insa-lyon.fr"
                                 class="social-link">
-                                <i class="uil uil-envelope"></i>
+                                <img src="https://cdn.simpleicons.org/gmail/323232" alt="Gmail" title="Gmail" />
                             </a>
-                            <a href="https://twitter.com/adamschlee"
+                            <a href="https://instagram.com/adschl2e"
                                 class="social-link" target="_blank"
                                 rel="noopener">
-                                <i class="uil uil-twitter"></i>
+                                <img src="https://cdn.simpleicons.org/instagram/323232" alt="Instagram" title="Instagram" />
                             </a>
                         </div>
                     </div>
@@ -1745,6 +1825,7 @@
                     }
                 },
                 footer: {
+
                     rights: "Tous droits réservés."
                 }
             },
@@ -1843,6 +1924,7 @@
             },
             ja: {
                 nav: {
+
                     home: "ホーム",
                     about: "私について",
                     education: "学歴",
@@ -1965,6 +2047,7 @@
                 initializeSkillsFilter();
                 loadPreferences();
                 setSkillItemHoverEffect();
+                setTechBadgeHoverEffect();
             }, 1000);
         });
 
@@ -2008,6 +2091,17 @@
             });
         }
 
+        function setTechBadgeHoverEffect() {
+            document.querySelectorAll('.tech-badge').forEach(badge => {
+                badge.addEventListener('mouseenter', () => {
+                    badge.classList.add('active');
+                });
+                badge.addEventListener('mouseleave', () => {
+                    badge.classList.remove('active');
+                });
+            });
+        }
+
         // ===== THEME SYSTEM =====
         function initializeThemeSelector() {
             themeBtn.addEventListener('click', (e) => {
@@ -2045,6 +2139,7 @@
             themeBtn.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
             setSkillItemHoverEffect();
+            setTechBadgeHoverEffect();
         }
         // ===== LANGUAGE SYSTEM =====
         function initializeLangSelector() {
