@@ -117,7 +117,7 @@
             list-style: none;
         }
 
-        .nav-links a {
+        .nav-link {
             text-decoration: none;
             color: var(--text-secondary);
             font-weight: 500;
@@ -126,8 +126,8 @@
             border-radius: var(--border-radius);
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-link:hover,
+        .nav-link.active {
             color: var(--primary-color);
             background: var(--shadow-color);
         }
@@ -352,22 +352,30 @@
             box-shadow: 0 16px 48px var(--shadow-color);
             transform: translateY(-6px) scale(1.01);
         }
-        .project-image {
+        .project-media {
             width: 100%;
             height: 200px;
             background: var(--gradient-primary);
             margin-bottom: 1rem;
             border-radius: calc(var(--border-radius) / 2);
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 3rem;
         }
-        .project-image img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
+        .project-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        .project-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
         }
         .project-title {
             font-size: 1.45rem;
@@ -800,11 +808,18 @@
             justify-content: center;
             width: 50px;
             height: 50px;
-            background: var(--shadow-color);
+            background: var(--secondary-color);
             color: var(--primary-color);
             border-radius: 50%;
             text-decoration: none;
             transition: var(--transition);
+        }
+
+        .social-link img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
         }
 
         .social-link:hover {
@@ -880,15 +895,7 @@
             .hero-content {
                 padding: 1rem;
             }
-            .grid-2,
-            .grid-3,
-            .grid-4 {
-                grid-template-columns: 1fr;
-            }
-            .skills-filters {
-                flex-direction: column;
-                align-items: center;
-            }
+
             .formation-card {
                 flex-direction: column;
                 align-items: center;
@@ -1574,8 +1581,11 @@
                 <div class="projects-grid">
                     <!-- Rate 'Em All -->
                     <div class="project-card">
-                        <div class="project-image" style="background:linear-gradient(135deg,#f6d365,#fda085,#c1272d);">
-                            <img src="assets/projects/rate-em-all-logo.png" alt="Rate 'Em All logo" />
+                        <div class="project-media" style="background:linear-gradient(135deg,#f6d365,#fda085,#c1272d);">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/projects/rate-em-all.mp4" type="video/mp4">
+                                <img src="assets/projects/rate-em-all.png" alt="Rate 'Em All logo" />
+                            </video>
                         </div>
                         <h3 class="project-title">Rate 'Em All</h3>
                         <p class="project-description">
@@ -1597,7 +1607,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://rate-em-all.vercel.app/" class="project-link" target="_blank" rel="noopener">
-                                <img src="https://img.icons8.com/?size=100&id=92&format=png&color=323232" alt="Live Demo" title="Live Demo" /> Live Démo
+                                <img src="https://img.icons8.com/?size=100&id=UMm5uUxFeg9c&format=png&color=323232" alt="Live Demo" title="Live Demo" /> Live Démo
                             </a>
                             <a href="https://github.com/AdSchl2E/rate-em-all" class="project-link" target="_blank" rel="noopener">
                                 <img src="https://cdn.simpleicons.org/github/323232" alt="GitHub" title="GitHub" /> GitHub
@@ -1606,8 +1616,11 @@
                     </div>
                     <!-- 1 Tonne de Bonnes Pratiques Green IT -->
                     <div class="project-card">
-                        <div class="project-image" style="background:linear-gradient(135deg,#8bc34a,#cddc39,#4caf50);">
-                            <img src="assets/projects/greenit-logo.png" alt="Green IT logo" />
+                        <div class="project-media" style="background:linear-gradient(135deg,#8bc34a,#cddc39,#4caf50);">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/projects/greenplay.mp4" type="video/mp4">
+                                <img src="assets/projects/greenplay.png" alt="1 Tonne de Bonnes Pratiques Green IT logo" />
+                            </video>
                         </div>
                         <h3 class="project-title">1 Tonne de Bonnes Pratiques Green IT</h3>
                         <p class="project-description">
@@ -1633,8 +1646,8 @@
                     </div>
                     <!-- Optimod (Back & Front) -->
                     <div class="project-card">
-                        <div class="project-image" style="background:linear-gradient(135deg,#00bcd4,#4fc3f7,#0097a7);">
-                            <img src="assets/projects/optimod-logo.png" alt="Optimod logo" />
+                        <div class="project-media" style="background:linear-gradient(135deg,#00bcd4,#4fc3f7,#0097a7);">
+                            <img src="assets/projects/optimod.png" alt="Optimod logo" />
                         </div>
                         <h3 class="project-title">Optimod Lyon</h3>
                         <p class="project-description">
@@ -2240,10 +2253,16 @@
 
         // ===== NAVIGATION =====
         function initializeNavigation() {
-            const navLinks = document.querySelectorAll('nav a');
+            const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
+                    link.classList.add('active');
+                    navLinks.forEach(l => {
+                        if (l !== link) {
+                            l.classList.remove('active');
+                        }
+                    });
                     const targetId = link.getAttribute('href');
                     scrollToSection(targetId);
                 });
