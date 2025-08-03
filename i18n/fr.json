@@ -1,0 +1,153 @@
+{
+    "nav": {
+        "brand": "Adam Schlee",
+        "home": "Accueil",
+        "about": "Qui je suis",
+        "education": "Formation",
+        "experience": "Expériences",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "contact": "Contact"
+    },
+    "themes": {
+        "light": { "name": "Clair" },
+        "dark": { "name": "Sombre" },
+        "momiji": { "name": "Momiji" },
+        "dark-momiji": { "name": "Momiji Sombre" },
+        "sakura": { "name": "Sakura" },
+        "dark-sakura": { "name": "Sakura Sombre" },
+        "yuzu": { "name": "Yuzu" },
+        "matcha": { "name": "Matcha" }
+    },
+    "hero": {
+        "greeting": "Bonjour, je suis",
+        "name": "Adam Schlee",
+        "subtitle": "Étudiant en informatique à l'INSA Lyon",
+        "description": "Passionné par le développement web et les nouvelles technologies, je crée des expériences numériques innovantes et performantes.",
+        "cta": {
+            "projects": "Voir mes projets",
+            "contact": "Me contacter",
+            "cv": "Télécharger mon CV"
+        }
+    },
+    "about": {
+        "title": "Qui je suis",
+        "subtitle": "Découvrez ma personnalité et mes passions",
+        "description1": "Étudiant passionné en informatique à l'INSA Lyon, je me spécialise dans le développement web full-stack avec un intérêt particulier pour les technologies modernes et l'innovation.",
+        "description2": "Au-delà de la programmation, je cultive une passion pour la gastronomie, l'œnologie et la culture japonaise, qui enrichissent ma créativité et ma vision du monde."
+    },
+    "education": {
+        "title": "Formation",
+        "subtitle": "Mon parcours académique",
+        "insa": {
+            "engineering": {
+                "title": "Cycle ingénieur en informatique",
+                "description": "Formation complète couvrant les algorithmes, structures de données, développement logiciel, bases de données et gestion de projet."
+            },
+            "prep": {
+                "title": "Classe préparatoire intégrée en filière internationale",
+                "description": "Formation intensive en mathématiques, physique et mécanique."
+            }
+        },
+        "highschool": {
+            "title": "Baccalauréat général",
+            "description": "Mention Très Bien, spécialité Mathématiques et NSI (Numérique et Sciences Informatiques)."
+        }
+    },
+    "experience": {
+        "title": "Expériences",
+        "subtitle": "Mon parcours professionnel",
+        "eiffage": {
+            "title": "Stage ingénieur développement logiciel",
+            "date": "Mai 2025 - Septembre 2025",
+            "description": {
+                "bullet1": "Développement d'un <span class=\"highlight\">simulateur d'équipements de tunnel</span> en <span class=\"highlight\">Java/Swing</span> pour la plateforme de tests du SITG (Système d'Information des Tunnels du Grand Lyon)",
+                "bullet2": "Appropriation de la <span class=\"highlight\">passerelle de communication SITG</span> et de la gestion de versions (<span class=\"highlight\">Git</span>)",
+                "bullet3": "Rédaction de <span class=\"highlight\">spécifications techniques</span> et réalisation de <span class=\"highlight\">tests unitaires</span>",
+                "bullet4": "Mise à jour de la <span class=\"highlight\">documentation technique</span> et des manuels d'utilisation",
+                "bullet5": "Collaboration avec les équipes projet pour garantir la qualité des livrables"
+            }
+        },
+        "loreal": {
+            "title": "Stage en gestion et analyse de données expérimentales",
+            "date": "Juin 2024 - Septembre 2024",
+            "description": {
+                "bullet1": "Traitement et nettoyage de <span class=\"highlight\">données issues de tests in vitro</span> sur modèles de peau reconstituée",
+                "bullet2": "Analyse statistique et visualisation avec <span class=\"highlight\">Excel, Power BI</span> (<span class=\"highlight\">VBA, DAX, M, Python</span>)",
+                "bullet3": "Développement d'<span class=\"highlight\">outils d'automatisation</span> pour l'analyse de données expérimentales",
+                "bullet4": "Collaboration étroite avec l'équipe <span class=\"highlight\">R&D</span> pour assurer la qualité et la fiabilité des données",
+                "bullet5": "Rédaction de rapports techniques et présentation des résultats aux équipes scientifiques"
+            }
+        }
+    },
+    "skills": {
+        "title": "Compétences",
+        "subtitle": "Technologies et outils que je maîtrise",
+        "filter": {
+            "all": "Toutes",
+            "languages": "Langages",
+            "frameworks": "Frameworks",
+            "tools": "Outils",
+            "databases": "Bases de données"
+        }
+    },
+    "projects": {
+        "title": "Projets",
+        "subtitle": "Mes réalisations les plus marquantes",
+        "view_all": "Voir tous mes projets",
+        "page": {
+            "title": "Tous mes projets",
+            "subtitle": "Découvrez l'ensemble de mes réalisations et expérimentations"
+        },
+        "filter": {
+            "technology": "Technologie :",
+            "all": "Toutes"
+        },
+        "no_results": {
+            "title": "Aucun projet trouvé",
+            "description": "Essayez avec d'autres filtres ou consultez tous les projets."
+        },
+        "cta": {
+            "title": "Intéressé par mes projets ?",
+            "description": "Discutons de votre prochain projet ou d'une collaboration.",
+            "contact": "Me contacter"
+        },
+        "rateemall": {
+            "description": "Application web full-stack pour explorer, noter et collectionner vos Pokémon favoris. Découvrez la base de données complète des Pokémon et partagez vos évaluations."
+        },
+        "greenit": {
+            "description": "Version digitalisée du jeu de cartes CGI pour sensibiliser aux pratiques numériques responsables. Jeu multijoueur en ligne avec mécaniques éducatives."
+        },
+        "optimod": {
+            "description": "Système de gestion de trafic pour Lyon avec cartographie interactive. Architecture MVC et API REST pour optimiser les flux de circulation."
+        },
+        "actions": {
+            "github": "GitHub",
+            "demo": "Démo live"
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Travaillons ensemble sur votre prochain projet",
+        "form": {
+            "name": "Nom",
+            "email": "Email",
+            "subject": "Sujet",
+            "message": "Message",
+            "send": "Envoyer"
+        },
+        "social": {
+            "title": "Retrouvez-moi sur",
+            "linkedin": "LinkedIn",
+            "github": "GitHub",
+            "instagram": "Instagram",
+            "email": "Email"
+        }
+    },
+    "footer": {
+        "rights": "Tous droits réservés."
+    },
+    "loader": {
+        "loading": "Chargement..."
+    }
+}

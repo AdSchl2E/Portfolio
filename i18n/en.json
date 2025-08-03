@@ -1,0 +1,165 @@
+{
+    "nav": {
+        "brand": "Adam Schlee",
+        "home": "Home",
+        "about": "About me",
+        "education": "Education",
+        "experience": "Experience",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "themes": {
+        "light": {
+            "name": "Light"
+        },
+        "dark": {
+            "name": "Dark"
+        },
+        "momiji": {
+            "name": "Momiji"
+        },
+        "dark-momiji": {
+            "name": "Dark Momiji"
+        },
+        "sakura": {
+            "name": "Sakura"
+        },
+        "dark-sakura": {
+            "name": "Dark Sakura"
+        },
+        "yuzu": {
+            "name": "Yuzu"
+        },
+        "matcha": {
+            "name": "Matcha"
+        }
+    },
+    "hero": {
+        "greeting": "Hello, I'm",
+        "subtitle": "Computer Science Student at INSA Lyon",
+        "description": "Passionate about web development and new technologies, I create innovative and performant digital experiences.",
+        "cta": {
+            "projects": "View my projects",
+            "contact": "Contact me",
+            "cv": "Download my CV"
+        },
+        "scroll": "Scroll"
+    },
+    "about": {
+        "title": "About me",
+        "subtitle": "Discover my personality and passions",
+        "description1": "Passionate computer science student at INSA Lyon, I specialize in full-stack web development with a particular interest in modern technologies and innovation.",
+        "description2": "Beyond programming, I cultivate a passion for gastronomy, oenology and Japanese culture, which enrich my creativity and world vision."
+    },
+    "education": {
+        "title": "Education",
+        "subtitle": "My academic background",
+        "insa": {
+            "engineering": {
+                "title": "Computer Engineering Cycle",
+                "description": "Comprehensive training covering algorithms, data structures, software development, databases, and project management."
+            },
+            "prep": {
+                "title": "Integrated Preparatory Class in International Track",
+                "description": "Intensive training in mathematics, physics, and mechanics."
+            }
+        },
+        "highschool": {
+            "title": "General Baccalaureate",
+            "description": "High honors, major in Mathematics and NSI (Digital and Computer Science)."
+        }
+    },
+    "experience": {
+        "title": "Experience",
+        "subtitle": "My professional background",
+        "eiffage": {
+            "title": "Software Development Engineering Internship",
+            "date": "May 2025 - September 2025",
+            "description": {
+                "bullet1": "Developed a <span class=\"highlight\">tunnel equipment simulator</span> in <span class=\"highlight\">Java/Swing</span> for the SITG (Grand Lyon Tunnel Information System) test platform.",
+                "bullet2": "Familiarized with the <span class=\"highlight\">SITG communication gateway</span> and version control (<span class=\"highlight\">Git</span>).",
+                "bullet3": "Wrote <span class=\"highlight\">technical specifications</span> and performed <span class=\"highlight\">unit tests</span>.",
+                "bullet4": "Updated <span class=\"highlight\">technical documentation</span> and user manuals.",
+                "bullet5": "Collaborated with project teams to ensure deliverable quality."
+            }
+        },
+        "loreal": {
+            "title": "Internship in Experimental Data Management and Analysis",
+            "date": "June 2024 - September 2024",
+            "description": {
+                "bullet1": "Processed and cleaned <span class=\"highlight\">in vitro test data</span> on reconstructed skin models.",
+                "bullet2": "Statistical analysis and visualization with <span class=\"highlight\">Excel, Power BI</span> (<span class=\"highlight\">VBA, DAX, M, Python</span>).",
+                "bullet3": "Developed <span class=\"highlight\">automation tools</span> for experimental data analysis.",
+                "bullet4": "Worked closely with the <span class=\"highlight\">R&D</span> team to ensure data quality and reliability.",
+                "bullet5": "Wrote technical reports and presented results to scientific teams."
+            }
+        }
+    },
+    "skills": {
+        "title": "Skills",
+        "subtitle": "Technologies and tools I master",
+        "filter": {
+            "all": "All",
+            "languages": "Languages",
+            "frameworks": "Frameworks",
+            "tools": "Tools",
+            "databases": "Databases"
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "subtitle": "My most significant achievements",
+        "view_all": "View all my projects",
+        "page": {
+            "title": "All my projects",
+            "subtitle": "Discover all my achievements and experiments"
+        },
+        "filter": {
+            "technology": "Technology",
+            "all": "All"
+        },
+        "no_results": {
+            "title": "No projects found",
+            "description": "Try with other filters or browse all projects."
+        },
+        "cta": {
+            "title": "Interested in my projects?",
+            "description": "Let's discuss your next project or collaboration.",
+            "contact": "Contact me"
+        },
+        "rateemall": {
+            "description": "Full-stack web application to explore, rate and collect your favorite Pokémon. Discover the complete Pokémon database and share your ratings."
+        },
+        "greenit": {
+            "description": "Digital version of the CGI card game to raise awareness about responsible digital practices. Online multiplayer game with educational mechanics."
+        },
+        "optimod": {
+            "description": "Traffic management system for Lyon with interactive mapping. MVC architecture and REST API to optimize traffic flows."
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Let's work together on your next project",
+        "email": {
+            "title": "Email"
+        },
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "subject": "Subject",
+            "message": "Message",
+            "send": "Send"
+        },
+        "social": {
+            "title": "Find me on",
+            "linkedin": "LinkedIn",
+            "github": "GitHub",
+            "instagram": "Instagram",
+            "email": "Email"
+        }
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    }
+}

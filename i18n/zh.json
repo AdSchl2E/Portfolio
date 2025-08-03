@@ -1,0 +1,165 @@
+{
+    "nav": {
+        "brand": "Adam Schlee",
+        "home": "主页",
+        "about": "关于我",
+        "education": "教育",
+        "experience": "经验",
+        "skills": "技能",
+        "projects": "项目",
+        "contact": "联系"
+    },
+    "themes": {
+        "light": {
+            "name": "浅色"
+        },
+        "dark": {
+            "name": "深色"
+        },
+        "momiji": {
+            "name": "红叶"
+        },
+        "dark-momiji": {
+            "name": "深色红叶"
+        },
+        "sakura": {
+            "name": "樱花"
+        },
+        "dark-sakura": {
+            "name": "深色樱花"
+        },
+        "yuzu": {
+            "name": "柚子"
+        },
+        "matcha": {
+            "name": "抹茶"
+        }
+    },
+    "hero": {
+        "greeting": "你好, 我是",
+        "subtitle": "INSA Lyon计算机科学学生",
+        "description": "我对网络开发和新技术充满热情, 创造创新和高性能的数字体验。",
+        "cta": {
+            "projects": "查看我的项目",
+            "contact": "联系我",
+            "cv": "下载我的简历"
+        },
+        "scroll": "滚动"
+    },
+    "about": {
+        "title": "关于我",
+        "subtitle": "发现我的个性和热情",
+        "description1": "作为INSA Lyon的计算机科学专业学生, 我专注于全栈网络开发, 对现代技术和创新有着特别的兴趣。",
+        "description2": "除了编程, 我还对美食学、葡萄酒学和日本文化充满热情, 这些都丰富了我的创造力和世界观。"
+    },
+    "education": {
+        "title": "教育",
+        "subtitle": "我的学术背景",
+        "insa": {
+            "engineering": {
+                "title": "计算机工程师课程",
+                "description": "涵盖算法、数据结构、软件开发、数据库和项目管理的综合培训。"
+            },
+            "prep": {
+                "title": "国际方向综合预科班",
+                "description": "数学、物理和力学的强化培训。"
+            }
+        },
+        "highschool": {
+            "title": "普通高中毕业证书",
+            "description": "以优异成绩毕业, 主修数学和NSI（数字与信息科学）。"
+        }
+    },
+    "experience": {
+        "title": "经验",
+        "subtitle": "我的职业背景",
+        "eiffage": {
+            "title": "软件开发工程师实习",
+            "date": "2025年5月 - 2025年9月",
+            "description": {
+                "bullet1": "为SITG（大里昂隧道信息系统）测试平台开发<span class=\"highlight\">隧道设备模拟器</span>, 使用<span class=\"highlight\">Java/Swing</span>。",
+                "bullet2": "熟悉<span class=\"highlight\">SITG通信网关</span>和版本管理（<span class=\"highlight\">Git</span>）。",
+                "bullet3": "编写<span class=\"highlight\">技术规范</span>并进行<span class=\"highlight\">单元测试</span>。",
+                "bullet4": "更新<span class=\"highlight\">技术文档</span>和用户手册。",
+                "bullet5": "与项目团队合作, 确保交付物质量。"
+            }
+        },
+        "loreal": {
+            "title": "实验数据管理与分析实习",
+            "date": "2024年6月 - 2024年9月",
+            "description": {
+                "bullet1": "处理和清理重建皮肤模型的<span class=\"highlight\">体外测试数据</span>。",
+                "bullet2": "使用<span class=\"highlight\">Excel, Power BI</span>（<span class=\"highlight\">VBA, DAX, M, Python</span>）进行统计分析和可视化。",
+                "bullet3": "开发<span class=\"highlight\">自动化工具</span>用于实验数据分析。",
+                "bullet4": "与<span class=\"highlight\">研发</span>团队紧密合作, 确保数据质量和可靠性。",
+                "bullet5": "撰写技术报告并向科学团队展示结果。"
+            }
+        }
+    },
+    "skills": {
+        "title": "技能",
+        "subtitle": "我掌握的技术和工具",
+        "filter": {
+            "all": "全部",
+            "languages": "语言",
+            "frameworks": "框架",
+            "tools": "工具",
+            "databases": "数据库"
+        }
+    },
+    "projects": {
+        "title": "项目",
+        "subtitle": "我最重要的成就",
+        "view_all": "查看我的所有项目",
+        "page": {
+            "title": "我的所有项目",
+            "subtitle": "发现我的所有成就和实验"
+        },
+        "filter": {
+            "technology": "技术",
+            "all": "全部"
+        },
+        "no_results": {
+            "title": "未找到项目",
+            "description": "尝试其他过滤器或浏览所有项目。"
+        },
+        "cta": {
+            "title": "对我的项目感兴趣？",
+            "description": "让我们讨论您的下一个项目或合作。",
+            "contact": "联系我"
+        },
+        "rateemall": {
+            "description": "全栈网络应用程序, 用于探索、评级和收集您最喜欢的宝可梦。发现完整的宝可梦数据库并分享您的评级。"
+        },
+        "greenit": {
+            "description": "CGI卡牌游戏的数字版本, 旨在提高对负责任数字实践的认识。具有教育机制的在线多人游戏。"
+        },
+        "optimod": {
+            "description": "里昂交通管理系统, 具有交互式地图。MVC架构和REST API以优化交通流量。"
+        }
+    },
+    "contact": {
+        "title": "联系",
+        "subtitle": "让我们一起完成您的下一个项目",
+        "email": {
+            "title": "邮箱"
+        },
+        "form": {
+            "name": "姓名",
+            "email": "邮箱",
+            "subject": "主题",
+            "message": "消息",
+            "send": "发送"
+        },
+        "social": {
+            "title": "在这里找到我",
+            "linkedin": "LinkedIn",
+            "github": "GitHub",
+            "instagram": "Instagram",
+            "email": "Email"
+        }
+    },
+    "footer": {
+        "rights": "版权所有。"
+    }
+}

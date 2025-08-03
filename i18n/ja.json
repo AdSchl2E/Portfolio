@@ -1,0 +1,165 @@
+{
+    "nav": {
+        "brand": "アダム・シュレー",
+        "home": "ホーム",
+        "about": "自己紹介",
+        "education": "学歴",
+        "experience": "経験",
+        "skills": "スキル",
+        "projects": "プロジェクト",
+        "contact": "お問い合わせ"
+    },
+    "themes": {
+        "light": {
+            "name": "ライト"
+        },
+        "dark": {
+            "name": "ダーク"
+        },
+        "momiji": {
+            "name": "紅葉"
+        },
+        "dark-momiji": {
+            "name": "ダーク紅葉"
+        },
+        "sakura": {
+            "name": "桜"
+        },
+        "dark-sakura": {
+            "name": "ダーク桜"
+        },
+        "yuzu": {
+            "name": "柚子"
+        },
+        "matcha": {
+            "name": "抹茶"
+        }
+    },
+    "hero": {
+        "greeting": "こんにちは、私は",
+        "subtitle": "INSA Lyonコンピュータサイエンス学生",
+        "description": "ウェブ開発と新技術に情熱を注ぎ、革新的で高性能なデジタル体験を創造しています。",
+        "cta": {
+            "projects": "プロジェクトを見る",
+            "contact": "お問い合わせ",
+            "cv": "履歴書をダウンロード"
+        },
+        "scroll": "スクロール"
+    },
+    "about": {
+        "title": "自己紹介",
+        "subtitle": "私の個性と情熱を発見してください",
+        "description1": "INSA Lyonで情熱的にコンピュータサイエンスを学ぶ学生として、現代技術とイノベーションに特別な関心を持ちながら、フルスタックウェブ開発を専門としています。",
+        "description2": "プログラミングを超えて、私は美食学、ワイン学、日本文化への情熱を育んでおり、これらが私の創造性と世界観を豊かにしています。"
+    },
+    "education": {
+        "title": "学歴",
+        "subtitle": "私の学術的な経歴",
+        "insa": {
+            "engineering": {
+                "title": "情報工学エンジニア課程",
+                "description": "アルゴリズム、データ構造、ソフトウェア開発、データベース、プロジェクト管理を網羅した総合的な教育。"
+            },
+            "prep": {
+                "title": "国際コース統合準備クラス",
+                "description": "数学、物理、力学の集中的なトレーニング。"
+            }
+        },
+        "highschool": {
+            "title": "一般バカロレア",
+            "description": "最優秀賞、数学とNSI（デジタル・情報科学）専攻。"
+        }
+    },
+    "experience": {
+        "title": "経験",
+        "subtitle": "私の職業的な経歴",
+        "eiffage": {
+            "title": "ソフトウェア開発エンジニアインターンシップ",
+            "date": "2025年5月 - 2025年9月",
+            "description": {
+                "bullet1": "<span class=\"highlight\">トンネル機器シミュレータ</span>を<span class=\"highlight\">Java/Swing</span>で開発し、SITG（グラン・リヨン・トンネル情報システム）のテストプラットフォームで使用。",
+                "bullet2": "<span class=\"highlight\">SITG通信ゲートウェイ</span>とバージョン管理（<span class=\"highlight\">Git</span>）の習得。",
+                "bullet3": "<span class=\"highlight\">技術仕様書</span>の作成と<span class=\"highlight\">単体テスト</span>の実施。",
+                "bullet4": "<span class=\"highlight\">技術文書</span>やユーザーマニュアルの更新。",
+                "bullet5": "成果物の品質を確保するためにプロジェクトチームと連携。"
+            }
+        },
+        "loreal": {
+            "title": "実験データ管理・分析インターンシップ",
+            "date": "2024年6月 - 2024年9月",
+            "description": {
+                "bullet1": "再構築皮膚モデルでの<span class=\"highlight\">in vitroテストデータ</span>の処理とクリーニング。",
+                "bullet2": "<span class=\"highlight\">Excel, Power BI</span>（<span class=\"highlight\">VBA, DAX, M, Python</span>）による統計解析と可視化。",
+                "bullet3": "実験データ分析のための<span class=\"highlight\">自動化ツール</span>の開発。",
+                "bullet4": "データの品質と信頼性を確保するために<span class=\"highlight\">R&D</span>チームと密接に連携。",
+                "bullet5": "技術レポートの作成と科学チームへの結果報告。"
+            }
+        }
+    },
+    "skills": {
+        "title": "スキル",
+        "subtitle": "私が習得している技術とツール",
+        "filter": {
+            "all": "すべて",
+            "languages": "言語",
+            "frameworks": "フレームワーク",
+            "tools": "ツール",
+            "databases": "データベース"
+        }
+    },
+    "projects": {
+        "title": "プロジェクト",
+        "subtitle": "私の最も重要な成果",
+        "view_all": "すべてのプロジェクトを見る",
+        "page": {
+            "title": "すべてのプロジェクト",
+            "subtitle": "私のすべての成果と実験を発見してください"
+        },
+        "filter": {
+            "technology": "技術",
+            "all": "すべて"
+        },
+        "no_results": {
+            "title": "プロジェクトが見つかりません",
+            "description": "他のフィルターを試すか、すべてのプロジェクトを閲覧してください。"
+        },
+        "cta": {
+            "title": "私のプロジェクトに興味がありますか？",
+            "description": "あなたの次のプロジェクトやコラボレーションについて話し合いましょう。",
+            "contact": "お問い合わせ"
+        },
+        "rateemall": {
+            "description": "お気に入りのポケモンを探索、評価、収集するフルスタックウェブアプリケーション。完全なポケモンデータベースを発見し、評価を共有してください。"
+        },
+        "greenit": {
+            "description": "責任あるデジタル実践の意識向上のためのCGIカードゲームのデジタル版。教育的メカニズムを持つオンラインマルチプレイヤーゲーム。"
+        },
+        "optimod": {
+            "description": "インタラクティブマッピングを備えたリヨンの交通管理システム。交通の流れを最適化するMVCアーキテクチャとREST API。"
+        }
+    },
+    "contact": {
+        "title": "お問い合わせ",
+        "subtitle": "あなたの次のプロジェクトで一緒に働きましょう",
+        "email": {
+            "title": "メール"
+        },
+        "form": {
+            "name": "名前",
+            "email": "メール",
+            "subject": "件名",
+            "message": "メッセージ",
+            "send": "送信"
+        },
+        "social": {
+            "title": "私を見つける",
+            "linkedin": "LinkedIn",
+            "github": "GitHub",
+            "instagram": "Instagram",
+            "email": "Email"
+        }
+    },
+    "footer": {
+        "rights": "すべての権利予約済み。"
+    }
+}

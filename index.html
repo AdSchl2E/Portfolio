@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<!-- 
+    Portfolio principal d'Adam Schlee - INSA Lyon
+    Site monopage responsive avec système de thèmes personnalisables
+    HTML sémantique avec support multilingue et accessibilité
+-->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio d'Adam Schlee - Étudiant en informatique à l'INSA Lyon">
+    <meta name="author" content="Adam Schlee">
+    <title>Adam Schlee - Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Unicons pour les icônes UI -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loader d'animation d'intro -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="loader-text">Adam</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Desktop -->
+    <nav class="navbar navbar-desktop" role="navigation" aria-label="Navigation principale">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#home" class="brand-link">
+                    <span class="brand-text" data-i18n="nav.brand">Adam Schlee</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home" data-i18n="nav.home">Accueil</a>
+                <a href="#about" class="nav-link" data-section="about" data-i18n="nav.about">Qui je suis</a>
+                <a href="#education" class="nav-link" data-section="education" data-i18n="nav.education">Formation</a>
+                <a href="#experience" class="nav-link" data-section="experience" data-i18n="nav.experience">Expériences</a>
+                <a href="#skills" class="nav-link" data-section="skills" data-i18n="nav.skills">Compétences</a>
+                <a href="#projects" class="nav-link" data-section="projects" data-i18n="nav.projects">Projets</a>
+                <a href="#contact" class="nav-link" data-section="contact" data-i18n="nav.contact">Contact</a>
+            </div>
+            
+            <div class="nav-controls">
+                <!-- Sélecteur de thème -->
+                <div class="theme-selector">
+                    <button class="theme-btn" aria-label="Sélectionner un thème" aria-expanded="false">
+                        
+                    </button>
+                    <div class="theme-dropdown">
+                        <!-- Options générées dynamiquement -->
+                    </div>
+                </div>
+                
+                <!-- Sélecteur de langue -->
+                <div class="language-selector">
+                    <button class="language-btn" aria-label="Changer de langue" aria-expanded="false">
+                        <i class="uil uil-globe"></i>
+                        <span id="current-language">FR</span>
+                        <i class="uil uil-angle-down"></i>
+                    </button>
+                    <div class="language-dropdown">
+                        <!-- Options de langue générées dynamiquement -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navigation Mobile -->
+    <nav class="navbar navbar-mobile" role="navigation" aria-label="Navigation mobile">
+        <div class="nav-container">
+            <a href="#home" class="nav-item active" data-section="home">
+                <i class="uil uil-home"></i>
+                <span data-i18n="nav.home">Accueil</span>
+            </a>
+            <a href="#about" class="nav-item" data-section="about">
+                <i class="uil uil-user"></i>
+                <span data-i18n="nav.about">À propos</span>
+            </a>
+            <a href="#education" class="nav-item" data-section="education">
+                <i class="uil uil-graduation-cap"></i>
+                <span data-i18n="nav.education">Formation</span>
+            </a>
+            <a href="#experience" class="nav-item" data-section="experience">
+                <i class="uil uil-briefcase-alt"></i>
+                <span data-i18n="nav.experience">Expérience</span>
+            </a>
+            <a href="#skills" class="nav-item" data-section="skills">
+                <i class="uil uil-code-branch"></i>
+                <span data-i18n="nav.skills">Compétences</span>
+            </a>
+            <a href="#projects" class="nav-item" data-section="projects">
+                <i class="uil uil-apps"></i>
+                <span data-i18n="nav.projects">Projets</span>
+            </a>
+            <a href="#contact" class="nav-item" data-section="contact">
+                <i class="uil uil-envelope"></i>
+                <span data-i18n="nav.contact">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Bouton flottant pour thème mobile -->
+    <button class="mobile-theme-button" aria-label="Sélectionner un thème">
+        <i class="uil uil-palette"></i>
+    </button>
+    <div class="mobile-theme-dropdown">
+        <!-- Options générées dynamiquement -->
+    </div>
+
+    <!-- Bouton flottant pour langue mobile -->
+    <button class="mobile-language-button" aria-label="Changer de langue">
+        <i class="uil uil-globe"></i>
+    </button>
+    <div class="mobile-language-dropdown">
+        <!-- Options de langue générées dynamiquement -->
+    </div>
+
+    <!-- Contenu principal -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-greeting" data-i18n="hero.greeting">Bonjour, je suis</span>
+                        <span class="hero-name">Adam Schlee</span>
+                    </h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Étudiant en informatique à l'INSA Lyon</p>
+                    <p class="hero-description" data-i18n="hero.description">
+                        Passionné par le développement web et les nouvelles technologies, 
+                        je crée des expériences numériques innovantes et performantes.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.projects">Voir mes projets</a>
+                        <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta.contact">Me contacter</a>
+                        <a href="assets/cv/CV_Adam_Schlee.pdf" target="_blank" class="btn btn-secondary" data-i18n="hero.cta.cv">
+                            <i class="uil uil-download-alt"></i>
+                            Télécharger mon CV
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-avatar">
+                    <div class="avatar-container">
+                        <img src="assets/cv/me.png" alt="Adam Schlee" class="avatar-image">
+                        <div class="avatar-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Qui je suis -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="about.title">Qui je suis</h2>
+                    <p class="section-subtitle" data-i18n="about.subtitle">Découvrez ma personnalité et mes passions</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-i18n="about.description1">
+                            Étudiant passionné en informatique à l'INSA Lyon, je me spécialise dans le développement web 
+                            full-stack avec un intérêt particulier pour les technologies modernes et l'innovation.
+                        </p>
+                        <p data-i18n="about.description2">
+                            Au-delà de la programmation, je cultive une passion pour la gastronomie, l'œnologie et 
+                            la culture japonaise, qui enrichissent ma créativité et ma vision du monde.
+                        </p>
+                    </div>
+                    
+                    <!-- Galerie carrousel automatique -->
+                    <div class="about-gallery">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide">
+                                    <img src="assets/images/canard.jpg" alt="Photo personnelle 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/images/canard.jpg" alt="Photo personnelle 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/images/canard.jpg" alt="Photo personnelle 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/images/canard.jpg" alt="Photo personnelle 4" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/images/canard.jpg" alt="Photo personnelle 5" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/images/canard.jpg" alt="Photo personnelle 6" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="carousel-dots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Formation -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="education.title">Formation</h2>
+                    <p class="section-subtitle" data-i18n="education.subtitle">Mon parcours académique</p>
+                </div>
+                
+                <div class="education-cards">
+                    <div class="education-card">
+                        <div class="education-image">
+                            <img src="assets/cv/insa-lyon-logo.png" alt="INSA Lyon" loading="lazy">
+                        </div>
+                        <div class="education-info">
+                            <div class="education-header">
+                                <div class="education-title-group">
+                                    <h3>INSA Lyon</h3>
+                                    <h4 data-i18n="education.insa.engineering.title">Cycle ingénieur en informatique</h4>
+                                </div>
+                                <div class="education-meta">
+                                    <span class="education-date">2023 - 2026</span>
+                                    <span class="education-location">Lyon</span>
+                                </div>
+                            </div>
+                            <p class="education-description" data-i18n="education.insa.engineering.description">
+                                Formation complète couvrant les algorithmes, structures de données, 
+                                développement logiciel, bases de données et gestion de projet.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="education-card">
+                        <div class="education-image">
+                            <img src="assets/cv/insa-lyon-logo.png" alt="INSA Lyon" loading="lazy">
+                        </div>
+                        <div class="education-info">
+                            <div class="education-header">
+                                <div class="education-title-group">
+                                    <h3>INSA Lyon</h3>
+                                    <h4 data-i18n="education.insa.prep.title">Classe préparatoire intégrée en filière internationale</h4>
+                                </div>
+                                <div class="education-meta">
+                                    <span class="education-date">2021 - 2023</span>
+                                    <span class="education-location">Lyon</span>
+                                </div>
+                            </div>
+                            <p class="education-description" data-i18n="education.insa.prep.description">
+                                Formation intensive en mathématiques, physique et mécanique.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="education-card">
+                        <div class="education-image">
+                            <img src="assets/cv/lycee-marc-bloch-logo.png" alt="Lycée Marc Bloch" loading="lazy">
+                        </div>
+                        <div class="education-info">
+                            <div class="education-header">
+                                <div class="education-title-group">
+                                    <h3>Lycée Marc Bloch</h3>
+                                    <h4 data-i18n="education.highschool.title">Baccalauréat général, spécialité mathématiques et NSI</h4>
+                                </div>
+                                <div class="education-meta">
+                                    <span class="education-date">2018 - 2021</span>
+                                    <span class="education-location">Strasbourg</span>
+                                </div>
+                            </div>
+                            <p class="education-description" data-i18n="education.highschool.description">
+                                Mention Très Bien. Formation solide en sciences et techniques.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Expériences -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="experience.title">Expériences</h2>
+                    <p class="section-subtitle" data-i18n="experience.subtitle">Mon parcours professionnel</p>
+                </div>
+                
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="experience-logo">
+                            <img src="assets/cv/eiffage-logo.png" alt="Eiffage Énergie Systèmes" loading="lazy">
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <div class="experience-title-group">
+                                    <h3 data-i18n="experience.eiffage.title">Stage ingénieur développement logiciel</h3>
+                                    <h4>Eiffage Énergie Systèmes</h4>
+                                </div>
+                                <div class="experience-meta">
+                                    <span class="experience-date" data-i18n="experience.eiffage.date">Mai 2025 - Septembre 2025</span>
+                                    <span class="experience-location">Lyon</span>
+                                </div>
+                            </div>
+                            <ul class="experience-description">
+                                <li data-i18n="experience.eiffage.description.bullet1">Développement d'un <span class="highlight">simulateur d'équipements de tunnel</span> en <span class="highlight">Java/Swing</span> pour la plateforme de tests du SITG (Système d'Information des Tunnels du Grand Lyon)</li>
+                                <li data-i18n="experience.eiffage.description.bullet2">Appropriation de la <span class="highlight">passerelle de communication SITG</span> et de la gestion de versions (<span class="highlight">Git</span>)</li>
+                                <li data-i18n="experience.eiffage.description.bullet3">Rédaction de <span class="highlight">spécifications techniques</span> et réalisation de <span class="highlight">tests unitaires</span></li>
+                                <li data-i18n="experience.eiffage.description.bullet4">Mise à jour de la <span class="highlight">documentation technique</span> et des manuels d'utilisation</li>
+                                <li data-i18n="experience.eiffage.description.bullet5">Collaboration avec les équipes projet pour garantir la qualité des livrables</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <div class="experience-logo">
+                            <img src="assets/cv/loreal-logo.png" alt="L'ORÉAL (EPISKIN)" loading="lazy">
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <div class="experience-title-group">
+                                    <h3 data-i18n="experience.loreal.title">Stage en gestion et analyse de données expérimentales</h3>
+                                    <h4>L'ORÉAL (EPISKIN)</h4>
+                                </div>
+                                <div class="experience-meta">
+                                    <span class="experience-date" data-i18n="experience.loreal.date">Juin 2024 - Septembre 2024</span>
+                                    <span class="experience-location">Lyon</span>
+                                </div>
+                            </div>
+                            <ul class="experience-description">
+                                <li data-i18n="experience.loreal.description.bullet1">Traitement et nettoyage de <span class="highlight">données issues de tests in vitro</span> sur modèles de peau reconstituée</li>
+                                <li data-i18n="experience.loreal.description.bullet2">Analyse statistique et visualisation avec <span class="highlight">Excel, Power BI</span> (<span class="highlight">VBA, DAX, M, Python</span>)</li>
+                                <li data-i18n="experience.loreal.description.bullet3">Développement d'<span class="highlight">outils d'automatisation</span> pour l'analyse de données expérimentales</li>
+                                <li data-i18n="experience.loreal.description.bullet4">Collaboration étroite avec l'équipe <span class="highlight">R&D</span> pour assurer la qualité et la fiabilité des données</li>
+                                <li data-i18n="experience.loreal.description.bullet5">Rédaction de rapports techniques et présentation des résultats aux équipes scientifiques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Compétences -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="skills.title">Compétences</h2>
+                    <p class="section-subtitle" data-i18n="skills.subtitle">Technologies et outils que je maîtrise</p>
+                </div>
+                
+                <div class="skills-filter">
+                    <button class="filter-btn active" data-filter="all" data-i18n="skills.filter.all">Toutes</button>
+                    <button class="filter-btn" data-filter="languages" data-i18n="skills.filter.languages">Langages</button>
+                    <button class="filter-btn" data-filter="frameworks" data-i18n="skills.filter.frameworks">Frameworks</button>
+                    <button class="filter-btn" data-filter="tools" data-i18n="skills.filter.tools">Outils</button>
+                    <button class="filter-btn" data-filter="databases" data-i18n="skills.filter.databases">Bases de données</button>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Langages -->
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" data-icon="javascript">
+                        </div>
+                        <span class="skill-name">JavaScript</span>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/html5" alt="HTML" data-icon="html5">
+                        </div>
+                        <span class="skill-name">HTML</span>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/css" alt="CSS" data-icon="css">
+                        </div>
+                        <span class="skill-name">CSS</span>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/python" alt="Python" data-icon="python">
+                        </div>
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img src="https://img.icons8.com/?size=100&id=2572&format=png&color" alt="Java" data-icon="java">
+                        </div>
+                        <span class="skill-name">Java</span>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/cplusplus" alt="C++" data-icon="cplusplus">
+                        </div>
+                        <span class="skill-name">C++</span>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" data-icon="typescript">
+                        </div>
+                        <span class="skill-name">TypeScript</span>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/php" alt="PHP" data-icon="php">
+                        </div>
+                        <span class="skill-name">PHP</span>
+                    </div>
+                    <div class="skill-item" data-category="languages">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/c" alt="C" data-icon="c">
+                        </div>
+                        <span class="skill-name">C</span>
+                    </div>
+                    
+                    <!-- Frameworks -->
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" data-icon="nodedotjs">
+                        </div>
+                        <span class="skill-name">Node.js</span>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/react" alt="React" data-icon="react">
+                        </div>
+                        <span class="skill-name">React</span>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js" data-icon="nextdotjs">
+                        </div>
+                        <span class="skill-name">Next.js</span>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/nestjs" alt="NestJS" data-icon="nestjs">
+                        </div>
+                        <span class="skill-name">NestJS</span>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/spring" alt="Spring" data-icon="spring">
+                        </div>
+                        <span class="skill-name">Spring</span>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/thymeleaf" alt="Thymeleaf" data-icon="thymeleaf">
+                        </div>
+                        <span class="skill-name">Thymeleaf</span>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap" data-icon="bootstrap">
+                        </div>
+                        <span class="skill-name">Bootstrap</span>
+                    </div>
+                    <div class="skill-item" data-category="frameworks">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind" data-icon="tailwindcss">
+                        </div>
+                        <span class="skill-name">Tailwind</span>
+                    </div>
+                    
+                    <!-- Outils -->
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/git" alt="Git" data-icon="git">
+                        </div>
+                        <span class="skill-name">Git</span>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/docker" alt="Docker" data-icon="docker">
+                        </div>
+                        <span class="skill-name">Docker</span>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img src="https://img.icons8.com/?size=100&id=yCNobJ80uutx&format=png&color" alt="VS Code" data-icon="vscode">
+                        </div>
+                        <span class="skill-name">VS Code</span>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/intellijidea" alt="IntelliJ IDEA" data-icon="intellijidea">
+                        </div>
+                        <span class="skill-name">IntelliJ IDEA</span>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/figma" alt="Figma" data-icon="figma">
+                        </div>
+                        <span class="skill-name">Figma</span>
+                    </div>
+                    <div class="skill-item" data-category="tools">
+                        <div class="skill-icon">
+                            <img src="https://img.icons8.com/?size=100&id=FQ9NVJuXbDIv&format=png&color" alt="Power BI" data-icon="powerbi">
+                        </div>
+                        <span class="skill-name">Power BI</span>
+                    </div>
+                    
+                    <!-- Bases de données -->
+                    <div class="skill-item" data-category="databases">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" data-icon="mongodb">
+                        </div>
+                        <span class="skill-name">MongoDB</span>
+                    </div>
+                    <div class="skill-item" data-category="databases">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/mysql" alt="MySQL" data-icon="mysql">
+                        </div>
+                        <span class="skill-name">MySQL</span>
+                    </div>
+                    <div class="skill-item" data-category="databases">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" data-icon="postgresql">
+                        </div>
+                        <span class="skill-name">PostgreSQL</span>
+                    </div>
+                    <div class="skill-item" data-category="databases">
+                        <div class="skill-icon">
+                            <img src="https://cdn.simpleicons.org/sqlite" alt="SQLite" data-icon="sqlite">
+                        </div>
+                        <span class="skill-name">SQLite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Projets -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="projects.title">Projets</h2>
+                    <p class="section-subtitle" data-i18n="projects.subtitle">Mes réalisations les plus marquantes</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Projet Rate 'Em All -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <video autoplay muted loop loading="lazy" poster="assets/projects/rate-em-all.png">
+                                <source src="assets/projects/rate-em-all.mp4" type="video/mp4">
+                                <img src="assets/projects/rate-em-all.png" alt="Rate 'Em All" loading="lazy">
+                            </video>
+                        </div>
+                        <div class="project-content">
+                            <h3>Rate 'Em All</h3>
+                            <p data-i18n="projects.rateemall.description">
+                                Application web full-stack pour explorer, noter et collectionner vos Pokémon favoris. 
+                                Découvrez la base de données complète des Pokémon et partagez vos évaluations.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js">
+                                    Next.js
+                                </span>
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/typescript" alt="TypeScript">
+                                    TypeScript
+                                </span>
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/nestjs" alt="NestJS">
+                                    NestJS
+                                </span>
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL">
+                                    PostgreSQL
+                                </span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/AdSchl2E/Rate-Em-All" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                                    <i class="uil uil-github"></i>
+                                    GitHub
+                                </a>
+                                <a href="https://rate-em-all.vercel.app/" target="_blank" rel="noopener" class="project-btn project-btn-primary">
+                                    <i class="uil uil-external-link-alt"></i>
+                                    Démo live
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet Green IT -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <video autoplay muted loop loading="lazy" poster="assets/projects/greenplay.png">
+                                <source src="assets/projects/greenplay.mp4" type="video/mp4">
+                                <img src="assets/projects/greenplay.png" alt="1 Tonne de Bonnes Pratiques Green IT" loading="lazy">
+                            </video>
+                        </div>
+                        <div class="project-content">
+                            <h3>1 Tonne Green IT</h3>
+                            <p data-i18n="projects.greenit.description">
+                                Version digitalisée du jeu de cartes CGI pour sensibiliser aux pratiques 
+                                numériques responsables. Jeu multijoueur en ligne avec mécaniques éducatives.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/react" alt="React">
+                                    React
+                                </span>
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/nestjs" alt="NestJS">
+                                    NestJS
+                                </span>
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL">
+                                    PostgreSQL
+                                </span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/hexplosif/4IF-PLD-AGIR" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                                    <i class="uil uil-github"></i>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet Optimod -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/projects/optimod.png" alt="Optimod Lyon" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Optimod Lyon</h3>
+                            <p data-i18n="projects.optimod.description">
+                                Système de gestion de trafic pour Lyon avec cartographie interactive. 
+                                Architecture MVC et API REST pour optimiser les flux de circulation.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <img src="https://img.icons8.com/?size=100&id=2572&format=png&color" alt="Java">
+                                    Java
+                                </span>
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/spring" alt="Spring Boot">
+                                    Spring Boot
+                                </span>
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/thymeleaf" alt="Thymeleaf">
+                                    Thymeleaf
+                                </span>
+                                <span class="tech-tag">
+                                    <img src="https://cdn.simpleicons.org/leaflet" alt="Leaflet">
+                                    Leaflet
+                                </span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/AdSchl2E/Optimod-Backend" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                                    <i class="uil uil-github"></i>
+                                    Backend
+                                </a>
+                                <a href="https://github.com/AdSchl2E/Optimod-Frontend" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                                    <i class="uil uil-github"></i>
+                                    Frontend
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projects-cta">
+                    <a href="projets.html" class="btn btn-primary" data-i18n="projects.view_all">Voir tous mes projets</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+                    <p class="section-subtitle" data-i18n="contact.subtitle">Travaillons ensemble sur votre prochain projet</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name" data-i18n="contact.form.name">Nom</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" data-i18n="contact.form.email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" data-i18n="contact.form.subject">Sujet</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact.form.message">Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-i18n="contact.form.send">Envoyer</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h3 data-i18n="contact.social.title">Retrouvez-moi sur</h3>
+                        <div class="social-icons">
+                            <a href="mailto:ad.schlee@gmail.com" class="social-icon" aria-label="Email">
+                                <i class="uil uil-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="https://linkedin.com/in/adam-schlee" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                                <i class="uil uil-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://instagram.com/AdSchl2e" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                                <i class="uil uil-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://github.com/AdSchl2E" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+                                <i class="uil uil-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Adam Schlee. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+                <div class="footer-links">
+                    <a href="mailto:adam.schlee@insa-lyon.fr" aria-label="Email">
+                        <i class="uil uil-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/adam-schlee" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="uil uil-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com/AdSchl2e" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="https://github.com/AdSchl2E" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="uil uil-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/themes.js"></script>
+    <script type="module" src="js/animations.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
