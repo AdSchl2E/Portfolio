@@ -52,7 +52,7 @@ function getAvailableLanguages() {
 function generateLanguageOptions() {
   const languageDropdown = document.querySelector('.language-dropdown');
   const mobileLanguageDropdown = document.querySelector('.mobile-language-dropdown');
-  
+
   if (languageDropdown) {
     languageDropdown.innerHTML = '';
     Object.entries(languageConfig).forEach(([code, config]) => {
@@ -92,7 +92,7 @@ class PortfolioManager {
   async init() {
     // Générer les options de langue dynamiquement
     generateLanguageOptions();
-    
+
     // Initialiser les autres composants
     await this.initializeLanguage();
     this.initializeNavigation();
@@ -109,7 +109,7 @@ class PortfolioManager {
     if (!getAvailableLanguages().includes(this.currentLanguage)) {
       this.currentLanguage = 'fr'; // Fallback vers français
     }
-    
+
     this.updateLanguageDisplay();
     await this.translatePage();
     this.bindLanguageEvents();
@@ -188,7 +188,7 @@ class PortfolioManager {
 
   async translatePage() {
     const elements = document.querySelectorAll('[data-i18n]');
-    
+
     try {
       const currentTranslations = await loadTranslations(this.currentLanguage);
 
@@ -499,35 +499,43 @@ class PortfolioManager {
 
   initializeContact() {
     const contactForm = document.getElementById('contact-form');
+    const toast = document.getElementById('toast');
     if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
+      contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        this.handleContactSubmit(e);
+        const formData = {
+          name: contactForm.name.value,
+          email: contactForm.email.value,
+          subject: contactForm.subject.value,
+          message: contactForm.message.value,
+          _honey: contactForm._honey.value,
+          _captcha: false,
+          _template: 'table'
+        };
+        fetch("https://formsubmit.co/ajax/ad.schlee@gmail.com", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+          .then(response => response.json())
+          .then(data => {
+            toast.style.opacity = '1';
+            toast.style.pointerEvents = 'auto';
+            contactForm.reset();
+            setTimeout(() => {
+              toast.style.opacity = '0';
+              toast.style.pointerEvents = 'none';
+            }, 3500);
+          })
+          .catch((e) => {
+            console.error('Error:', e);
+            alert('There was an error sending your message. Please try again.');
+          });
       });
     }
-  }
-
-  handleContactSubmit(e) {
-    const formData = new FormData(e.target);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message')
-    };
-
-    // Créer le lien mailto
-    const subject = encodeURIComponent(data.subject);
-    const body = encodeURIComponent(`
-Nom: ${data.name}
-Email: ${data.email}
-
-Message:
-${data.message}
-    `);
-
-    const mailtoLink = `mailto:ad.schlee@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
   }
 
   initializeThemeEvents() {

@@ -1001,7 +1001,6 @@ body {
     margin: 0 auto;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: var(--shadow-medium);
 }
 
 .carousel-track {
@@ -1058,10 +1057,6 @@ body {
     .carousel-slide {
         min-width: 100%;
         /* 1 photo par vue mobile */
-    }
-
-    .carousel-slide img {
-        height: 200px;
     }
 }
 
@@ -1845,6 +1840,23 @@ body {
     font-size: 1.125rem;
     color: var(--text-secondary);
     margin-bottom: 2rem;
+}
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #16a34a;    
+    border: 1px solid var(--bg-primary);
+    color: #ffffff;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+    z-index: 9999;
+    font-size: 1rem;
 }
 
 /* Responsive Design */

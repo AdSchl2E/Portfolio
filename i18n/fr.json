@@ -2,7 +2,7 @@
     "nav": {
         "brand": "Adam Schlee",
         "home": "Accueil",
-        "about": "Qui je suis",
+        "about": "Qui suis-je",
         "education": "Formation",
         "experience": "Expériences",
         "skills": "Compétences",
@@ -10,20 +10,36 @@
         "contact": "Contact"
     },
     "themes": {
-        "light": { "name": "Clair" },
-        "dark": { "name": "Sombre" },
-        "momiji": { "name": "Momiji" },
-        "dark-momiji": { "name": "Momiji Sombre" },
-        "sakura": { "name": "Sakura" },
-        "dark-sakura": { "name": "Sakura Sombre" },
-        "yuzu": { "name": "Yuzu" },
-        "matcha": { "name": "Matcha" }
+        "light": {
+            "name": "Clair"
+        },
+        "dark": {
+            "name": "Sombre"
+        },
+        "momiji": {
+            "name": "Momiji"
+        },
+        "dark-momiji": {
+            "name": "Momiji Sombre"
+        },
+        "sakura": {
+            "name": "Sakura"
+        },
+        "dark-sakura": {
+            "name": "Sakura Sombre"
+        },
+        "yuzu": {
+            "name": "Yuzu"
+        },
+        "matcha": {
+            "name": "Matcha"
+        }
     },
     "hero": {
         "greeting": "Bonjour, je suis",
         "name": "Adam Schlee",
         "subtitle": "Étudiant en informatique à l'INSA Lyon",
-        "description": "Passionné par le développement web et les nouvelles technologies, je crée des expériences numériques innovantes et performantes.",
+        "description": "Futur ingénieur en informatique spécialisé en développement web et logiciel, j'allie expertise technique et vision globale pour concevoir des solutions numériques performantes et adaptées aux besoins utilisateurs.",
         "cta": {
             "projects": "Voir mes projets",
             "contact": "Me contacter",
@@ -31,10 +47,10 @@
         }
     },
     "about": {
-        "title": "Qui je suis",
-        "subtitle": "Découvrez ma personnalité et mes passions",
-        "description1": "Étudiant passionné en informatique à l'INSA Lyon, je me spécialise dans le développement web full-stack avec un intérêt particulier pour les technologies modernes et l'innovation.",
-        "description2": "Au-delà de la programmation, je cultive une passion pour la gastronomie, l'œnologie et la culture japonaise, qui enrichissent ma créativité et ma vision du monde."
+        "title": "Qui suis-je",
+        "subtitle": "Découvrez ma personnalité et mes centres d'intérêt",
+        "description1": "Étudiant en informatique à l'INSA Lyon, je développe des solutions numériques alliant performance, design et valeur ajoutée, en explorant les opportunités offertes par les technologies émergentes.",
+        "description2": "Curieux et ouvert sur le monde, je m'intéresse à la gastronomie, à l'œnologie et à la culture japonaise, des passions qui nourrissent ma créativité et mon sens du détail."
     },
     "education": {
         "title": "Formation",

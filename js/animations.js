@@ -144,7 +144,7 @@ class AnimationManager {
                         this.triggerHeroAnimation();
                     }
                 }, 500);
-            }, 2000);
+            }, 1500);
         }
     }
 

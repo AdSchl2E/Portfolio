@@ -38,7 +38,7 @@
     "hero": {
         "greeting": "Hallo, ich bin",
         "subtitle": "Informatikstudent an der INSA Lyon",
-        "description": "Leidenschaftlich für Webentwicklung und neue Technologien, erstelle ich innovative und leistungsstarke digitale Erfahrungen.",
+        "description": "Zukünftiger Informatikingenieur, spezialisiert auf Web- und Softwareentwicklung, der technisches Fachwissen mit einer ganzheitlichen Vision verbindet, um leistungsstarke digitale Lösungen zu entwerfen, die auf die Bedürfnisse der Nutzer zugeschnitten sind.",
         "cta": {
             "projects": "Meine Projekte ansehen",
             "contact": "Kontaktieren Sie mich",
@@ -48,9 +48,9 @@
     },
     "about": {
         "title": "Über mich",
-        "subtitle": "Entdecken Sie meine Persönlichkeit und Leidenschaften",
-        "description1": "Als leidenschaftlicher Informatikstudent an der INSA Lyon spezialisiere ich mich auf Full-Stack-Webentwicklung mit besonderem Interesse an modernen Technologien und Innovation.",
-        "description2": "Über die Programmierung hinaus kultiviere ich eine Leidenschaft für Gastronomie, Önologie und japanische Kultur, die meine Kreativität und Weltanschauung bereichern."
+        "subtitle": "Entdecken Sie meine Persönlichkeit und Interessen",
+        "description1": "Als Informatikstudent an der INSA Lyon entwickle ich digitale Lösungen, die Leistung, Design und Mehrwert vereinen, und erkunde dabei die Chancen neuer Technologien.",
+        "description2": "Neugierig und weltoffen interessiere ich mich für Gastronomie, Önologie und die japanische Kultur – Leidenschaften, die meine Kreativität und meinen Sinn für Details bereichern."
     },
     "education": {
         "title": "Bildung",
