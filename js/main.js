@@ -459,9 +459,48 @@ class PortfolioManager {
   }
 
   initializeProjectsFilter() {
-    const filterButtons = document.querySelectorAll('.projects-filters .filter-btn');
+    const filterContainer = document.getElementById('dynamic-filters');
     const projectCards = document.querySelectorAll('.project-card');
     const noProjectsMessage = document.getElementById('no-projects');
+
+    if (!filterContainer) return;
+
+    // Récupérer toutes les technologies uniques des projets
+    const allTechnologies = new Set();
+
+    projectCards.forEach(card => {
+      const techTags = card.querySelectorAll('.tech-tag');
+      techTags.forEach(tag => {
+        const techName = tag.textContent.trim();
+        if (techName) {
+          allTechnologies.add(techName);
+        }
+      });
+    });
+
+    // Créer les boutons de filtre dynamiquement
+    filterContainer.innerHTML = '';
+
+    // Bouton "Toutes"
+    const allButton = document.createElement('button');
+    allButton.className = 'filter-btn active';
+    allButton.setAttribute('data-filter', 'all');
+    allButton.setAttribute('data-i18n', 'projects.filter.all');
+    allButton.textContent = 'Toutes';
+    filterContainer.appendChild(allButton);
+
+    // Boutons pour chaque technologie (triés alphabétiquement)
+    const sortedTechnologies = Array.from(allTechnologies).sort();
+    sortedTechnologies.forEach(tech => {
+      const button = document.createElement('button');
+      button.className = 'filter-btn';
+      button.setAttribute('data-filter', tech.toLowerCase());
+      button.textContent = tech;
+      filterContainer.appendChild(button);
+    });
+
+    // Ajouter les event listeners aux boutons
+    const filterButtons = filterContainer.querySelectorAll('.filter-btn');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
@@ -475,10 +514,22 @@ class PortfolioManager {
 
         // Filtrer les projets
         projectCards.forEach(card => {
-          const tags = card.getAttribute('data-tags') || '';
+          const techTags = card.querySelectorAll('.tech-tag');
+          let hasMatchingTech = false;
 
-          if (filter === 'all' || tags.includes(filter)) {
-            card.style.display = 'block';
+          if (filter === 'all') {
+            hasMatchingTech = true;
+          } else {
+            techTags.forEach(tag => {
+              const techName = tag.textContent.trim().toLowerCase();
+              if (techName === filter) {
+                hasMatchingTech = true;
+              }
+            });
+          }
+
+          if (hasMatchingTech) {
+            card.style.display = 'flex';
             visibleCount++;
           } else {
             card.style.display = 'none';
@@ -495,6 +546,9 @@ class PortfolioManager {
         }
       });
     });
+
+    // Traduire les boutons après les avoir créés
+    this.translatePage();
   }
 
   initializeContact() {

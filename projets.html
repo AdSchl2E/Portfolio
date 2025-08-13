@@ -5,350 +5,741 @@
     HTML sémantique avec support multilingue et accessibilité
 -->
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tous les projets d'Adam Schlee - Étudiant en informatique à l'INSA Lyon">
-    <meta name="author" content="Adam Schlee">
-    <title>Projets - Adam Schlee</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- Unicons pour les icônes UI -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    
-    <!-- Polices Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation Desktop -->
-    <nav class="navbar navbar-desktop" role="navigation" aria-label="Navigation principale">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <a href="index.html" class="brand-link">
-                    <span class="brand-text" data-i18n="nav.brand">Adam Schlee</span>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Tous les projets d'Adam Schlee - Étudiant en informatique à l'INSA Lyon">
+        <meta name="author" content="Adam Schlee">
+        <title>Projets - Adam Schlee</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Unicons pour les icônes UI -->
+        <link rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+        <!-- Polices Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navigation Desktop -->
+        <nav class="navbar navbar-desktop" role="navigation"
+            aria-label="Navigation principale">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand-link">
+                        <span class="brand-text" data-i18n="nav.brand">Adam
+                            Schlee</span>
+                    </a>
+                </div>
+
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link"
+                        data-i18n="nav.home">Accueil</a>
+                    <a href="index.html#about" class="nav-link"
+                        data-i18n="nav.about">Qui suis-je</a>
+                    <a href="index.html#education" class="nav-link"
+                        data-i18n="nav.education">Formation</a>
+                    <a href="index.html#experience" class="nav-link"
+                        data-i18n="nav.experience">Expériences</a>
+                    <a href="index.html#skills" class="nav-link"
+                        data-i18n="nav.skills">Compétences</a>
+                    <a href="projets.html" class="nav-link active"
+                        data-i18n="nav.projects">Projets</a>
+                    <a href="index.html#contact" class="nav-link"
+                        data-i18n="nav.contact">Contact</a>
+                </div>
+
+                <div class="nav-controls">
+                    <!-- Sélecteur de thème -->
+                    <div class="theme-selector">
+                        <button class="theme-btn"
+                            aria-label="Sélectionner un thème"
+                            aria-expanded="false">
+
+                        </button>
+                        <div class="theme-dropdown">
+                            <!-- Options générées dynamiquement -->
+                        </div>
+                    </div>
+
+                    <!-- Sélecteur de langue -->
+                    <div class="language-selector">
+                        <button class="language-btn"
+                            aria-label="Changer de langue"
+                            aria-expanded="false">
+                            <i class="uil uil-globe"></i>
+                            <span id="current-language">FR</span>
+                            <i class="uil uil-angle-down"></i>
+                        </button>
+                        <div class="language-dropdown">
+                            <!-- Options de langue générées dynamiquement -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Navigation Mobile -->
+        <nav class="navbar navbar-mobile" role="navigation"
+            aria-label="Navigation mobile">
+            <div class="nav-container">
+                <a href="index.html" class="nav-item">
+                    <i class="uil uil-home"></i>
+                    <span data-i18n="nav.home">Accueil</span>
+                </a>
+                <a href="index.html#about" class="nav-item">
+                    <i class="uil uil-user"></i>
+                    <span data-i18n="nav.about">À propos</span>
+                </a>
+                <a href="index.html#education" class="nav-item">
+                    <i class="uil uil-graduation-cap"></i>
+                    <span data-i18n="nav.education">Formation</span>
+                </a>
+                <a href="index.html#experience" class="nav-item">
+                    <i class="uil uil-briefcase-alt"></i>
+                    <span data-i18n="nav.experience">Expérience</span>
+                </a>
+                <a href="index.html#skills" class="nav-item">
+                    <i class="uil uil-code-branch"></i>
+                    <span data-i18n="nav.skills">Compétences</span>
+                </a>
+                <a href="projets.html" class="nav-item active">
+                    <i class="uil uil-apps"></i>
+                    <span data-i18n="nav.projects">Projets</span>
+                </a>
+                <a href="index.html#contact" class="nav-item">
+                    <i class="uil uil-envelope"></i>
+                    <span data-i18n="nav.contact">Contact</span>
                 </a>
             </div>
-            
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link" data-i18n="nav.home">Accueil</a>
-                <a href="index.html#about" class="nav-link" data-i18n="nav.about">Qui suis-je</a>
-                <a href="index.html#education" class="nav-link" data-i18n="nav.education">Formation</a>
-                <a href="index.html#experience" class="nav-link" data-i18n="nav.experience">Expériences</a>
-                <a href="index.html#skills" class="nav-link" data-i18n="nav.skills">Compétences</a>
-                <a href="projets.html" class="nav-link active" data-i18n="nav.projects">Projets</a>
-                <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-            </div>
-            
-            <div class="nav-controls">
-                <!-- Sélecteur de thème -->
-                <div class="theme-selector">
-                    <button class="theme-btn" aria-label="Sélectionner un thème" aria-expanded="false">
-                        
-                    </button>
-                    <div class="theme-dropdown">
-                        <!-- Options générées dynamiquement -->
-                    </div>
-                </div>
-                
-                <!-- Sélecteur de langue -->
-                <div class="language-selector">
-                    <button class="language-btn" aria-label="Changer de langue" aria-expanded="false">
-                        <i class="uil uil-globe"></i>
-                        <span id="current-language">FR</span>
-                        <i class="uil uil-angle-down"></i>
-                    </button>
-                    <div class="language-dropdown">
-                        <!-- Options de langue générées dynamiquement -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Navigation Mobile -->
-    <nav class="navbar navbar-mobile" role="navigation" aria-label="Navigation mobile">
-        <div class="nav-container">
-            <a href="index.html" class="nav-item">
-                <i class="uil uil-home"></i>
-                <span data-i18n="nav.home">Accueil</span>
-            </a>
-            <a href="index.html#about" class="nav-item">
-                <i class="uil uil-user"></i>
-                <span data-i18n="nav.about">À propos</span>
-            </a>
-            <a href="index.html#education" class="nav-item">
-                <i class="uil uil-graduation-cap"></i>
-                <span data-i18n="nav.education">Formation</span>
-            </a>
-            <a href="index.html#experience" class="nav-item">
-                <i class="uil uil-briefcase-alt"></i>
-                <span data-i18n="nav.experience">Expérience</span>
-            </a>
-            <a href="index.html#skills" class="nav-item">
-                <i class="uil uil-code-branch"></i>
-                <span data-i18n="nav.skills">Compétences</span>
-            </a>
-            <a href="projets.html" class="nav-item active">
-                <i class="uil uil-apps"></i>
-                <span data-i18n="nav.projects">Projets</span>
-            </a>
-            <a href="index.html#contact" class="nav-item">
-                <i class="uil uil-envelope"></i>
-                <span data-i18n="nav.contact">Contact</span>
-            </a>
-        </div>
-    </nav>
+        </nav>
 
         <!-- Bouton flottant pour thème mobile -->
-    <button class="mobile-theme-button" aria-label="Sélectionner un thème">
-        <i class="uil uil-palette"></i>
-    </button>
-    <div class="mobile-theme-dropdown">
-        <!-- Options générées dynamiquement -->
-    </div>
-
-    <!-- Bouton flottant pour langue mobile -->
-    <button class="mobile-language-button" aria-label="Changer de langue">
-        <i class="uil uil-globe"></i>
-    </button>
-    <div class="mobile-language-dropdown">
-        <!-- Options de langue générées dynamiquement -->
-    </div>
-
-    <!-- Contenu principal -->
-    <main id="main-content" class="projects-page">
-        <!-- Header de la page -->
-        <section class="page-header">
-            <div class="container">
-                <div class="breadcrumb">
-                    <a href="index.html" data-i18n="nav.home">Accueil</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span data-i18n="nav.projects">Projets</span>
-                </div>
-                <h1 class="page-title" data-i18n="projects.page.title">Tous mes projets</h1>
-                <p class="page-subtitle" data-i18n="projects.page.subtitle">
-                    Découvrez l'ensemble de mes réalisations et expérimentations
-                </p>
-            </div>
-        </section>
-
-        <!-- Filtres -->
-        <section class="projects-filters">
-            <div class="container">
-                <div class="filter-controls">
-                    <div class="filter-group">
-                        <label class="filter-label" data-i18n="projects.filter.technology">Technologie :</label>
-                        <div class="filter-options">
-                            <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">Toutes</button>
-                            <button class="filter-btn" data-filter="javascript">JavaScript</button>
-                            <button class="filter-btn" data-filter="typescript">TypeScript</button>
-                            <button class="filter-btn" data-filter="react">React</button>
-                            <button class="filter-btn" data-filter="nextjs">Next.js</button>
-                            <button class="filter-btn" data-filter="nestjs">NestJS</button>
-                            <button class="filter-btn" data-filter="java">Java</button>
-                            <button class="filter-btn" data-filter="spring">Spring Boot</button>
-                            <button class="filter-btn" data-filter="python">Python</button>
-                            <button class="filter-btn" data-filter="postgresql">PostgreSQL</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Grille des projets -->
-        <section class="projects-section">
-            <div class="container">
-                <div class="projects-grid" id="projects-grid">
-                    
-                    <!-- Projet Rate 'Em All -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <video autoplay muted loop loading="lazy" poster="assets/projects/rate-em-all.png">
-                                <source src="assets/projects/rate-em-all.mp4" type="video/mp4">
-                                <img src="assets/projects/rate-em-all.png" alt="Rate 'Em All" loading="lazy">
-                            </video>
-                        </div>
-                        <div class="project-content">
-                            <h3>Rate 'Em All</h3>
-                            <p data-i18n="projects.rateemall.description">
-                                Application web full-stack pour explorer, noter et collectionner vos Pokémon favoris. 
-                                Découvrez la base de données complète des Pokémon et partagez vos évaluations.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/nextdotjs/323232" alt="Next.js">
-                                    Next.js
-                                </span>
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/typescript/323232" alt="TypeScript">
-                                    TypeScript
-                                </span>
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/nestjs/323232" alt="NestJS">
-                                    NestJS
-                                </span>
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/postgresql/323232" alt="PostgreSQL">
-                                    PostgreSQL
-                                </span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://github.com/AdSchl2E/Rate-Em-All" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
-                                    <i class="uil uil-github"></i>
-                                    GitHub
-                                </a>
-                                <a href="https://rate-em-all.vercel.app/" target="_blank" rel="noopener" class="project-btn project-btn-primary">
-                                    <i class="uil uil-external-link-alt"></i>
-                                    Démo live
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Projet Green IT -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <video autoplay muted loop loading="lazy" poster="assets/projects/greenplay.png">
-                                <source src="assets/projects/greenplay.mp4" type="video/mp4">
-                                <img src="assets/projects/greenplay.png" alt="1 Tonne de Bonnes Pratiques Green IT" loading="lazy">
-                            </video>
-                        </div>
-                        <div class="project-content">
-                            <h3>1 Tonne Green IT</h3>
-                            <p data-i18n="projects.greenit.description">
-                                Version digitalisée du jeu de cartes CGI pour sensibiliser aux pratiques 
-                                numériques responsables. Jeu multijoueur en ligne avec mécaniques éducatives.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/react/323232" alt="React">
-                                    React
-                                </span>
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/nestjs/323232" alt="NestJS">
-                                    NestJS
-                                </span>
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/postgresql/323232" alt="PostgreSQL">
-                                    PostgreSQL
-                                </span>
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/typescript/323232" alt="TypeScript">
-                                    TypeScript
-                                </span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://github.com/hexplosif/4IF-PLD-AGIR" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
-                                    <i class="uil uil-github"></i>
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Projet Optimod -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <video autoplay muted loop loading="lazy" poster="assets/projects/optimod.png">
-                                <source src="assets/projects/optimod.mp4" type="video/mp4">
-                                <img src="assets/projects/optimod.png" alt="Optimod - Système de gestion de trafic" loading="lazy">
-                            </video>
-                        </div>
-                        <div class="project-content">
-                            <h3>Optimod Lyon</h3>
-                            <p data-i18n="projects.optimod.description">
-                                Système de gestion de trafic de Lyon avec cartographie interactive. 
-                                Architecture MVC et API REST pour optimiser les flux de circulation.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">
-                                    <img src="https://img.icons8.com/?size=100&id=2572&format=png&color=323232" alt="Java">
-                                    Java
-                                </span>
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/spring/323232" alt="Spring Boot">
-                                    Spring Boot
-                                </span>
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/thymeleaf/323232" alt="Thymeleaf">
-                                    Thymeleaf
-                                </span>
-                                <span class="tech-tag">
-                                    <img src="https://cdn.simpleicons.org/leaflet/323232" alt="Leaflet">
-                                    Leaflet
-                                </span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://github.com/AdSchl2E/Optimod-Backend" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
-                                    <i class="uil uil-server"></i>
-                                    Backend
-                                </a>
-                                <a href="https://github.com/AdSchl2E/Optimod-Frontend" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
-                                    <i class="uil uil-browser"></i>
-                                    Frontend
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                
-                <!-- Message si aucun projet trouvé -->
-                <div id="no-projects" class="no-projects" style="display: none;">
-                    <div class="no-projects-content">
-                        <i class="uil uil-search"></i>
-                        <h3 data-i18n="projects.no_results.title">Aucun projet trouvé</h3>
-                        <p data-i18n="projects.no_results.description">
-                            Essayez avec d'autres filtres ou consultez tous les projets.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA de contact -->
-        <section class="projects-cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2 data-i18n="projects.cta.title">Intéressé par mes projets ?</h2>
-                    <p data-i18n="projects.cta.description">
-                        Discutons de votre prochain projet ou d'une collaboration.
-                    </p>
-                    <a href="index.html#contact" class="btn btn-primary" data-i18n="projects.cta.contact">Me contacter</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Adam Schlee. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
-                <div class="footer-links">
-                    <a href="mailto:adam.schlee@insa-lyon.fr" aria-label="Email">
-                        <i class="uil uil-envelope"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/adam-schlee" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <i class="uil uil-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/AdSchl2E" target="_blank" rel="noopener" aria-label="GitHub">
-                        <i class="uil uil-github"></i>
-                    </a>
-                </div>
-            </div>
+        <button class="mobile-theme-button" aria-label="Sélectionner un thème">
+            <i class="uil uil-palette"></i>
+        </button>
+        <div class="mobile-theme-dropdown">
+            <!-- Options générées dynamiquement -->
         </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script type="module" src="js/themes.js"></script>
-    <script type="module" src="js/main.js"></script>
-</body>
+        <!-- Bouton flottant pour langue mobile -->
+        <button class="mobile-language-button" aria-label="Changer de langue">
+            <i class="uil uil-globe"></i>
+        </button>
+        <div class="mobile-language-dropdown">
+            <!-- Options de langue générées dynamiquement -->
+        </div>
+
+        <!-- Contenu principal -->
+        <main id="main-content" class="projects-page">
+            <!-- Header de la page -->
+            <section class="page-header">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <a href="index.html" data-i18n="nav.home">Accueil</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <span data-i18n="nav.projects">Projets</span>
+                    </div>
+                    <h1 class="page-title" data-i18n="projects.page.title">Tous
+                        mes projets</h1>
+                    <p class="page-subtitle" data-i18n="projects.page.subtitle">
+                        Découvrez l'ensemble de mes réalisations et
+                        expérimentations
+                    </p>
+                </div>
+            </section>
+
+            <!-- Filtres -->
+            <section class="projects-filters">
+                <div class="container">
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label class="filter-label"
+                                data-i18n="projects.filter.technology">Technologie
+                                :</label>
+                            <div class="filter-options" id="dynamic-filters">
+                                <!-- Filtres générés dynamiquement -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grille des projets -->
+            <section class="projects-section">
+                <div class="container">
+                    <div class="projects-grid" id="projects-grid">
+
+                        <!-- Projet Rate 'Em All -->
+                        <div class="project-card" data-tags="javascript typescript react nextjs nestjs postgresql">
+                            <div class="project-image">
+                                <video autoplay muted loop loading="lazy"
+                                    poster="assets/projects/rate-em-all.png">
+                                    <source
+                                        src="assets/projects/rate-em-all.mp4"
+                                        type="video/mp4">
+                                    <img src="assets/projects/rate-em-all.png"
+                                        alt="Rate 'Em All" loading="lazy">
+                                </video>
+                            </div>
+                            <div class="project-content">
+                                <h3>Rate 'Em All</h3>
+                                <p data-i18n="projects.rateemall.description">
+                                    Application web full-stack pour explorer,
+                                    noter et collectionner vos Pokémon favoris.
+                                    Découvrez la base de données complète des
+                                    Pokémon et partagez vos évaluations.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/nextdotjs"
+                                            alt="Next.js">
+                                        Next.js
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/typescript"
+                                            alt="TypeScript">
+                                        TypeScript
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/nestjs"
+                                            alt="NestJS">
+                                        NestJS
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/postgresql"
+                                            alt="PostgreSQL">
+                                        PostgreSQL
+                                    </span>
+                                </div>
+                                <div class="project-actions">
+                                    <a
+                                        href="https://github.com/AdSchl2E/Rate-Em-All"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-secondary">
+                                        <i class="uil uil-github"></i>
+                                        GitHub
+                                    </a>
+                                    <a href="https://rate-em-all.vercel.app/"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-primary">
+                                        <i
+                                            class="uil uil-external-link-alt"></i>
+                                        Démo live
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet Green IT -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <video autoplay muted loop loading="lazy"
+                                    poster="assets/projects/greenplay.png">
+                                    <source src="assets/projects/greenplay.mp4"
+                                        type="video/mp4">
+                                    <img src="assets/projects/greenplay.png"
+                                        alt="1 Tonne de Bonnes Pratiques Green IT"
+                                        loading="lazy">
+                                </video>
+                            </div>
+                            <div class="project-content">
+                                <h3>1 Tonne Green IT</h3>
+                                <p data-i18n="projects.greenit.description">
+                                    Version digitalisée du jeu de cartes CGI
+                                    pour sensibiliser aux pratiques
+                                    numériques responsables. Jeu multijoueur en
+                                    ligne avec mécaniques éducatives.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/react"
+                                            alt="React">
+                                        React
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/nestjs"
+                                            alt="NestJS">
+                                        NestJS
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/postgresql"
+                                            alt="PostgreSQL">
+                                        PostgreSQL
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/typescript"
+                                            alt="TypeScript">
+                                        TypeScript
+                                    </span>
+                                </div>
+                                <div class="project-actions">
+                                    <a
+                                        href="https://github.com/hexplosif/4IF-PLD-AGIR"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-secondary">
+                                        <i class="uil uil-github"></i>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet Club Œnologie INSA Lyon -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <video autoplay muted loop loading="lazy"
+                                    poster="assets/projects/oenologieinsalyon.png">
+                                    <source
+                                        src="assets/projects/oenologieinsalyon.mp4"
+                                        type="video/mp4">
+                                    <img
+                                        src="assets/projects/oenologieinsalyon.png"
+                                        alt="Club Œnologie INSA Lyon"
+                                        loading="lazy">
+                                </video>
+                            </div>
+                            <div class="project-content">
+                                <h3>Club Œnologie INSA Lyon</h3>
+                                <p>
+                                    Site officiel du club d'œnologie de l'INSA
+                                    Lyon, que j'ai entièrement développé en
+                                    HTML, TailwindCSS et JavaScript.
+                                    Il utilise l'API Instagram de Meta pour
+                                    récupérer et afficher automatiquement les
+                                    derniers posts du club.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/html5"
+                                            alt="HTML">
+                                        HTML
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/tailwindcss"
+                                            alt="TailwindCSS">
+                                        TailwindCSS
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/javascript"
+                                            alt="JavaScript">
+                                        JavaScript
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/instagram"
+                                            alt="Instagram API">
+                                        Instagram API
+                                    </span>
+                                </div>
+                                <div class="project-actions">
+                                    <a
+                                        href="https://github.com/oenologieinsalyon/oenologieinsalyon"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-secondary">
+                                        <i class="uil uil-github"></i>
+                                        GitHub
+                                    </a>
+                                    <a href="https://oenologieinsalyon.fr"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-primary">
+                                        <i
+                                            class="uil uil-external-link-alt"></i>
+                                        oenologieinsalyon.fr
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet Optimod -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <video autoplay muted loop loading="lazy"
+                                    poster="assets/projects/optimod.png">
+                                    <source src="assets/projects/optimod.mp4"
+                                        type="video/mp4">
+                                    <img src="assets/projects/optimod.png"
+                                        alt="Optimod - Système de gestion de trafic"
+                                        loading="lazy">
+                                </video>
+                            </div>
+                            <div class="project-content">
+                                <h3>Optimod Lyon</h3>
+                                <p data-i18n="projects.optimod.description">
+                                    Système de gestion de trafic de Lyon avec
+                                    cartographie interactive.
+                                    Architecture MVC et API REST pour optimiser
+                                    les flux de circulation.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://img.icons8.com/?size=100&id=2572&format=png"
+                                            alt="Java">
+                                        Java
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/spring"
+                                            alt="Spring Boot">
+                                        Spring Boot
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/thymeleaf"
+                                            alt="Thymeleaf">
+                                        Thymeleaf
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/leaflet"
+                                            alt="Leaflet">
+                                        Leaflet
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/bootstrap"
+                                            alt="Bootstrap">
+                                        Bootstrap
+                                    </span>
+                                </div>
+                                <div class="project-actions">
+                                    <a
+                                        href="https://github.com/AdSchl2E/Optimod-Backend"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-secondary">
+                                        <i class="uil uil-github"></i>
+                                        Backend
+                                    </a>
+                                    <a
+                                        href="https://github.com/AdSchl2E/Optimod-Frontend"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-secondary">
+                                        <i class="uil uil-github"></i>
+                                        Frontend
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet Connect4IF -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <video autoplay muted loop loading="lazy"
+                                    poster="assets/projects/connect4if.png">
+                                    <source
+                                        src="assets/projects/connect4if.mp4"
+                                        type="video/mp4">
+                                    <img
+                                        src="assets/projects/connect4if.png"
+                                        alt="Club Œnologie INSA Lyon"
+                                        loading="lazy">
+                                </video>
+                            </div>
+                            <div class="project-content">
+                                <h3>Connect4IF</h3>
+                                <p>
+                                    Connect4IF est un jeu de Puissance 4
+                                    développé en Prolog dans le cadre du cours
+                                    ALIA à l'INSA Lyon.<br>
+                                    Il permet de jouer contre un autre joueur ou
+                                    contre 4 intelligences artificielles
+                                    différentes : aléatoire, pondérée,
+                                    offensive, défensive, Minimax.<br>
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prolog/prolog-original.svg"
+                                            alt="Prolog">
+                                        Prolog
+                                    </span>
+                                </div>
+                                <div class="project-actions">
+                                    <a
+                                        href="https://github.com/AdSchl2E/Connect4IF"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-secondary">
+                                        <i class="uil uil-github"></i>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet ZarbIF -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <video autoplay muted loop loading="lazy">
+                                    <source
+                                        src="assets/projects/zarbif.mp4"
+                                        type="video/mp4">
+                                    <img
+                                        src="assets/projects/zarbif.png"
+                                        alt="ZarbIF"
+                                        loading="lazy">
+                                </video>
+                            </div>
+                            <div class="project-content">
+                                <h3>ZarbIF</h3>
+                                <p>
+                                    ZarbIF est un site web affichant des
+                                    informations sur les Pokémon à partir de
+                                    requêtes SPARQL liant plusieurs sources de
+                                    données du web sémantique via Wikidata et
+                                    TriplyDB, et effectue aussi des requêtes
+                                    vers la PokéApi pour compléter les
+                                    informations manquantes. </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/html5"
+                                            alt="HTML">
+                                        HTML
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/css"
+                                            alt="CSS">
+                                        CSS
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/javascript"
+                                            alt="JavaScript">
+                                        JavaScript
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/jquery"
+                                            alt="jQuery">
+                                        jQuery
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/bootstrap"
+                                            alt="Bootstrap">
+                                        Bootstrap
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://www.svgrepo.com/show/374091/sparql.svg"
+                                            alt="SPARQL"
+                                            style="width:1.2em;height:1.2em;">
+                                        SPARQL
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://www.wikidata.org/static/images/project-logos/wikidatawiki.png"
+                                            alt="Wikidata"
+                                            style="width:1.2em;height:1.2em;">
+                                        Wikidata
+                                    </span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/AdSchl2E/ZarbIF"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-secondary">
+                                        <i class="uil uil-github"></i>
+                                        GitHub
+                                    </a>
+                                    <a
+                                        href="https://hexplosif.github.io/ZarbIF/"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-primary">
+                                        <i
+                                            class="uil uil-external-link-alt"></i>
+                                        Démo live
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- IFCC -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <video autoplay muted loop loading="lazy">
+                                    <source src="assets/projects/ifcc.mp4"
+                                        type="video/mp4">
+                                    <img src="assets/projects/ifcc.png"
+                                        alt="IFCC - Compilateur C vers Assembleur"
+                                        loading="lazy">
+                                </video>
+                            </div>
+                            <div class="project-content">
+                                <h3>IFCC</h3>
+                                <p>
+                                    IFCC est un compilateur C vers assembleur
+                                    multi-cible (x86-64, ARM64) développé en
+                                    C++. <br>Il prend en charge un sous-ensemble
+                                    important du langage C (types de base,
+                                    structures de contrôle, fonctions, tableaux,
+                                    structures) et réalise une analyse statique
+                                    pour garantir la robustesse du code.
+                                    <br>Basé sur une Représentation
+                                    Intermédiaire (IR), il optimise et génère du
+                                    code assembleur pour plusieurs
+                                    architectures.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/cplusplus"
+                                            alt="C++">
+                                        C++
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img src="https://cdn.simpleicons.org/c"
+                                            alt="C">
+                                        C
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/python"
+                                            alt="Python">
+                                        Python
+                                    </span>
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/linux"
+                                            alt="Linux">
+                                        Linux
+                                    </span>
+                                </div>
+                                <div class="project-actions">
+                                    <a
+                                        href="https://github.com/hexplosif/4IF-PLD-COMP"
+                                        target="_blank" rel="noopener"
+                                        class="project-btn project-btn-secondary">
+                                        <i class="uil uil-github"></i>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projet Voyageur de Commerce - Algorithme Génétique -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <video autoplay muted loop playsinline>
+                                    <source
+                                        src="assets/projects/tsp-genetic.mp4"
+                                        type="video/mp4">
+                                    <img src="assets/projects/tsp-genetic.png"
+                                        alt="Voyageur de Commerce - Algorithme Génétique"
+                                        loading="lazy">
+                                </video>
+                            </div>
+                            <div class="project-content">
+                                <h3>Voyageur de Commerce - Algorithme
+                                    Génétique</h3>
+                                <p>
+                                    Projet de classe de Terminale NSI : 
+                                    résolution du problème du
+                                    voyageur de commerce à l'aide d'un
+                                    algorithme génétique en Python.<br>
+                                    Interface graphique avec Tkinter,
+                                    visualisation des générations et paramètres
+                                    interactifs.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">
+                                        <img
+                                            src="https://cdn.simpleicons.org/python"
+                                            alt="Python">
+                                        Python
+                                    </span>
+                                </div>
+                                <div class="project-actions">
+                                    <!-- Ajoutez un lien GitHub si le projet est public -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Message si aucun projet trouvé -->
+                    <div id="no-projects" class="no-projects"
+                        style="display: none;">
+                        <div class="no-projects-content">
+                            <i class="uil uil-search"></i>
+                            <h3 data-i18n="projects.no_results.title">Aucun
+                                projet trouvé</h3>
+                            <p data-i18n="projects.no_results.description">
+                                Essayez avec d'autres filtres ou consultez tous
+                                les projets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA de contact -->
+            <section class="projects-cta">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2 data-i18n="projects.cta.title">Intéressé par mes
+                            projets ?</h2>
+                        <p data-i18n="projects.cta.description">
+                            Discutons de votre prochain projet ou d'une
+                            collaboration.
+                        </p>
+                        <a href="index.html#contact" class="btn btn-primary"
+                            data-i18n="projects.cta.contact">Me contacter</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2025 Adam Schlee. <span
+                            data-i18n="footer.rights">Tous droits
+                            réservés.</span></p>
+                    <div class="footer-links">
+                        <a href="mailto:adam.schlee@insa-lyon.fr"
+                            aria-label="Email">
+                            <i class="uil uil-envelope"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/adam-schlee"
+                            target="_blank" rel="noopener"
+                            aria-label="LinkedIn">
+                            <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/AdSchl2E" target="_blank"
+                            rel="noopener" aria-label="GitHub">
+                            <i class="uil uil-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script type="module" src="js/themes.js"></script>
+        <script type="module" src="js/main.js"></script>
+    </body>
 </html>
