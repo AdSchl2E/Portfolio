@@ -67,7 +67,7 @@
         },
         "highschool": {
             "title": "一般バカロレア",
-            "description": "最優秀賞、数学とNSI（デジタル・情報科学）専攻。"
+            "description": "最優秀賞、数学とNSI(デジタル・情報科学)専攻。"
         }
     },
     "experience": {
@@ -77,8 +77,8 @@
             "title": "ソフトウェア開発エンジニアインターンシップ",
             "date": "2025年5月 - 2025年9月",
             "description": {
-                "bullet1": "<span class=\"highlight\">トンネル機器シミュレータ</span>を<span class=\"highlight\">Java/Swing</span>で開発し、SITG（グラン・リヨン・トンネル情報システム）のテストプラットフォームで使用。",
-                "bullet2": "<span class=\"highlight\">SITG通信ゲートウェイ</span>とバージョン管理（<span class=\"highlight\">Git</span>）の習得。",
+                "bullet1": "<span class=\"highlight\">トンネル機器シミュレータ</span>を<span class=\"highlight\">Java/Swing</span>で開発し、SITG(グラン・リヨン・トンネル情報システム)のテストプラットフォームで使用。",
+                "bullet2": "<span class=\"highlight\">SITG通信ゲートウェイ</span>とバージョン管理(<span class=\"highlight\">Git</span>)の習得。",
                 "bullet3": "<span class=\"highlight\">技術仕様書</span>の作成と<span class=\"highlight\">単体テスト</span>の実施。",
                 "bullet4": "<span class=\"highlight\">技術文書</span>やユーザーマニュアルの更新。",
                 "bullet5": "成果物の品質を確保するためにプロジェクトチームと連携。"
@@ -89,7 +89,7 @@
             "date": "2024年6月 - 2024年9月",
             "description": {
                 "bullet1": "再構築皮膚モデルでの<span class=\"highlight\">in vitroテストデータ</span>の処理とクリーニング。",
-                "bullet2": "<span class=\"highlight\">Excel, Power BI</span>（<span class=\"highlight\">VBA, DAX, M, Python</span>）による統計解析と可視化。",
+                "bullet2": "<span class=\"highlight\">Excel, Power BI</span>(<span class=\"highlight\">VBA, DAX, M, Python</span>)による統計解析と可視化。",
                 "bullet3": "実験データ分析のための<span class=\"highlight\">自動化ツール</span>の開発。",
                 "bullet4": "データの品質と信頼性を確保するために<span class=\"highlight\">R&D</span>チームと密接に連携。",
                 "bullet5": "技術レポートの作成と科学チームへの結果報告。"
@@ -129,13 +129,32 @@
             "contact": "お問い合わせ"
         },
         "rateemall": {
-            "description": "お気に入りのポケモンを探索、評価、収集するフルスタックウェブアプリケーション。完全なポケモンデータベースを発見し、評価を共有してください。"
+            "description": "お気に入りのポケモンを探索、評価、収集する<span class=\"highlight\">フルスタックウェブアプリケーション</span>。<span class=\"highlight\">完全なポケモンデータベース</span>を発見し、評価を共有してください。"
         },
         "greenit": {
-            "description": "責任あるデジタル実践の意識向上のためのCGIカードゲームのデジタル版。教育的メカニズムを持つオンラインマルチプレイヤーゲーム。"
+            "description": "<span class=\"highlight\">責任あるデジタル実践</span>の意識向上のための<span class=\"highlight\">CGIカードゲーム</span>のデジタル版。教育的メカニズムを持つ<span class=\"highlight\">オンラインマルチプレイヤーゲーム</span>。"
+        },
+        "oenologie": {
+            "description": "INSAリヨンワインクラブの公式ウェブサイト。<span class=\"highlight\">HTML、TailwindCSS、JavaScript</span>で<span class=\"highlight\">完全に開発</span>しました。<span class=\"highlight\">Meta Instagram API</span>を使用して、クラブの最新投稿を自動的に取得・表示します。"
         },
         "optimod": {
-            "description": "インタラクティブマッピングを備えたリヨンの交通管理システム。交通の流れを最適化するMVCアーキテクチャとREST API。"
+            "description": "リヨンの<span class=\"highlight\">宅配管理システム</span>、<span class=\"highlight\">インタラクティブマッピング</span>付き。<span class=\"highlight\">MVCアーキテクチャ</span>と<span class=\"highlight\">REST API</span>で配送フローを最適化。"
+        },
+        "connect4if": {
+            "description": "Connect4IFは、INSAリヨンのALIAコースの一環として<span class=\"highlight\">Prolog</span>で開発された<span class=\"highlight\">コネクト4ゲーム</span>です。<br>他のプレイヤーまたは<span class=\"highlight\">4つの異なる人工知能</span>(ランダム、重み付き、攻撃的、防御的、Minimax)と対戦できます。"
+        },
+        "zarbif": {
+            "description": "ZarbIFは、<span class=\"highlight\">WikidataとTriplyDB</span>を介した<span class=\"highlight\">SPARQLクエリ</span>からポケモン情報を表示し、<span class=\"highlight\">セマンティックWeb</span>から不足している情報を補完するために<span class=\"highlight\">PokéApi</span>へのクエリも実行するウェブサイトです。"
+        },
+        "ifcc": {
+            "description": "IFCCは<span class=\"highlight\">C++</span>で開発された<span class=\"highlight\">Cからアセンブリへのコンパイラ</span>マルチターゲット(<span class=\"highlight\">x86-64、ARM64</span>)です。<br>C言語の重要なサブセットをサポートし、<span class=\"highlight\">基本型、制御構造、関数、配列、構造体</span>を処理し、コードの堅牢性を確保するために<span class=\"highlight\">静的解析</span>を実行します。<br>コンパイラは最適化とリターゲティングのために<span class=\"highlight\">中間表現(IR)</span>に依存しています。"
+        },
+        "tsp_genetic": {
+            "description": "<span class=\"highlight\">高校情報科学</span>のクラスプロジェクト: Pythonで<span class=\"highlight\">遺伝的アルゴリズム</span>を使用した<span class=\"highlight\">巡回セールスマン問題</span>の解決。<br><span class=\"highlight\">Tkinter</span>を使用したグラフィカルインターフェース、世代の可視化、インタラクティブパラメータ。"
+        },
+        "actions": {
+            "github": "GitHub",
+            "demo": "ライブデモ"
         }
     },
     "contact": {

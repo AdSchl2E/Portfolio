@@ -129,13 +129,28 @@
             "contact": "Me contacter"
         },
         "rateemall": {
-            "description": "Application web full-stack pour explorer, noter et collectionner vos Pokémon favoris. Découvrez la base de données complète des Pokémon et partagez vos évaluations."
+            "description": "Application web <span class=\"highlight\">full-stack</span> pour explorer, noter et collectionner vos Pokémon favoris. Découvrez la <span class=\"highlight\">base de données complète</span> des Pokémon et partagez vos évaluations."
         },
         "greenit": {
-            "description": "Version digitalisée du jeu de cartes CGI pour sensibiliser aux pratiques numériques responsables. Jeu multijoueur en ligne avec mécaniques éducatives."
+            "description": "Version digitalisée du <span class=\"highlight\">jeu de cartes CGI</span> pour sensibiliser aux <span class=\"highlight\">pratiques numériques responsables</span>. Jeu <span class=\"highlight\">multijoueur en ligne</span> avec mécaniques éducatives."
+        },
+        "oenologie": {
+            "description": "Site officiel du club d'œnologie de l'INSA Lyon, que j'ai <span class=\"highlight\">entièrement développé</span> en <span class=\"highlight\">HTML, TailwindCSS et JavaScript</span>. Il utilise l'<span class=\"highlight\">API Instagram de Meta</span> pour récupérer et afficher automatiquement les derniers posts du club."
         },
         "optimod": {
-            "description": "Système de gestion de trafic pour Lyon avec cartographie interactive. Architecture MVC et API REST pour optimiser les flux de circulation."
+            "description": "Système de <span class=\"highlight\">gestion de livraison de colis</span> à Lyon avec <span class=\"highlight\">cartographie interactive</span>. Architecture <span class=\"highlight\">MVC</span> et <span class=\"highlight\">API REST</span> pour optimiser les flux de livraison."
+        },
+        "connect4if": {
+            "description": "Connect4IF est un <span class=\"highlight\">jeu de Puissance 4</span> développé en <span class=\"highlight\">Prolog</span> dans le cadre du cours ALIA à l'INSA Lyon.<br>Il permet de jouer contre un autre joueur ou contre <span class=\"highlight\">4 intelligences artificielles</span> différentes : aléatoire, pondérée, offensive, défensive, Minimax."
+        },
+        "zarbif": {
+            "description": "ZarbIF est un site web affichant des informations sur les Pokémon à partir de <span class=\"highlight\">requêtes SPARQL</span> via <span class=\"highlight\">Wikidata et TriplyDB</span>, et effectue aussi des requêtes vers la <span class=\"highlight\">PokéApi</span> pour compléter les informations manquantes sur le <span class=\"highlight\">web sémantique</span>."
+        },
+        "ifcc": {
+            "description": "IFCC est un <span class=\"highlight\">compilateur C vers assembleur</span> multi-cible (<span class=\"highlight\">x86-64, ARM64</span>) développé en <span class=\"highlight\">C++</span>.<br>Il prend en charge un sous-ensemble significatif du langage C, gère les <span class=\"highlight\">types de base, structures de contrôle, fonctions, tableaux, structures</span> et effectue de l'<span class=\"highlight\">analyse statique</span> pour garantir la robustesse du code généré.<br>Le compilateur s'appuie sur une <span class=\"highlight\">Représentation Intermédiaire (IR)</span> pour l'optimisation et le reciblage."
+        },
+        "tsp_genetic": {
+            "description": "Projet de classe de <span class=\"highlight\">Terminale NSI</span> : résolution du <span class=\"highlight\">problème du voyageur de commerce</span> à l'aide d'un <span class=\"highlight\">algorithme génétique</span> en Python.<br>Interface graphique avec <span class=\"highlight\">Tkinter</span>, visualisation des générations et paramètres interactifs."
         },
         "actions": {
             "github": "GitHub",

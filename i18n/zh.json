@@ -38,7 +38,7 @@
     "hero": {
         "greeting": "你好, 我是",
         "subtitle": "INSA Lyon计算机科学学生",
-        "description": "未来的计算机工程师，专注于网页和软件开发，结合技术专长与全局视野，设计符合用户需求的高性能数字化解决方案。",
+        "description": "未来的计算机工程师, 专注于网页和软件开发, 结合技术专长与全局视野, 设计符合用户需求的高性能数字化解决方案。",
         "cta": {
             "projects": "查看我的项目",
             "contact": "联系我",
@@ -49,8 +49,8 @@
     "about": {
         "title": "关于我",
         "subtitle": "了解我的个性与兴趣",
-        "description1": "作为 INSA 里昂的计算机专业学生，我设计兼具性能、设计感与附加价值的数字化解决方案，并不断探索新兴技术带来的机遇。",
-        "description2": "我充满好奇且具有国际视野，对美食、葡萄酒学以及日本文化充满热情，这些爱好丰富了我的创造力与细节把控能力。"
+        "description1": "作为 INSA 里昂的计算机专业学生, 我设计兼具性能、设计感与附加价值的数字化解决方案, 并不断探索新兴技术带来的机遇。",
+        "description2": "我充满好奇且具有国际视野, 对美食、葡萄酒学以及日本文化充满热情, 这些爱好丰富了我的创造力与细节把控能力。"
     },
     "education": {
         "title": "教育",
@@ -67,7 +67,7 @@
         },
         "highschool": {
             "title": "普通高中毕业证书",
-            "description": "以优异成绩毕业, 主修数学和NSI（数字与信息科学）。"
+            "description": "以优异成绩毕业, 主修数学和NSI (数字与信息科学) 。"
         }
     },
     "experience": {
@@ -77,8 +77,8 @@
             "title": "软件开发工程师实习",
             "date": "2025年5月 - 2025年9月",
             "description": {
-                "bullet1": "为SITG（大里昂隧道信息系统）测试平台开发<span class=\"highlight\">隧道设备模拟器</span>, 使用<span class=\"highlight\">Java/Swing</span>。",
-                "bullet2": "熟悉<span class=\"highlight\">SITG通信网关</span>和版本管理（<span class=\"highlight\">Git</span>）。",
+                "bullet1": "为SITG (大里昂隧道信息系统) 测试平台开发<span class=\"highlight\">隧道设备模拟器</span>, 使用<span class=\"highlight\">Java/Swing</span>。",
+                "bullet2": "熟悉<span class=\"highlight\">SITG通信网关</span>和版本管理 (<span class=\"highlight\">Git</span>) 。",
                 "bullet3": "编写<span class=\"highlight\">技术规范</span>并进行<span class=\"highlight\">单元测试</span>。",
                 "bullet4": "更新<span class=\"highlight\">技术文档</span>和用户手册。",
                 "bullet5": "与项目团队合作, 确保交付物质量。"
@@ -89,7 +89,7 @@
             "date": "2024年6月 - 2024年9月",
             "description": {
                 "bullet1": "处理和清理重建皮肤模型的<span class=\"highlight\">体外测试数据</span>。",
-                "bullet2": "使用<span class=\"highlight\">Excel, Power BI</span>（<span class=\"highlight\">VBA, DAX, M, Python</span>）进行统计分析和可视化。",
+                "bullet2": "使用<span class=\"highlight\">Excel, Power BI</span> (<span class=\"highlight\">VBA, DAX, M, Python</span>) 进行统计分析和可视化。",
                 "bullet3": "开发<span class=\"highlight\">自动化工具</span>用于实验数据分析。",
                 "bullet4": "与<span class=\"highlight\">研发</span>团队紧密合作, 确保数据质量和可靠性。",
                 "bullet5": "撰写技术报告并向科学团队展示结果。"
@@ -129,13 +129,32 @@
             "contact": "联系我"
         },
         "rateemall": {
-            "description": "全栈网络应用程序, 用于探索、评级和收集您最喜欢的宝可梦。发现完整的宝可梦数据库并分享您的评级。"
+            "description": "<span class=\"highlight\">全栈网络应用程序</span>, 用于探索、评级和收集您最喜欢的宝可梦。发现<span class=\"highlight\">完整的宝可梦数据库</span>并分享您的评级。"
         },
         "greenit": {
-            "description": "CGI卡牌游戏的数字版本, 旨在提高对负责任数字实践的认识。具有教育机制的在线多人游戏。"
+            "description": "<span class=\"highlight\">CGI卡牌游戏</span>的数字版本, 旨在提高对<span class=\"highlight\">负责任数字实践</span>的认识。具有教育机制的<span class=\"highlight\">在线多人游戏</span>。"
+        },
+        "oenologie": {
+            "description": "INSA里昂葡萄酒俱乐部的官方网站, 我用<span class=\"highlight\">HTML、TailwindCSS和JavaScript</span><span class=\"highlight\">完全开发</span>。它使用<span class=\"highlight\">Meta Instagram API</span>自动检索并显示俱乐部的最新帖子。"
         },
         "optimod": {
-            "description": "里昂交通管理系统, 具有交互式地图。MVC架构和REST API以优化交通流量。"
+            "description": "里昂的<span class=\"highlight\">包裹配送管理系统</span>, 具有<span class=\"highlight\">交互式地图</span>。<span class=\"highlight\">MVC架构</span>和<span class=\"highlight\">REST API</span>优化配送流程。"
+        },
+        "connect4if": {
+            "description": "Connect4IF是在INSA里昂ALIA课程中用<span class=\"highlight\">Prolog</span>开发的<span class=\"highlight\">四子棋游戏</span>。<br>它允许您与另一个玩家或与<span class=\"highlight\">4种不同的人工智能</span>对战: 随机、加权、攻击性、防御性、Minimax。"
+        },
+        "zarbif": {
+            "description": "ZarbIF是一个显示宝可梦信息的网站, 通过<span class=\"highlight\">Wikidata和TriplyDB</span>的<span class=\"highlight\">SPARQL查询</span>, 还对<span class=\"highlight\">PokéApi</span>执行查询以补充<span class=\"highlight\">语义网</span>中缺失的信息。"
+        },
+        "ifcc": {
+            "description": "IFCC是用<span class=\"highlight\">C++</span>开发的<span class=\"highlight\">C到汇编编译器</span>多目标 (<span class=\"highlight\">x86-64、ARM64</span>) 。<br>它支持C语言的重要子集, 处理<span class=\"highlight\">基本类型、控制结构、函数、数组、结构</span>并执行<span class=\"highlight\">静态分析</span>以确保代码健壮性。<br>编译器依赖<span class=\"highlight\">中间表示 (IR) </span>进行优化和重新定位。"
+        },
+        "tsp_genetic": {
+            "description": "<span class=\"highlight\">高中计算机科学</span>课程项目: 使用Python中的<span class=\"highlight\">遗传算法</span>解决<span class=\"highlight\">旅行商问题</span>。<br>使用<span class=\"highlight\">Tkinter</span>的图形界面, 代际可视化和交互参数。"
+        },
+        "actions": {
+            "github": "GitHub",
+            "demo": "实时演示"
         }
     },
     "contact": {

@@ -154,13 +154,13 @@ const themes = {
 // Gestionnaire de thèmes
 class ThemeManager {
     constructor() {
-        this.currentTheme = 'momiji'; // Thème par défaut: Momiji
+        this.currentTheme = 'dark'; // Thème par défaut: dark
         this.init();
     }
 
     init() {
-        // Charger le thème sauvegardé ou utiliser momiji par défaut
-        const savedTheme = localStorage.getItem('portfolio-theme') || 'momiji';
+        // Charger le thème sauvegardé ou utiliser dark par défaut
+        const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
         this.createThemeOptions();
         this.applyTheme(savedTheme);
         this.updateThemeUI();
