@@ -50,7 +50,15 @@
         "title": "Sobre mí",
         "subtitle": "Descubre mi personalidad y mis intereses",
         "description1": "Estudiante de informática en el INSA Lyon, diseño soluciones digitales que combinan rendimiento, diseño y valor añadido, explorando las oportunidades que ofrecen las tecnologías emergentes.",
-        "description2": "Curioso y abierto al mundo, me apasiona la gastronomía, la enología y la cultura japonesa, intereses que alimentan mi creatividad y mi atención al detalle."
+        "description2": "Curioso y abierto al mundo, me apasiona la gastronomía, la enología y la cultura japonesa, intereses que alimentan mi creatividad y mi atención al detalle.",
+        "gallery": {
+            "canard_alt": "Delicioso magret de pato",
+            "xwine_alt": "Foto de los participantes del concurso de cata X-Wine en Château Figeac organizado por la École Polytechnique",
+            "japan_alt": "Vista del Monte Fuji desde la Pagoda Chureito",
+            "vin_alt": "Cata de vinos del Loira en INSA",
+            "japan2_alt": "Calle Ichiban gai en Kabukicho, Shinjuku",
+            "dessert_alt": "Un magnífico fondant de matcha y chocolate blanco"
+        }
     },
     "education": {
         "title": "Educación",

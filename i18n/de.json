@@ -50,7 +50,15 @@
         "title": "Über mich",
         "subtitle": "Entdecken Sie meine Persönlichkeit und Interessen",
         "description1": "Als Informatikstudent an der INSA Lyon entwickle ich digitale Lösungen, die Leistung, Design und Mehrwert vereinen, und erkunde dabei die Chancen neuer Technologien.",
-        "description2": "Neugierig und weltoffen interessiere ich mich für Gastronomie, Önologie und die japanische Kultur – Leidenschaften, die meine Kreativität und meinen Sinn für Details bereichern."
+        "description2": "Neugierig und weltoffen interessiere ich mich für Gastronomie, Önologie und die japanische Kultur - Leidenschaften, die meine Kreativität und meinen Sinn für Details bereichern.",
+        "gallery": {
+            "canard_alt": "Köstliche Entenbrust",
+            "xwine_alt": "Foto der Teilnehmer des X-Wine Verkostungswettbewerbs im Château Figeac, organisiert von der École Polytechnique",
+            "japan_alt": "Blick auf den Berg Fuji von der Chureito-Pagode",
+            "vin_alt": "Loire-Weinverkostung an der INSA",
+            "japan2_alt": "Ichiban gai Straße in Kabukicho, Shinjuku",
+            "dessert_alt": "Ein herrlicher Matcha- und weiße Schokolade-Fondant"
+        }
     },
     "education": {
         "title": "Bildung",
@@ -138,7 +146,7 @@
             "description": "Offizielle Website des Weinclubs der INSA Lyon, die ich <span class=\"highlight\">vollständig entwickelt</span> habe in <span class=\"highlight\">HTML, TailwindCSS und JavaScript</span>. Sie nutzt die <span class=\"highlight\">Meta Instagram API</span>, um automatisch die neuesten Posts des Clubs abzurufen und anzuzeigen."
         },
         "optimod": {
-            "description": "<span class=\"highlight\">Paketliefermanagementsystem</span> in Lyon mit <span class=\"highlight\">interaktiver Kartierung</span>. <span class=\"highlight\">MVC-Architektur</span> und <span class=\"highlight\">REST-API</span> zur Optimierung der Lieferflüsse."
+            "description": "<span class=\"highlight\">Paketliefermanagementssystem</span> in Lyon mit <span class=\"highlight\">interaktiver Kartierung</span>. <span class=\"highlight\">MVC-Architektur</span> und <span class=\"highlight\">REST-API</span> zur Optimierung der Lieferflüsse."
         },
         "connect4if": {
             "description": "Connect4IF ist ein <span class=\"highlight\">Vier-Gewinnt-Spiel</span>, entwickelt in <span class=\"highlight\">Prolog</span> im Rahmen des ALIA-Kurses an der INSA Lyon.<br>Es ermöglicht das Spielen gegen einen anderen Spieler oder gegen <span class=\"highlight\">4 verschiedene künstliche Intelligenzen</span>: zufällig, gewichtet, offensiv, defensiv, Minimax."

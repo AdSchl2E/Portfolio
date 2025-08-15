@@ -229,32 +229,38 @@
                                 <div class="carousel-track">
                                     <div class="carousel-slide">
                                         <img src="assets/images/canard.jpg"
-                                            alt="Photo personnelle 1"
+                                            alt="Délicieux magret de canard"
+                                            data-i18n-alt="about.gallery.canard_alt"
                                             loading="lazy">
                                     </div>
                                     <div class="carousel-slide">
                                         <img src="assets/images/xwine.jpg"
-                                            alt="Photo personnelle 2"
+                                            alt="Photo des participants du concours X-Wine"
+                                            data-i18n-alt="about.gallery.xwine_alt"
+                                            loading="lazy">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="assets/images/japan.png"
+                                            alt="Vue du mont fuji depuis la pagode Chureito"
+                                            data-i18n-alt="about.gallery.japan_alt"
                                             loading="lazy">
                                     </div>
                                     <div class="carousel-slide">
                                         <img src="assets/images/vin.jpg"
-                                            alt="Photo personnelle 3"
+                                            alt="Dégustation de vin de Loire à l'INSA"
+                                            data-i18n-alt="about.gallery.vin_alt"
                                             loading="lazy">
                                     </div>
                                     <div class="carousel-slide">
-                                        <img src="assets/images/vin.jpg"
-                                            alt="Photo personnelle 4"
+                                        <img src="assets/images/japan2.jpg"
+                                            alt="Ichiban gai street dans le Kabukicho à Shinjuku"
+                                            data-i18n-alt="about.gallery.japan2_alt"
                                             loading="lazy">
                                     </div>
                                     <div class="carousel-slide">
-                                        <img src="assets/images/canard.jpg"
-                                            alt="Photo personnelle 5"
-                                            loading="lazy">
-                                    </div>
-                                    <div class="carousel-slide">
-                                        <img src="assets/images/vin.jpg"
-                                            alt="Photo personnelle 6"
+                                        <img src="assets/images/dessert-blanc-matcha.jpg"
+                                            alt="Un superbe fondant au matcha et chocolat blanc"
+                                            data-i18n-alt="about.gallery.dessert_alt"
                                             loading="lazy">
                                     </div>
                                 </div>
@@ -1045,6 +1051,23 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Lightbox pour les images -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" aria-label="Fermer">
+                    <i class="uil uil-times"></i>
+                </button>
+                <button class="lightbox-prev" aria-label="Image précédente">
+                    <i class="uil uil-angle-left"></i>
+                </button>
+                <button class="lightbox-next" aria-label="Image suivante">
+                    <i class="uil uil-angle-right"></i>
+                </button>
+                <img id="lightbox-image" class="lightbox-image" src="" alt="">
+                <div id="lightbox-caption" class="lightbox-caption"></div>
+            </div>
+        </div>
 
         <div id="toast" class="toast">
             <i class="uil uil-check-circle"></i>

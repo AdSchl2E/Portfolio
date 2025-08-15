@@ -50,7 +50,15 @@
         "title": "About Me",
         "subtitle": "Discover my personality and interests",
         "description1": "A computer science student at INSA Lyon, I design digital solutions that combine performance, design, and added value, while exploring the opportunities offered by emerging technologies.",
-        "description2": "Curious and open-minded, I have a strong interest in gastronomy, oenology, and Japanese culture—passions that inspire my creativity and attention to detail."
+        "description2": "Curious and open-minded, I have a strong interest in gastronomy, oenology, and Japanese culture—passions that inspire my creativity and attention to detail.",
+        "gallery": {
+            "canard_alt": "Delicious duck breast",
+            "xwine_alt": "Photo of participants in the X-Wine tasting competition at Château Figeac organized by École Polytechnique",
+            "japan_alt": "View of Mount Fuji from Chureito Pagoda",
+            "vin_alt": "Loire wine tasting at INSA",
+            "japan2_alt": "Ichiban gai street in Kabukicho, Shinjuku",
+            "dessert_alt": "A superb matcha and white chocolate fondant"
+        }
     },
     "education": {
         "title": "Education",

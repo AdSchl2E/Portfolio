@@ -188,10 +188,12 @@ class PortfolioManager {
 
   async translatePage() {
     const elements = document.querySelectorAll('[data-i18n]');
+    const altElements = document.querySelectorAll('[data-i18n-alt]');
 
     try {
       const currentTranslations = await loadTranslations(this.currentLanguage);
 
+      // Traduire les éléments textuels
       elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
         const translation = this.getNestedTranslation(currentTranslations, key);
@@ -202,6 +204,16 @@ class PortfolioManager {
           } else {
             element.innerHTML = translation;
           }
+        }
+      });
+
+      // Traduire les attributs alt des images
+      altElements.forEach(element => {
+        const key = element.getAttribute('data-i18n-alt');
+        const translation = this.getNestedTranslation(currentTranslations, key);
+
+        if (translation) {
+          element.alt = translation;
         }
       });
 
@@ -639,10 +651,20 @@ class CarouselManager {
     this.autoSlideInterval = null;
     this.slidesPerView = window.innerWidth > 768 ? 3 : 1;
     this.totalGroups = Math.ceil(this.slides.length / this.slidesPerView);
+    this.autoSlideStarted = false;
+
+    // Variables pour le support tactile
+    this.startX = 0;
+    this.currentX = 0;
+    this.isDragging = false;
+    this.startTransform = 0;
+    this.threshold = 50; // Distance minimale pour déclencher un swipe
 
     if (this.slides.length > 0 && this.track && this.dotsContainer) {
       this.init();
       this.setupResponsive();
+      this.initializeLightbox();
+      this.initializeTouchEvents();
     }
   }
 
@@ -687,10 +709,146 @@ class CarouselManager {
     });
   }
 
+  // Nouvelle méthode pour initialiser les événements tactiles
+  initializeTouchEvents() {
+    // Événements tactiles
+    this.track.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
+    this.track.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
+    this.track.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
+
+    // Événements souris pour le desktop (optionnel)
+    this.track.addEventListener('mousedown', (e) => this.handleMouseStart(e));
+    this.track.addEventListener('mousemove', (e) => this.handleMouseMove(e));
+    this.track.addEventListener('mouseup', (e) => this.handleMouseEnd(e));
+    this.track.addEventListener('mouseleave', (e) => this.handleMouseEnd(e));
+
+    // Empêcher la sélection de texte pendant le drag
+    this.track.addEventListener('selectstart', (e) => e.preventDefault());
+  }
+
+  // Gestion du début du touch/drag
+  handleTouchStart(e) {
+    this.startX = e.touches[0].clientX;
+    this.currentX = this.startX;
+    this.isDragging = true;
+    this.startTransform = this.getCurrentTransform();
+    this.stopAutoSlide();
+    
+    // Supprimer temporairement la transition pour un mouvement fluide
+    this.track.style.transition = 'none';
+  }
+
+  handleMouseStart(e) {
+    this.startX = e.clientX;
+    this.currentX = this.startX;
+    this.isDragging = true;
+    this.startTransform = this.getCurrentTransform();
+    this.stopAutoSlide();
+    this.track.style.transition = 'none';
+    e.preventDefault(); // Empêcher la sélection de texte
+  }
+
+  // Gestion du mouvement
+  handleTouchMove(e) {
+    if (!this.isDragging) return;
+    
+    this.currentX = e.touches[0].clientX;
+    const diffX = this.currentX - this.startX;
+    const newTransform = this.startTransform + (diffX / this.track.offsetWidth) * 100;
+    
+    // Limiter le mouvement aux bornes du carrousel
+    const minTransform = -(this.totalGroups - 1) * (100 / this.slidesPerView) * this.slidesPerView;
+    const maxTransform = 0;
+    
+    const clampedTransform = Math.max(minTransform, Math.min(maxTransform, newTransform));
+    this.track.style.transform = `translateX(${clampedTransform}%)`;
+    
+    // Empêcher le scroll de la page sur mobile
+    if (Math.abs(diffX) > 10) {
+      e.preventDefault();
+    }
+  }
+
+  handleMouseMove(e) {
+    if (!this.isDragging) return;
+    
+    this.currentX = e.clientX;
+    const diffX = this.currentX - this.startX;
+    const newTransform = this.startTransform + (diffX / this.track.offsetWidth) * 100;
+    
+    const minTransform = -(this.totalGroups - 1) * (100 / this.slidesPerView) * this.slidesPerView;
+    const maxTransform = 0;
+    
+    const clampedTransform = Math.max(minTransform, Math.min(maxTransform, newTransform));
+    this.track.style.transform = `translateX(${clampedTransform}%)`;
+  }
+
+  // Gestion de la fin du touch/drag
+  handleTouchEnd(e) {
+    if (!this.isDragging) return;
+    
+    this.isDragging = false;
+    this.track.style.transition = 'transform 0.5s ease';
+    
+    const diffX = this.currentX - this.startX;
+    
+    // Déterminer la direction du swipe
+    if (Math.abs(diffX) > this.threshold) {
+      if (diffX > 0 && this.currentGroup > 0) {
+        // Swipe vers la droite - aller au groupe précédent
+        this.goToGroup(this.currentGroup - 1);
+      } else if (diffX < 0 && this.currentGroup < this.totalGroups - 1) {
+        // Swipe vers la gauche - aller au groupe suivant
+        this.goToGroup(this.currentGroup + 1);
+      } else {
+        // Retourner à la position actuelle si on ne peut pas aller plus loin
+        this.goToGroup(this.currentGroup);
+      }
+    } else {
+      // Pas assez de mouvement, retourner à la position actuelle
+      this.goToGroup(this.currentGroup);
+    }
+    
+    this.resetAutoSlide();
+  }
+
+  handleMouseEnd(e) {
+    if (!this.isDragging) return;
+    
+    this.isDragging = false;
+    this.track.style.transition = 'transform 0.5s ease';
+    
+    const diffX = this.currentX - this.startX;
+    
+    if (Math.abs(diffX) > this.threshold) {
+      if (diffX > 0 && this.currentGroup > 0) {
+        this.goToGroup(this.currentGroup - 1);
+      } else if (diffX < 0 && this.currentGroup < this.totalGroups - 1) {
+        this.goToGroup(this.currentGroup + 1);
+      } else {
+        this.goToGroup(this.currentGroup);
+      }
+    } else {
+      this.goToGroup(this.currentGroup);
+    }
+    
+    this.resetAutoSlide();
+  }
+
+  // Méthode utilitaire pour obtenir la valeur de transform actuelle
+  getCurrentTransform() {
+    const transform = window.getComputedStyle(this.track).transform;
+    if (transform === 'none') return 0;
+    
+    const matrix = new DOMMatrix(transform);
+    const translateX = matrix.m41; // valeur en pixels
+    return (translateX / this.track.offsetWidth) * 100; // convertir en pourcentage
+  }
+
   goToGroup(groupIndex) {
     this.currentGroup = groupIndex;
     const slideWidth = 100 / this.slidesPerView;
-    const translateX = -groupIndex * slideWidth * this.slidesPerView - (groupIndex / this.slidesPerView * 5);
+    const translateX = -groupIndex * slideWidth * this.slidesPerView - (groupIndex / this.slidesPerView * 4.5);
     this.track.style.transform = `translateX(${translateX}%)`;
 
     this.dots.forEach((dot, i) => {
@@ -704,20 +862,116 @@ class CarouselManager {
   }
 
   startAutoSlide() {
+    if (this.autoSlideStarted) return;
+    this.autoSlideStarted = true;
     this.autoSlideInterval = setInterval(() => {
       this.nextGroup();
-    }, 3000);
+    }, 5000);
   }
 
   stopAutoSlide() {
     if (this.autoSlideInterval) {
       clearInterval(this.autoSlideInterval);
     }
+    this.autoSlideStarted = false;
   }
 
   resetAutoSlide() {
     this.stopAutoSlide();
-    this.startAutoSlide();
+    // Attendre un peu avant de redémarrer pour éviter les conflits
+    setTimeout(() => {
+      if (!this.autoSlideStarted) {
+        this.startAutoSlide();
+      }
+    }, 1500);
+  }
+
+  initializeLightbox() {
+    this.lightbox = document.getElementById('lightbox');
+    this.lightboxImage = document.getElementById('lightbox-image');
+    this.lightboxCaption = document.getElementById('lightbox-caption');
+    this.lightboxClose = document.querySelector('.lightbox-close');
+    this.lightboxPrev = document.querySelector('.lightbox-prev');
+    this.lightboxNext = document.querySelector('.lightbox-next');
+    this.currentImageIndex = 0;
+
+    // Créer un tableau des images avec leurs informations
+    this.images = Array.from(this.slides).map((slide, index) => {
+      const img = slide.querySelector('img');
+      return {
+        src: img.src,
+        alt: img.alt,
+        caption: img.alt || `Photo ${index + 1}`, // Utilisera l'alt traduit
+        element: img // Garder une référence pour les mises à jour
+      };
+    });
+
+    // Ajouter les événements de clic sur les images
+    this.slides.forEach((slide, index) => {
+      slide.addEventListener('click', () => {
+        this.openLightbox(index);
+        this.stopAutoSlide(); // Arrêter le carrousel pendant l'affichage lightbox
+      });
+    });
+
+    // Événements pour fermer le lightbox
+    this.lightboxClose.addEventListener('click', () => this.closeLightbox());
+    this.lightbox.addEventListener('click', (e) => {
+      if (e.target === this.lightbox) {
+        this.closeLightbox();
+      }
+    });
+
+    // Navigation dans le lightbox
+    this.lightboxPrev.addEventListener('click', () => this.previousImage());
+    this.lightboxNext.addEventListener('click', () => this.nextImage());
+
+    // Contrôles clavier
+    document.addEventListener('keydown', (e) => {
+      if (this.lightbox.classList.contains('active')) {
+        switch (e.key) {
+          case 'Escape':
+            this.closeLightbox();
+            break;
+          case 'ArrowLeft':
+            this.previousImage();
+            break;
+          case 'ArrowRight':
+            this.nextImage();
+            break;
+        }
+      }
+    });
+  }
+
+  openLightbox(index) {
+    this.currentImageIndex = index;
+    this.updateLightboxImage();
+    this.lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Empêcher le scroll
+  }
+
+  closeLightbox() {
+    this.lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Restaurer le scroll
+    this.startAutoSlide(); // Redémarrer le carrousel
+  }
+
+  previousImage() {
+    this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+    this.updateLightboxImage();
+  }
+
+  nextImage() {
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+    this.updateLightboxImage();
+  }
+
+  updateLightboxImage() {
+    const currentImage = this.images[this.currentImageIndex];
+    this.lightboxImage.src = currentImage.src;
+    this.lightboxImage.alt = currentImage.element.alt; // Alt à jour
+    this.lightboxCaption.textContent = currentImage.element.alt || currentImage.caption;
   }
 }
 

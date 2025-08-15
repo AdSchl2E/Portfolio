@@ -50,7 +50,15 @@
         "title": "Qui suis-je",
         "subtitle": "Découvrez ma personnalité et mes centres d'intérêt",
         "description1": "Étudiant en informatique à l'INSA Lyon, je développe des solutions numériques alliant performance, design et valeur ajoutée, en explorant les opportunités offertes par les technologies émergentes.",
-        "description2": "Curieux et ouvert sur le monde, je m'intéresse à la gastronomie, à l'œnologie et à la culture japonaise, des passions qui nourrissent ma créativité et mon sens du détail."
+        "description2": "Curieux et ouvert sur le monde, je m'intéresse à la gastronomie, à l'œnologie et à la culture japonaise, des passions qui nourrissent ma créativité et mon sens du détail.",
+        "gallery": {
+            "canard_alt": "Délicieux magret de canard",
+            "xwine_alt": "Photo des participants du concours de dégustation X-Wine au Chateau Figeac organisé par l'École Polytechnique",
+            "japan_alt": "Vue du mont fuji depuis la pagode Chureito",
+            "vin_alt": "Dégustation de vin de Loire à l'INSA",
+            "japan2_alt": "Ichiban gai street dans le Kabukicho à Shinjuku",
+            "dessert_alt": "Un superbe fondant au matcha et chocolat blanc"
+        }
     },
     "education": {
         "title": "Formation",
