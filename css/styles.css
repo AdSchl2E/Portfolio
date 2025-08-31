@@ -1549,13 +1549,7 @@ body {
 /* Mots en surbrillance avec couleur du thème */
 .highlight {
     font-weight: 800;
-    padding: 0 0.3rem;
-    transition: all var(--transition-duration) ease;
-    text-decoration: underline;
-}
-
-.highlight:hover {
-    text-decoration: none;
+    padding: 0 0.1rem;
 }
 
 /* Section Compétences */
@@ -2129,6 +2123,9 @@ body {
         grid-template-columns: 1fr;
         gap: 3rem;
         text-align: center;
+        /* Inverser l'ordre en mode mobile */
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .hero-name {
@@ -2181,6 +2178,9 @@ body {
     .hero-content {
         padding: 0 1rem;
         gap: 2rem;
+        /* Maintenir l'ordre inversé */
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .hero-text {
@@ -2345,6 +2345,13 @@ body {
 
     .hero-subtitle {
         font-size: 1.25rem;
+    }
+
+    .hero-content {
+        gap: 1.5rem;
+        /* Maintenir l'ordre inversé sur très petit écran */
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .section-title {

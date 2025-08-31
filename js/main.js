@@ -268,8 +268,8 @@ class PortfolioManager {
     const navLinks = document.querySelectorAll('.nav-link[data-section], .nav-item[data-section]');
 
     const observerOptions = {
-      threshold: 0.3,
-      rootMargin: '-20% 0px -20% 0px'
+      threshold: 0.2,
+      rootMargin: '-15% 0px -15% 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
