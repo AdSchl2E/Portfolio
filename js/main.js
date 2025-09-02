@@ -468,6 +468,9 @@ class PortfolioManager {
     if (document.querySelector('.projects-page')) {
       this.initializeProjectsFilter();
     }
+    
+    // Initialiser le lazy loading des vidéos
+    this.initializeVideoLazyLoading();
   }
 
   initializeProjectsFilter() {
@@ -561,6 +564,127 @@ class PortfolioManager {
 
     // Traduire les boutons après les avoir créés
     this.translatePage();
+  }
+
+  initializeVideoLazyLoading() {
+    const videos = document.querySelectorAll('.project-image video');
+    
+    videos.forEach((video, index) => {
+      // Arrêter la lecture automatique immédiatement
+      video.pause();
+      video.currentTime = 0;
+      
+      // Retirer l'attribut autoplay pour éviter le chargement automatique
+      video.removeAttribute('autoplay');
+      
+      // Ajouter data-lazy pour marquer comme non chargé
+      video.setAttribute('data-lazy', 'pending');
+      
+      // Trouver l'image de remplacement (enfant de la vidéo)
+      const fallbackImg = video.querySelector('img');
+      const projectImage = video.closest('.project-image');
+      
+      if (fallbackImg && projectImage) {
+        // Créer une copie de l'image en dehors de la vidéo
+        const placeholderImg = fallbackImg.cloneNode(true);
+        placeholderImg.setAttribute('data-placeholder', 'active');
+        placeholderImg.classList.add('lazy-placeholder');
+        
+        // Ajouter l'image placeholder au conteneur parent
+        projectImage.appendChild(placeholderImg);
+        
+        // Cacher l'image originale dans la vidéo
+        fallbackImg.style.display = 'none';
+      }
+      
+      // Démarrer le chargement différé après un délai progressif
+      setTimeout(() => {
+        this.loadVideoLazy(video);
+      }, 2000 + (index * 1000)); // Délai progressif pour éviter de surcharger
+    });
+  }
+  
+  loadVideoLazy(video) {
+    if (video.getAttribute('data-lazy') !== 'pending') return;
+    
+    // Marquer comme en cours de chargement
+    video.setAttribute('data-lazy', 'loading');
+    
+    // Précharger la vidéo
+    video.load();
+    
+    // Une fois que suffisamment de données sont chargées pour jouer
+    const handleCanPlay = () => {
+      video.setAttribute('data-lazy', 'loaded');
+      video.removeEventListener('canplaythrough', handleCanPlay);
+      video.removeEventListener('error', handleError);
+      
+      // Démarrer la lecture automatiquement une fois chargée
+      this.startAutoPlayVideo(video);
+    };
+    
+    // En cas d'erreur, garder l'image
+    const handleError = () => {
+      video.setAttribute('data-lazy', 'error');
+      video.removeEventListener('canplaythrough', handleCanPlay);
+      video.removeEventListener('error', handleError);
+      console.warn('Erreur de chargement vidéo:', video.src);
+    };
+    
+    video.addEventListener('canplaythrough', handleCanPlay, { once: true });
+    video.addEventListener('error', handleError, { once: true });
+  }
+  
+  startAutoPlayVideo(video) {
+    const projectImage = video.closest('.project-image');
+    const placeholderImg = projectImage ? projectImage.querySelector('img[data-placeholder="active"]') : null;
+    
+    if (!projectImage || !placeholderImg) return;
+    
+    // La vidéo est déjà positionnée, on n'a qu'à la rendre visible
+    video.currentTime = 0;
+    video.play().then(() => {
+      // Une fois que la vidéo joue, faire la transition
+      setTimeout(() => {
+        // Utiliser les classes CSS au lieu des styles inline
+        video.setAttribute('data-lazy', 'loaded');
+        placeholderImg.setAttribute('data-placeholder', 'hidden');
+      }, 100); // Petit délai pour s'assurer que la vidéo joue
+      
+    }).catch((error) => {
+      // Si la lecture échoue, garder l'image et cacher la vidéo
+      console.warn('Autoplay bloqué, on garde l\'image:', error);
+      video.setAttribute('data-lazy', 'pending');
+      if (placeholderImg.getAttribute('data-placeholder') === 'hidden') {
+        placeholderImg.setAttribute('data-placeholder', 'active');
+      }
+      
+      // Réessayer plus tard
+      setTimeout(() => {
+        video.play().then(() => {
+          video.setAttribute('data-lazy', 'loaded');
+          placeholderImg.setAttribute('data-placeholder', 'hidden');
+        }).catch(() => {
+          // Si ça échoue encore, garder définitivement l'image
+          video.setAttribute('data-lazy', 'pending');
+        });
+      }, 1000);
+    });
+    
+    // S'assurer que la vidéo continue de jouer si elle s'arrête
+    video.addEventListener('pause', () => {
+      if (video.getAttribute('data-lazy') === 'loaded') {
+        setTimeout(() => {
+          video.play().catch(() => {});
+        }, 100);
+      }
+    });
+    
+    // Redémarrer la vidéo quand elle se termine (au cas où loop ne fonctionne pas)
+    video.addEventListener('ended', () => {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    });
   }
 
   initializeContact() {
