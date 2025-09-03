@@ -132,20 +132,11 @@ body {
 }
 
 .personality-traits {
-    display: flex;
-    gap: 2mm;
-    margin-bottom: 3mm;
-    flex-wrap: wrap;
+    display: none; /* Plus utilisé - gardé pour compatibilité */
 }
 
 .trait {
-    background: var(--primary-color);
-    color: white;
-    padding: 1mm 2.5mm;
-    border-radius: 8mm;
-    font-size: 2.8mm;
-    font-weight: 500;
-    white-space: nowrap;
+    display: none; /* Plus utilisé - gardé pour compatibilité */
 }
 
 .contact-info {
@@ -364,12 +355,12 @@ body {
     font-weight: 500;
     color: var(--primary-color);
     flex: 1;
-    font-size: 3.3mm;
+    font-size: 3.1mm;
     line-height: 1.1;
 }
 
 .period {
-    font-size: 2.5mm;
+    font-size: 2.2mm;
     color: var(--text-secondary);
     background: var(--bg-gray-100);
     padding: 0.6mm 1.5mm;
@@ -441,6 +432,12 @@ body {
     font-weight: 500;
 }
 
+.skill-tag.soft-skill {
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+}
+
 .tech-tag {
     background: var(--bg-gray-100);
     color: var(--text-secondary);
@@ -452,32 +449,47 @@ body {
 }
 
 .language-skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2mm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8mm;
+    align-items: flex-start;
 }
 
 .language-item {
     display: flex;
     flex-direction: column;
-    gap: 0.4mm;
+    align-items: center;
+    gap: 0.8mm;
 }
 
-.language {
-    font-weight: 600;
-    color: var(--text-primary);
+.language-badge {
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.6mm 0.8mm 0.6mm 1.5mm;
+    border-radius: 3mm;
     font-size: 2.5mm;
-}
-
-.level {
-    font-size: 2.2mm;
-    color: var(--primary-color);
     font-weight: 500;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1mm;
 }
 
-.language-item small {
-    font-size: 2.2mm;
-    color: var(--text-light);
+.level-badge {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--secondary-color);
+    padding: 0.3mm 0.8mm;
+    border-radius: 2mm;
+    font-size: 1.8mm;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.language-note {
+    font-size: 1.4mm;
+    color: var(--secondary-color);
+    text-align: center;
+    font-style: italic;
 }
 
 /* Centres d'intérêt - Similaires aux compétences */
