@@ -74,6 +74,10 @@
                 "description": "Formación intensiva en matemáticas, física y mecánica."
             }
         },
+        "keio": {
+            "title": "Intercambio universitario internacional",
+            "description": "Cursos de informática de nivel de máster impartidos en inglés en la Facultad de Informática."
+        },
         "highschool": {
             "title": "Bachillerato general",
             "description": "Mención de honor, especialidad en Matemáticas y NSI (Ciencias Digitales e Informática)."

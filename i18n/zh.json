@@ -74,6 +74,10 @@
                 "description": "数学、物理和力学的强化培训。"
             }
         },
+        "keio": {
+            "title": "国际大学交换项目",
+            "description": "在计算机科学学院用英语授课的硕士级计算机科学课程。"
+        },
         "highschool": {
             "title": "普通高中毕业证书",
             "description": "以优异成绩毕业, 主修数学和NSI (数字与信息科学) 。"

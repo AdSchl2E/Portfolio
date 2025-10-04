@@ -74,6 +74,10 @@
                 "description": "Intensive Ausbildung in Mathematik, Physik und Mechanik."
             }
         },
+        "keio": {
+            "title": "Internationaler Universitätsaustausch",
+            "description": "Master-Level Informatikkurse auf Englisch an der Fakultät für Informatik."
+        },
         "highschool": {
             "title": "Allgemeines Abitur",
             "description": "Mit Auszeichnung, Schwerpunkt Mathematik und NSI (Digitale und Informatikwissenschaften)."

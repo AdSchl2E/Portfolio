@@ -74,6 +74,10 @@
                 "description": "Formation intensive en mathématiques, physique et mécanique."
             }
         },
+        "keio": {
+            "title": "Échange universitaire à l'internationale",
+            "description": "Cours d'informatique de niveau master enseignés en anglais à la faculté d'informatique."
+        },
         "highschool": {
             "title": "Baccalauréat général",
             "description": "Mention Très Bien, spécialité Mathématiques et NSI (Numérique et Sciences Informatiques)."

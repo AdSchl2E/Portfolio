@@ -74,6 +74,10 @@
                 "description": "Intensive training in mathematics, physics, and mechanics."
             }
         },
+        "keio": {
+            "title": "International University Exchange",
+            "description": "Graduate-level computer science courses taught in English at the Faculty of Computer Science."
+        },
         "highschool": {
             "title": "General Baccalaureate",
             "description": "High honors, major in Mathematics and NSI (Digital and Computer Science)."
