@@ -55,10 +55,37 @@
             "canard_alt": "Köstliche Entenbrust",
             "senso-ji_alt": "Senso-ji Tempel in Asakusa",
             "xwine_alt": "Foto der Teilnehmer des X-Wine Verkostungswettbewerbs im Château Figeac, organisiert von der École Polytechnique",
-            "japan_alt": "Blick auf den Berg Fuji von der Chureito-Pagode",
             "vin_alt": "Loire-Weinverkostung an der INSA",
-            "japan2_alt": "Ichiban gai Straße in Kabukicho, Shinjuku",
-            "dessert_alt": "Ein herrlicher Matcha- und weiße Schokolade-Fondant"
+            "dessert_alt": "Ein herrlicher Matcha- und weiße Schokolade-Fondant",
+            "kiyomizu-dera_alt": "Terrasse des Kiyomizu-dera Tempels mit Blick über den Wald in Kyoto",
+            "nara_alt": "Einkaufsstraße im Nara-Park mit freilaufenden Rehen",
+            "ohori-pavillon_alt": "Ukimido-Pavillon am See des Ohori-Parks in Fukuoka",
+            "osaka-castle_alt": "Betrachtung der Burg Osaka",
+            "rinno-ji_alt": "Tempeltor umrahmt von Herbstlaub in Sendai",
+            "rinno-ji-2_alt": "Rote Brücke unter roten Ahornbäumen in Sendai",
+            "sapporo_alt": "Panoramablick auf das verschneite Sapporo",
+            "senso-ji-pagode_alt": "Fünfstöckige Pagode des Senso-ji Tempels in Asakusa",
+            "skytree_alt": "Tokyo Skytree",
+            "teamlab-borderless_alt": "Immersive Installation im TeamLab Borderless Museum in Tokio",
+            "fuji-sky_alt": "Luftaufnahme des Berges Fuji",
+            "tokyo-skytree-view_alt": "Nachtansicht von Tokio und dem Berg Fuji von der Tokyo Skytree",
+            "tokyo-tower_alt": "Tokyo Tower und der Azabudai Hills Turm von den Höhen von Roppongi",
+            "shibuya-roppongi-view_alt": "Nachtansicht von Shibuya von den Höhen von Roppongi",
+            "akihabara_alt": "Akihabara-Viertel, das Elektronik- und Otaku-Kulturviertel in Tokio",
+            "buddha-chill_alt": "Große Buddha-Statue am Nanzo-in Tempel bei Fukuoka",
+            "bukchon-hanok_alt": "Traditionelles Bukchon-Hanok-Dorf in Seoul",
+            "dessert-matcha_alt": "Matcha-Dessert",
+            "entsu-in_alt": "Entsu-in Tempel in Matsushima",
+            "fuji-pagode_alt": "Chureito-Pagode mit dem Berg Fuji im Hintergrund",
+            "fushimi-inari_alt": "Torii-Pfad am Fushimi-Inari-Schrein in Kyoto",
+            "hakodate_alt": "Panoramablick auf die Bucht von Hakodate",
+            "harajuku_alt": "Harajuku-Viertel in Tokio",
+            "hiroshima_alt": "Friedensdenkmal in Hiroshima",
+            "itsukushima-jinja_alt": "Itsukushima-Schrein auf der Insel Miyajima",
+            "jonggak_alt": "Jonggak-Viertel in Seoul",
+            "keio_alt": "Campus der Keio-Universität in Tokio",
+            "kinkaku-ji_alt": "Kinkaku-ji Tempel, der Goldene Pavillon in Kyoto",
+            "tokyo-sky_alt": "Luftaufnahme des Zentrums von Tokio mit dem Berg Fuji im Hintergrund"
         }
     },
     "education": {
@@ -165,9 +192,13 @@
         "tsp_genetic": {
             "description": "Klassenprojekt der <span class=\"highlight\">Oberstufen-Informatik</span>: Lösung des <span class=\"highlight\">Handlungsreisenden-Problems</span> mit einem <span class=\"highlight\">genetischen Algorithmus</span> in Python.<br>Grafische Benutzeroberfläche mit <span class=\"highlight\">Tkinter</span>, Generationsvisualisierung und interaktive Parameter."
         },
+        "openworld": {
+            "description": "<span class=\"highlight\">Android</span>-Anwendung, entwickelt mit <span class=\"highlight\">Flutter</span>, die GPS-Bewegungen verfolgt und erkundete Gebiete mit einem <span class=\"highlight\">Fog of War</span>-Overlay auf <span class=\"highlight\">Google Maps</span> visualisiert.<br><span class=\"highlight\">Hintergrund</span>-Standortverfolgung, einstellbarer Erkundungsradius, JSON-Import/Export.<br>Vollständig <span class=\"highlight\">lokale Speicherung (SQLite)</span>, kein Konto, keine Cloud."
+        },
         "actions": {
             "github": "GitHub",
-            "demo": "Live-Demo"
+            "demo": "Live-Demo",
+            "download": "APK herunterladen"
         }
     },
     "contact": {

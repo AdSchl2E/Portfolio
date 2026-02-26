@@ -1726,7 +1726,7 @@ body {
 
 .project-card:hover .project-image img,
 .project-card:hover .project-image video {
-    transform: scale(1.05);
+    transform: none;
 }
 
 .project-overlay {

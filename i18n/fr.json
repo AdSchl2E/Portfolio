@@ -55,10 +55,37 @@
             "canard_alt": "Délicieux magret de canard",
             "senso-ji_alt": "Temple Senso-ji à Asakusa",
             "xwine_alt": "Photo des participants du concours de dégustation X-Wine au Chateau Figeac organisé par l'École Polytechnique",
-            "japan_alt": "Vue du mont fuji depuis la pagode Chureito",
             "vin_alt": "Dégustation de vin de Loire à l'INSA",
-            "japan2_alt": "Ichiban gai street dans le Kabukicho à Shinjuku",
-            "dessert_alt": "Un superbe fondant au matcha et chocolat blanc"
+            "dessert_alt": "Un superbe fondant au matcha et chocolat blanc",
+            "kiyomizu-dera_alt": "Terrasse du temple Kiyomizu-dera surplombant la forêt à Kyoto",
+            "nara_alt": "Rue commerçante du parc de Nara avec les daims en liberté",
+            "ohori-pavillon_alt": "Pavillon Ukimido sur le lac du parc Ohori à Fukuoka",
+            "osaka-castle_alt": "Contemplation du château d'Osaka",
+            "rinno-ji_alt": "Porte du temple encadrée par les feuilles d'automne à Sendai",
+            "rinno-ji-2_alt": "Pont rouge sous les érables rouges à Sendai",
+            "sapporo_alt": "Vue panoramique de Sapporo sous la neige",
+            "senso-ji-pagode_alt": "Pagode à cinq étages du temple Senso-ji à Asakusa",
+            "skytree_alt": "Tokyo Skytree",
+            "teamlab-borderless_alt": "Installation immersive au musée TeamLab Borderless à Tokyo",
+            "fuji-sky_alt": "Vue aérienne du Mont Fuji",
+            "tokyo-skytree-view_alt": "Vue nocturne de Tokyo et du Mont Fuji depuis la Tokyo Skytree",
+            "tokyo-tower_alt": "Tokyo Tower et la tour Azabudai Hills vues depuis les hauteurs de Roppongi",
+            "shibuya-roppongi-view_alt": "Vue nocturne de Shibuya depuis les hauteurs de Roppongi",
+            "akihabara_alt": "Quartier d'Akihabara à Tokyo",
+            "buddha-chill_alt": "Grande statue de Bouddha au temple Nanzo-in près de Fukuoka",
+            "bukchon-hanok_alt": "Village traditionnel de Bukchon Hanok à Séoul",
+            "dessert-matcha_alt": "Dessert au matcha",
+            "entsu-in_alt": "Temple Entsu-in à Matsushima",
+            "fuji-pagode_alt": "Pagode Chureito avec le Mont Fuji en arrière-plan",
+            "fushimi-inari_alt": "Allée de torii du sanctuaire Fushimi Inari à Kyoto",
+            "hakodate_alt": "Vue panoramique de la baie de Hakodate",
+            "harajuku_alt": "Quartier de Harajuku à Tokyo",
+            "hiroshima_alt": "Mémorial de la paix à Hiroshima",
+            "itsukushima-jinja_alt": "Sanctuaire d'Itsukushima sur l'île de Miyajima",
+            "jonggak_alt": "Quartier de Jonggak à Séoul",
+            "keio_alt": "Campus de l'université Keio à Tokyo",
+            "kinkaku-ji_alt": "Temple Kinkaku-ji, le Pavillon d'or à Kyoto",
+            "tokyo-sky_alt": "Vue aérienne du centre de Tokyo avec le Mont Fuji au fond"
         }
     },
     "education": {
@@ -165,9 +192,13 @@
         "tsp_genetic": {
             "description": "Projet de classe de <span class=\"highlight\">Terminale NSI</span> : résolution du <span class=\"highlight\">problème du voyageur de commerce</span> à l'aide d'un <span class=\"highlight\">algorithme génétique</span> en Python.<br>Interface graphique avec <span class=\"highlight\">Tkinter</span>, visualisation des générations et paramètres interactifs."
         },
+        "openworld": {
+            "description": "Application <span class=\"highlight\">Android</span> développée avec <span class=\"highlight\">Flutter</span> qui suit les déplacements GPS et visualise les zones explorées grâce à un <span class=\"highlight\">fog of war</span> sur <span class=\"highlight\">Google Maps</span>.<br>Suivi en <span class=\"highlight\">arrière-plan</span>, rayon d'exploration ajustable, import/export JSON.<br>Stockage entièrement <span class=\"highlight\">local (SQLite)</span>, sans compte ni cloud."
+        },
         "actions": {
             "github": "GitHub",
-            "demo": "Démo live"
+            "demo": "Démo live",
+            "download": "Télécharger l'APK"
         }
     },
     "contact": {

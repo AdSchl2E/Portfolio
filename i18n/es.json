@@ -55,10 +55,37 @@
             "canard_alt": "Delicioso magret de pato",
             "senso-ji_alt": "Senso-ji templo en Asakusa",
             "xwine_alt": "Foto de los participantes del concurso de cata X-Wine en Château Figeac organizado por la École Polytechnique",
-            "japan_alt": "Vista del Monte Fuji desde la Pagoda Chureito",
             "vin_alt": "Cata de vinos del Loira en INSA",
-            "japan2_alt": "Calle Ichiban gai en Kabukicho, Shinjuku",
-            "dessert_alt": "Un magnífico fondant de matcha y chocolate blanco"
+            "dessert_alt": "Un magnífico fondant de matcha y chocolate blanco",
+            "kiyomizu-dera_alt": "Terraza del templo Kiyomizu-dera con vistas al bosque en Kioto",
+            "nara_alt": "Calle comercial del parque de Nara con ciervos en libertad",
+            "ohori-pavillon_alt": "Pabellón Ukimido en el lago del parque Ohori en Fukuoka",
+            "osaka-castle_alt": "Contemplación del castillo de Osaka",
+            "rinno-ji_alt": "Puerta del templo enmarcada por las hojas de otoño en Sendai",
+            "rinno-ji-2_alt": "Puente rojo bajo arces rojos en Sendai",
+            "sapporo_alt": "Vista panorámica de Sapporo cubierta de nieve",
+            "senso-ji-pagode_alt": "Pagoda de cinco pisos del templo Senso-ji en Asakusa",
+            "skytree_alt": "Tokyo Skytree",
+            "teamlab-borderless_alt": "Instalación inmersiva en el museo TeamLab Borderless de Tokio",
+            "fuji-sky_alt": "Vista aérea del Monte Fuji",
+            "tokyo-skytree-view_alt": "Vista nocturna de Tokio y el Monte Fuji desde la Tokyo Skytree",
+            "tokyo-tower_alt": "Tokyo Tower y la torre Azabudai Hills vistas desde las alturas de Roppongi",
+            "shibuya-roppongi-view_alt": "Vista nocturna de Shibuya desde las alturas de Roppongi",
+            "akihabara_alt": "Barrio de Akihabara, el distrito de la electrónica y la cultura otaku en Tokio",
+            "buddha-chill_alt": "Gran estatua de Buda en el templo Nanzo-in cerca de Fukuoka",
+            "bukchon-hanok_alt": "Pueblo tradicional de Bukchon Hanok en Seúl",
+            "dessert-matcha_alt": "Postre de matcha",
+            "entsu-in_alt": "Templo Entsu-in en Matsushima",
+            "fuji-pagode_alt": "Pagoda Chureito con el Monte Fuji de fondo",
+            "fushimi-inari_alt": "Camino de torii del santuario Fushimi Inari en Kioto",
+            "hakodate_alt": "Vista panorámica de la bahía de Hakodate",
+            "harajuku_alt": "Barrio de Harajuku en Tokio",
+            "hiroshima_alt": "Memorial de la Paz de Hiroshima",
+            "itsukushima-jinja_alt": "Santuario de Itsukushima en la isla de Miyajima",
+            "jonggak_alt": "Barrio de Jonggak en Seúl",
+            "keio_alt": "Campus de la universidad Keio en Tokio",
+            "kinkaku-ji_alt": "Templo Kinkaku-ji, el Pabellón de Oro en Kioto",
+            "tokyo-sky_alt": "Vista aérea del centro de Tokio con el Monte Fuji al fondo"
         }
     },
     "education": {
@@ -165,9 +192,13 @@
         "tsp_genetic": {
             "description": "Proyecto de clase de <span class=\"highlight\">bachillerato en informática</span>: resolver el <span class=\"highlight\">problema del viajante de comercio</span> usando un <span class=\"highlight\">algoritmo genético</span> en Python.<br>Interfaz gráfica con <span class=\"highlight\">Tkinter</span>, visualización de generaciones y parámetros interactivos."
         },
+        "openworld": {
+            "description": "Aplicación <span class=\"highlight\">Android</span> desarrollada con <span class=\"highlight\">Flutter</span> que rastrea el movimiento GPS y visualiza las áreas exploradas mediante un <span class=\"highlight\">fog of war</span> sobre <span class=\"highlight\">Google Maps</span>.<br>Seguimiento de ubicación en <span class=\"highlight\">segundo plano</span>, radio de exploración ajustable, importación/exportación JSON.<br>Almacenamiento completamente <span class=\"highlight\">local (SQLite)</span>, sin cuenta ni nube."
+        },
         "actions": {
             "github": "GitHub",
-            "demo": "Demo en vivo"
+            "demo": "Demo en vivo",
+            "download": "Descargar APK"
         }
     },
     "contact": {

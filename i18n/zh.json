@@ -55,10 +55,37 @@
             "canard_alt": "美味的鸭胸肉",
             "senso-ji_alt": "浅草的浅草寺",
             "xwine_alt": "巴黎综合理工学院在菲雅克酒庄举办的X-Wine品酒比赛参与者照片",
-            "japan_alt": "从忠灵塔眺望富士山",
             "vin_alt": "INSA的卢瓦尔河谷葡萄酒品鉴",
-            "japan2_alt": "新宿歌舞伎町一番街",
-            "dessert_alt": "精美的抹茶白巧克力熔岩蛋糕"
+            "dessert_alt": "精美的抹茶白巧克力熔岩蛋糕",
+            "kiyomizu-dera_alt": "京都清水寺舞台俯瞰森林的景色",
+            "nara_alt": "奈良公园商业街上自由漫步的鹿",
+            "ohori-pavillon_alt": "福冈大濠公园湖上的浮见堂",
+            "osaka-castle_alt": "凝望大阪城",
+            "rinno-ji_alt": "仙台被秋叶环绕的寺院山门",
+            "rinno-ji-2_alt": "仙台红桥下的红枫",
+            "sapporo_alt": "白雪覆盖的札幌全景",
+            "senso-ji-pagode_alt": "浅草寺的五重塔",
+            "skytree_alt": "东京晴空塔",
+            "teamlab-borderless_alt": "东京TeamLab Borderless博物馆的沉浸式装置",
+            "fuji-sky_alt": "富士山航拍",
+            "tokyo-skytree-view_alt": "从东京晴空塔眺望东京和富士山的夜景",
+            "tokyo-tower_alt": "从六本木高处看到的东京塔和麻布台之丘大厦",
+            "shibuya-roppongi-view_alt": "从六本木高处俯瞰涩谷夜景",
+            "akihabara_alt": "秋叶原，东京的电器街和御宅族文化街区",
+            "buddha-chill_alt": "福冈附近南藏院的大佛像",
+            "bukchon-hanok_alt": "首尔传统的北村韩屋村",
+            "dessert-matcha_alt": "抹茶甜点",
+            "entsu-in_alt": "松岛的圆通院",
+            "fuji-pagode_alt": "以富士山为背景的忠灵塔",
+            "fushimi-inari_alt": "京都伏见稻荷大社的鸟居参道",
+            "hakodate_alt": "函馆湾全景",
+            "harajuku_alt": "东京原宿地区",
+            "hiroshima_alt": "广岛和平纪念碑",
+            "itsukushima-jinja_alt": "宫岛上的严岛神社",
+            "jonggak_alt": "首尔钟阁地区",
+            "keio_alt": "东京庆应义塾大学校园",
+            "kinkaku-ji_alt": "京都金阁寺",
+            "tokyo-sky_alt": "以富士山为背景的东京市中心航拍照片"
         }
     },
     "education": {
@@ -165,9 +192,13 @@
         "tsp_genetic": {
             "description": "<span class=\"highlight\">高中计算机科学</span>课程项目: 使用Python中的<span class=\"highlight\">遗传算法</span>解决<span class=\"highlight\">旅行商问题</span>。<br>使用<span class=\"highlight\">Tkinter</span>的图形界面, 代际可视化和交互参数。"
         },
+        "openworld": {
+            "description": "使用<span class=\"highlight\">Flutter</span>开发的<span class=\"highlight\">Android</span>应用程序, 追踪GPS移动并通过<span class=\"highlight\">Google Maps</span>上的<span class=\"highlight\">fog of war</span>覆盖层可视化已探索区域。<br><span class=\"highlight\">后台</span>位置追踪、可调探索半径、JSON导入/导出。<br>完全<span class=\"highlight\">本地存储 (SQLite)</span>, 无需账户, 无需云端。"
+        },
         "actions": {
             "github": "GitHub",
-            "demo": "实时演示"
+            "demo": "实时演示",
+            "download": "下载APK"
         }
     },
     "contact": {

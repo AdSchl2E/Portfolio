@@ -55,10 +55,37 @@
             "canard_alt": "Delicious duck breast",
             "senso-ji_alt": "Senso-ji temple in Asakusa",
             "xwine_alt": "Photo of participants in the X-Wine tasting competition at Château Figeac organized by École Polytechnique",
-            "japan_alt": "View of Mount Fuji from Chureito Pagoda",
             "vin_alt": "Loire wine tasting at INSA",
-            "japan2_alt": "Ichiban gai street in Kabukicho, Shinjuku",
-            "dessert_alt": "A superb matcha and white chocolate fondant"
+            "dessert_alt": "A superb matcha and white chocolate fondant",
+            "kiyomizu-dera_alt": "Terrace of Kiyomizu-dera temple overlooking the forest in Kyoto",
+            "nara_alt": "Shopping street in Nara Park with free-roaming deer",
+            "ohori-pavillon_alt": "Ukimido Pavilion on Ohori Park lake in Fukuoka",
+            "osaka-castle_alt": "Contemplating Osaka Castle",
+            "rinno-ji_alt": "Temple gate framed by autumn leaves in Sendai",
+            "rinno-ji-2_alt": "Red bridge under red maple trees in Sendai",
+            "sapporo_alt": "Panoramic view of snow-covered Sapporo",
+            "senso-ji-pagode_alt": "Five-story pagoda of Senso-ji temple in Asakusa",
+            "skytree_alt": "Tokyo Skytree",
+            "teamlab-borderless_alt": "Immersive installation at TeamLab Borderless museum in Tokyo",
+            "fuji-sky_alt": "Aerial view of Mount Fuji",
+            "tokyo-skytree-view_alt": "Night view of Tokyo and Mount Fuji from the Tokyo Skytree",
+            "tokyo-tower_alt": "Tokyo Tower and Azabudai Hills tower seen from the heights of Roppongi",
+            "shibuya-roppongi-view_alt": "Night view of Shibuya from the heights of Roppongi",
+            "akihabara_alt": "Akihabara district, the electronics and otaku culture quarter in Tokyo",
+            "buddha-chill_alt": "Great Buddha statue at Nanzo-in Temple near Fukuoka",
+            "bukchon-hanok_alt": "Traditional Bukchon Hanok Village in Seoul",
+            "dessert-matcha_alt": "Matcha dessert",
+            "entsu-in_alt": "Entsu-in Temple in Matsushima",
+            "fuji-pagode_alt": "Chureito Pagoda with Mount Fuji in the background",
+            "fushimi-inari_alt": "Torii gate path at Fushimi Inari Shrine in Kyoto",
+            "hakodate_alt": "Panoramic view of Hakodate Bay",
+            "harajuku_alt": "Harajuku district in Tokyo",
+            "hiroshima_alt": "Hiroshima Peace Memorial",
+            "itsukushima-jinja_alt": "Itsukushima Shrine on Miyajima Island",
+            "jonggak_alt": "Jonggak district in Seoul",
+            "keio_alt": "Keio University campus in Tokyo",
+            "kinkaku-ji_alt": "Kinkaku-ji Temple, the Golden Pavilion in Kyoto",
+            "tokyo-sky_alt": "Aerial view of central Tokyo with Mount Fuji in the background"
         }
     },
     "education": {
@@ -165,9 +192,13 @@
         "tsp_genetic": {
             "description": "<span class=\"highlight\">High school computer science</span> class project: solving the <span class=\"highlight\">traveling salesman problem</span> using a <span class=\"highlight\">genetic algorithm</span> in Python.<br>Graphical interface with <span class=\"highlight\">Tkinter</span>, generation visualization and interactive parameters."
         },
+        "openworld": {
+            "description": "<span class=\"highlight\">Android</span> application built with <span class=\"highlight\">Flutter</span> that tracks GPS movement and visualizes explored areas using a <span class=\"highlight\">fog of war</span> overlay on <span class=\"highlight\">Google Maps</span>.<br><span class=\"highlight\">Background</span> location tracking, adjustable exploration radius, JSON import/export.<br>Fully <span class=\"highlight\">local storage (SQLite)</span>, no account, no cloud."
+        },
         "actions": {
             "github": "GitHub",
-            "demo": "Live demo"
+            "demo": "Live demo",
+            "download": "Download APK"
         }
     },
     "contact": {

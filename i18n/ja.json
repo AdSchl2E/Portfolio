@@ -55,10 +55,37 @@
             "canard_alt": "美味しい鴨胸肉",
             "senso-ji_alt": "浅草の浅草寺",
             "xwine_alt": "エコール・ポリテクニーク主催のシャトー・フィジャックでのX-Wineテイスティングコンテストの参加者の写真",
-            "japan_alt": "忠霊塔からの富士山の眺め",
             "vin_alt": "INSAでのロワールワインテイスティング",
-            "japan2_alt": "新宿歌舞伎町の一番街",
-            "dessert_alt": "素晴らしい抹茶とホワイトチョコレートのフォンダン"
+            "dessert_alt": "素晴らしい抹茶とホワイトチョコレートのフォンダン",
+            "kiyomizu-dera_alt": "京都の清水寺の舞台から森を見下ろす景色",
+            "nara_alt": "奈良公園の商店街と自由に歩く鹿",
+            "ohori-pavillon_alt": "福岡の大濠公園にある浮見堂",
+            "osaka-castle_alt": "大阪城を眺めるひととき",
+            "rinno-ji_alt": "仙台の紅葉に彩られた寺院の門",
+            "rinno-ji-2_alt": "仙台の赤い橋と紅葉のもみじ",
+            "sapporo_alt": "雪に覆われた札幌のパノラマビュー",
+            "senso-ji-pagode_alt": "浅草寺の五重塔",
+            "skytree_alt": "東京スカイツリー",
+            "teamlab-borderless_alt": "東京のチームラボボーダレスの没入型インスタレーション",
+            "fuji-sky_alt": "富士山の航空写真",
+            "tokyo-skytree-view_alt": "東京スカイツリーからの東京と富士山の夜景",
+            "tokyo-tower_alt": "六本木の高台から見た東京タワーと麻布台ヒルズ",
+            "shibuya-roppongi-view_alt": "六本木の高台からの渋谷の夜景",
+            "akihabara_alt": "秋葉原、東京の電気街とオタク文化の街",
+            "buddha-chill_alt": "福岡近郊の南蔵院の大仏像",
+            "bukchon-hanok_alt": "ソウルの伝統的な北村韓屋村",
+            "dessert-matcha_alt": "抹茶デザート",
+            "entsu-in_alt": "松島の円通院",
+            "fuji-pagode_alt": "富士山を背景にした忠霊塔",
+            "fushimi-inari_alt": "京都の伏見稲荷大社の鳥居の参道",
+            "hakodate_alt": "函館湾のパノラマビュー",
+            "harajuku_alt": "東京の原宿エリア",
+            "hiroshima_alt": "広島平和記念碑",
+            "itsukushima-jinja_alt": "宮島の厳島神社",
+            "jonggak_alt": "ソウルの鍾閣エリア",
+            "keio_alt": "東京の慶應義塾大学キャンパス",
+            "kinkaku-ji_alt": "京都の金閣寺",
+            "tokyo-sky_alt": "富士山を背景にした東京中心部の航空写真"
         }
     },
     "education": {
@@ -165,9 +192,13 @@
         "tsp_genetic": {
             "description": "<span class=\"highlight\">高校情報科学</span>のクラスプロジェクト: Pythonで<span class=\"highlight\">遺伝的アルゴリズム</span>を使用した<span class=\"highlight\">巡回セールスマン問題</span>の解決。<br><span class=\"highlight\">Tkinter</span>を使用したグラフィカルインターフェース、世代の可視化、インタラクティブパラメータ。"
         },
+        "openworld": {
+            "description": "<span class=\"highlight\">Flutter</span>で開発された<span class=\"highlight\">Android</span>アプリケーション。GPS移動を追跡し、<span class=\"highlight\">Google Maps</span>上の<span class=\"highlight\">fog of war</span>オーバーレイで探索エリアを可視化します。<br><span class=\"highlight\">バックグラウンド</span>位置追跡、調整可能な探索半径、JSONインポート/エクスポート。<br>完全な<span class=\"highlight\">ローカルストレージ（SQLite）</span>、アカウント不要、クラウド不要。"
+        },
         "actions": {
             "github": "GitHub",
-            "demo": "ライブデモ"
+            "demo": "ライブデモ",
+            "download": "APKをダウンロード"
         }
     },
     "contact": {
