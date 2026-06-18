@@ -113,6 +113,15 @@
     "experience": {
         "title": "经验",
         "subtitle": "我的职业背景",
+        "sap": {
+            "title": "AI全栈开发实习",
+            "date": "2026年3月 - 2026年8月",
+            "description": {
+                "bullet1": "使用 <span class=\"highlight\">TypeScript</span> 为 SAP 新产品 <span class=\"highlight\">Joule Studio 2.0</span> 开发 <span class=\"highlight\">智能体代码库</span>。",
+                "bullet2": "为产品智能体设计 <span class=\"highlight\">Docker 沙箱</span>, 优化 AI 的使用, 并加深对 <span class=\"highlight\">skills</span> 与 <span class=\"highlight\">MCP 服务器</span> 的理解。",
+                "bullet3": "使用 <span class=\"highlight\">Claude Code</span>（hooks、skills、plugins、上下文优化）加速开发与迭代。"
+            }
+        },
         "eiffage": {
             "title": "软件开发工程师实习",
             "date": "2025年5月 - 2025年9月",

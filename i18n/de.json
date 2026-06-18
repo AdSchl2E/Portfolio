@@ -113,6 +113,15 @@
     "experience": {
         "title": "Erfahrung",
         "subtitle": "Mein beruflicher Werdegang",
+        "sap": {
+            "title": "Praktikum als KI-Full-Stack-Entwickler",
+            "date": "März 2026 - August 2026",
+            "description": {
+                "bullet1": "Entwicklung von <span class=\"highlight\">Agent-Codebasen</span> in <span class=\"highlight\">TypeScript</span> für <span class=\"highlight\">Joule Studio 2.0</span>, das neue SAP-Produkt",
+                "bullet2": "Aufbau von <span class=\"highlight\">Docker-Sandboxes</span> für die Produkt-Agenten, Verbesserung des KI-Einsatzes und Ausbau von Expertise in <span class=\"highlight\">Skills</span> und <span class=\"highlight\">MCP-Servern</span>",
+                "bullet3": "Einsatz von <span class=\"highlight\">Claude Code</span> (Hooks, Skills, Plugins, Kontextoptimierung), um Entwicklung und Iteration zu beschleunigen"
+            }
+        },
         "eiffage": {
             "title": "Praktikum als Softwareentwicklungsingenieur",
             "date": "Mai 2025 - September 2025",

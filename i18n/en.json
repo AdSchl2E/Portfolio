@@ -113,6 +113,15 @@
     "experience": {
         "title": "Experience",
         "subtitle": "My professional background",
+        "sap": {
+            "title": "AI Full-Stack Developer Internship",
+            "date": "March 2026 - August 2026",
+            "description": {
+                "bullet1": "Developed <span class=\"highlight\">agent codebases</span> in <span class=\"highlight\">TypeScript</span> for <span class=\"highlight\">Joule Studio 2.0</span>, SAP's new product",
+                "bullet2": "Built <span class=\"highlight\">Docker sandboxes</span> for product agents, improving AI usage and deepening expertise in <span class=\"highlight\">skills</span> and <span class=\"highlight\">MCP servers</span>",
+                "bullet3": "Used <span class=\"highlight\">Claude Code</span> (hooks, skills, plugins, context optimization) to speed up development and iteration"
+            }
+        },
         "eiffage": {
             "title": "Software Development Engineering Internship",
             "date": "May 2025 - September 2025",

@@ -113,6 +113,15 @@
     "experience": {
         "title": "Experiencia",
         "subtitle": "Mi trayectoria profesional",
+        "sap": {
+            "title": "Pasantía de desarrollador IA full-stack",
+            "date": "Marzo 2026 - Agosto 2026",
+            "description": {
+                "bullet1": "Desarrollo en <span class=\"highlight\">TypeScript</span> de <span class=\"highlight\">codebases de agentes</span> para <span class=\"highlight\">Joule Studio 2.0</span>, el nuevo producto de SAP",
+                "bullet2": "Diseño de <span class=\"highlight\">sandboxes Docker</span> para los agentes del producto, mejorando el uso de la IA y ampliando experiencia en <span class=\"highlight\">skills</span> y <span class=\"highlight\">servidores MCP</span>",
+                "bullet3": "Uso de <span class=\"highlight\">Claude Code</span> (hooks, skills, plugins, optimización del contexto) para acelerar el desarrollo y la iteración"
+            }
+        },
         "eiffage": {
             "title": "Prácticas de ingeniería en desarrollo de software",
             "date": "Mayo 2025 - Septiembre 2025",

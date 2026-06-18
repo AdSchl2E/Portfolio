@@ -113,6 +113,15 @@
     "experience": {
         "title": "経験",
         "subtitle": "私の職業的な経歴",
+        "sap": {
+            "title": "AIフルスタック開発インターン",
+            "date": "2026年3月 - 2026年8月",
+            "description": {
+                "bullet1": "<span class=\"highlight\">TypeScript</span>で、SAPの新製品 <span class=\"highlight\">Joule Studio 2.0</span> 向けの <span class=\"highlight\">エージェントコードベース</span> を開発。",
+                "bullet2": "製品エージェント向けの <span class=\"highlight\">Dockerサンドボックス</span> を設計し、AI活用を改善しながら <span class=\"highlight\">skills</span> と <span class=\"highlight\">MCPサーバー</span> の理解を深めた。",
+                "bullet3": "<span class=\"highlight\">Claude Code</span>（hooks、skills、plugins、コンテキスト最適化）を活用し、開発と反復を高速化。"
+            }
+        },
         "eiffage": {
             "title": "ソフトウェア開発エンジニアインターンシップ",
             "date": "2025年5月 - 2025年9月",
