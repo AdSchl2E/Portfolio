@@ -85,10 +85,10 @@ if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&'IntersectionObserver
 
 // language: saved choice, else the browser's, else French
 try{const saved=localStorage.getItem('portfolio-lang'),want=saved&&D[saved]?saved:((navigator.languages||[navigator.language||'fr']).map(x=>String(x).slice(0,2)).find(x=>D[x])||'fr');ls.value=want;lang(want)}catch(e){lang('fr')}
-// contact form (formsubmit.co, same endpoint as before)
-(function(){const f=document.getElementById('contact-form'),msg=document.getElementById('fmsg');if(!f)return;
-function show(k){msg.hidden=false;msg.dataset.i18n=k;msg.textContent=(D[document.documentElement.lang]||D.en)[k];clearTimeout(msg._t);msg._t=setTimeout(()=>{msg.hidden=true},6000)}
-f.addEventListener('submit',e=>{e.preventDefault();const b=f.querySelector('button');if(b.classList.contains('busy'))return;b.classList.add('busy');
-const d=Object.fromEntries(new FormData(f));d._captcha=false;d._template='table';
-fetch('https://formsubmit.co/ajax/ad.schlee@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)})
-.then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(()=>{f.reset();show('contact.sent')}).catch(()=>show('contact.error')).finally(()=>b.classList.remove('busy'))})})();
+// reveal on scroll
+(function(){const sel=['#home section>h2','#home .entry','#home .skills>div','#home .cc','#home .pcard','#allview .ptools','#allview .pcard','#allview .pcta'].join(',');
+const els=[...document.querySelectorAll(sel)];if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,sib=[...el.parentNode.children].filter(x=>x.classList.contains('rv')),k=Math.max(0,sib.indexOf(el));
+el.style.setProperty('--d',(k%4)*.08+'s');el.classList.add('in');io.unobserve(el);
+el.addEventListener('animationend',()=>{el.classList.remove('rv','in');el.style.removeProperty('--d')},{once:true})}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+els.forEach(el=>{el.classList.add('rv');io.observe(el)})})();
