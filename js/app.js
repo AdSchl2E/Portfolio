@@ -9,6 +9,8 @@ function lang(l){r.lang=l;document.querySelectorAll('[data-i18n]').forEach(e=>{i
  document.querySelectorAll('[data-i18n-ph]').forEach(e=>{if(!e.dataset.en)e.dataset.en=e.placeholder;e.placeholder=D[l][e.dataset.i18nPh]||e.dataset.en});try{localStorage.setItem('portfolio-lang',l)}catch(e){}}
 const ts=document.getElementById('theme'),ls=document.getElementById('lang');
 ts.onchange=()=>theme(+ts.value);ls.onchange=()=>lang(ls.value);
+// language: saved choice, else English
+try{const saved=localStorage.getItem('portfolio-lang'),want=saved&&D[saved]?saved:'en';ls.value=want;lang(want)}catch(e){ls.value='en';lang('en')}
 try{const a=localStorage.getItem('portfolio-theme'),b=localStorage.getItem('portfolio-lang');
  if(a){const i=T.findIndex(t=>t.id===a);if(i>0){ts.value=i;theme(i)}} }catch(e){}
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.querySelectorAll('.pcard').forEach(c=>{const p=c.querySelector('.pbody p');let paused=false,wait=2000,pos=0,last=0,end=false;
@@ -48,7 +50,7 @@ const techs=[...new Set(cards.flatMap(names))].sort((a,b)=>a.localeCompare(b));l
 box.innerHTML='<button type="button" class="btn primary" data-f="all" data-i18n="projects.filter.all">All</button>'+techs.map(t=>'<button type="button" class="btn" data-f="'+t.toLowerCase()+'">'+t+'</button>').join('');
 function apply(){let n=0;const s=q.value.trim().toLowerCase();cards.forEach(c=>{const ok=(cur==='all'||names(c).map(x=>x.toLowerCase()).includes(cur))&&(!s||c.textContent.toLowerCase().includes(s));c.style.display=ok?'':'none';if(ok)n++});none.style.display=n?'none':'block'}
 box.onclick=e=>{const b=e.target.closest('button');if(!b)return;cur=b.dataset.f;box.querySelectorAll('button').forEach(x=>x.classList.toggle('primary',x===b));apply()};
-q.oninput=apply;if(ls.value!=='en')lang(ls.value)})();
+q.oninput=apply})();
 function loadJs(src){return new Promise((ok,ko)=>{const s=document.createElement('script');s.src=src;s.onload=ok;s.onerror=ko;document.head.appendChild(s)})}
 function imgPng(i){const c=document.createElement('canvas');c.width=i.naturalWidth;c.height=i.naturalHeight;c.getContext('2d').drawImage(i,0,0);return c.toDataURL('image/png')}
 async function savePdf(btn){
@@ -86,8 +88,6 @@ async function savePdf(btn){
 const vs=[...document.querySelectorAll('.pmedia video')];
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?e.target.play().catch(()=>{}):e.target.pause()),{threshold:.5});vs.forEach(v=>io.observe(v))}
 
-// language: saved choice, else English
-try{const saved=localStorage.getItem('portfolio-lang'),want=saved&&D[saved]?saved:'en';ls.value=want;lang(want)}catch(e){lang('en')}
 // reveal on scroll
 (function(){const sel=['#home section>h2','#home .entry','#home .skills>div','#home .cc','#home .pcard','#allview .ptools','#allview .pcard','#allview .pcta'].join(',');
 const els=[...document.querySelectorAll(sel)];if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
