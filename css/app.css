@@ -82,7 +82,8 @@ select{font:inherit;font-family:var(--display);font-size:.9rem;color:inherit;bac
 .dd>button::after{content:"";width:.38rem;height:.38rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-left:.15rem}
 .sw{display:inline-flex;flex:none;width:1.9rem;height:1.35rem;border-radius:5px;overflow:hidden;border:1px solid rgba(128,128,128,.5)}
 .sw b{flex:1;display:grid;place-items:center;font:700 .7rem/1 var(--display)}
-.sw i{flex:none;width:.5rem}
+.sw i{flex:none;width:.5rem;display:flex;flex-direction:column}
+.sw u{flex:1;display:block;text-decoration:none}
 .dd>button::after{margin-left:auto}
 .cur{display:grid}
 .slot{grid-area:1/1;display:flex;align-items:center;gap:.5rem;white-space:nowrap}
