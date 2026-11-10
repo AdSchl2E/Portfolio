@@ -21,7 +21,7 @@ requestAnimationFrame(tick)};requestAnimationFrame(tick)});
 (function(){const names={en:'English',fr:'Français',de:'Deutsch',es:'Español',ja:'日本語',zh:'中文'};
 const $=id=>document.getElementById(id),th=$('theme'),lg=$('lang'),dds=[];
 // swatch colours = what each theme looks like: page colour, text colour, then its signature colour(s)
-const SW={paper:['#F1F2EF','#18212F','#2B3FBF'],light:['#FFFFFF','#0A0A0A','#D12E12'],github:['#0D1117','#E6EDF3','#58A6FF','#238636'],claude:['#F5F4ED','#1F1E1D','#D97757'],momiji:['#F5EFE6','#2B211E','#B3261E'],sakura:['#FFF7F8','#3B2A31','#B93A68'],yuzu:['#FFFCF0','#1C1A10','#FFD43B'],matcha:['#F2F5EE','#1E2A20','#3B6B2B'],sap:['#F5F6F7','#1D2D3E','#0070F2']};
+const SW={paper:['#F1F2EF','#18212F','#2B3FBF'],light:['#FFFFFF','#0A0A0A','#D12E12'],github:['#0D1117','#E6EDF3','#238636'],claude:['#F5F4ED','#1F1E1D','#D97757'],momiji:['#F5EFE6','#2B211E','#B3261E'],sakura:['#FFF7F8','#3B2A31','#B93A68'],yuzu:['#FFFCF0','#1C1A10','#FFD43B'],matcha:['#F2F5EE','#1E2A20','#3B6B2B'],sap:['#F5F6F7','#1D2D3E','#0070F2']};
 const swp=t=>{if(t.id==='paper'&&matchMedia('(prefers-color-scheme:dark)').matches)return['#12161D','#E8EAE6','#8FA0FF'];return SW[t.id]||[t.paper||'#F1F2EF',t.ink||'#18212F',t.accent||'#2B3FBF']};
 const sw=t=>{const p=swp(t);return `<span class="sw"><b style="background:${p[0]};color:${p[1]}">Aa</b><i>${p.slice(2).map(c=>`<u style="background:${c}"></u>`).join('')}</i></span>`};
 function mk(host,get,items,pick,label){const render=()=>{const cur=get();
